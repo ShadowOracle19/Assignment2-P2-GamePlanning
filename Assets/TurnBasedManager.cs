@@ -8,11 +8,11 @@ public class TurnBasedManager : MonoBehaviour
 {
     private bool isPlayersTurn = true;
 
-    public int playerHealth = 10;
-    private int playerMaxHealth = 10;
+    private int playerHealth = 10;
+    public int playerMaxHealth = 10;
 
-    public int enemyHealth = 10;
-    private int enemyMaxHealth = 10;
+    private int enemyHealth = 10;
+    public int enemyMaxHealth = 10;
 
     public int playerAttack = 2;
     public int maxPlayerAttack = 2;
@@ -32,6 +32,8 @@ public class TurnBasedManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        playerHealth = playerMaxHealth;
+        enemyHealth = enemyMaxHealth;
         DisplayNextEnemyMove();
     }
 
@@ -51,16 +53,20 @@ public class TurnBasedManager : MonoBehaviour
             //attack will activate if number is above 50
             if(attackChance > attackPercent)
             {
+                Debug.Log("enemy attack");
                 playerHealth -= enemyAttack;
                 enemyAttack = maxEnemyAttack;
                 isPlayersTurn = true;
                 DisplayNextEnemyMove();
+                playerAttack = maxPlayerAttack;
             }
             else //defend
             {
-                playerAttack -= 1;
+                Debug.Log("enemy defend");
+                playerAttack -= maxEnemyAttack;
                 isPlayersTurn = true;
                 DisplayNextEnemyMove();
+                playerAttack = maxPlayerAttack;
             }
         }
 
@@ -80,7 +86,20 @@ public class TurnBasedManager : MonoBehaviour
 
     public void Defend()
     {
-        enemyAttack -= 1;
+        enemyAttack -= maxEnemyAttack;
+        isPlayersTurn = false;
+    }
+
+    public void Special()
+    {
+        enemyHealth -= playerAttack * 2;
+        playerAttack = maxPlayerAttack;
+        isPlayersTurn = false;
+    }
+
+    public void Heal()
+    {
+        playerHealth += playerAttack;
         isPlayersTurn = false;
     }
 

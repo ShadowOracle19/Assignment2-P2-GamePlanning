@@ -28,6 +28,8 @@ public class TurnBasedManager : MonoBehaviour
     public TextMeshProUGUI enemyHealthText;
 
     public Image enemyAttackIndicator;
+    public Sprite attack;
+    public Sprite defend;
 
     // Start is called before the first frame update
     void Start()
@@ -109,11 +111,11 @@ public class TurnBasedManager : MonoBehaviour
         //attack will activate if number is above 50
         if (attackChance > attackPercent)
         {
-            enemyAttackIndicator.color = Color.red;
+            enemyAttackIndicator.sprite = attack;
         }
         else //defend
         {
-            enemyAttackIndicator.color = Color.blue;
+            enemyAttackIndicator.sprite = defend;
         }
     }
 }

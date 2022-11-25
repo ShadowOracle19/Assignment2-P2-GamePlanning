@@ -97,8 +97,8 @@ GameObject:
   - component: {fileID: 716394163390723673}
   - component: {fileID: 716394163390723676}
   - component: {fileID: 716394163390723679}
-  - component: {fileID: 158653762}
   - component: {fileID: 2163700030389360933}
+  - component: {fileID: 1673642666739836764}
   m_Layer: 0
   m_Name: Action Attack
   m_TagString: Untagged
@@ -235,20 +235,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMax: 5
   itemInFront: {fileID: 0}
---- !u!114 &158653762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716394163390723675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ef1918a94112564f89aaed4b3364d13, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isDragging: 0
-  manager: {fileID: 0}
 --- !u!114 &2163700030389360933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,3 +248,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+--- !u!114 &1673642666739836764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716394163390723675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e179576a2c42343aaf257e7e2d49fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  manager: {fileID: 0}

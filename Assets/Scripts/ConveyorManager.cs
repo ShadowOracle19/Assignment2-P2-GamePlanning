@@ -17,6 +17,8 @@ public class ConveyorManager : MonoBehaviour
     [SerializeField]
     private float spawnSpeed = 1.0f;
 
+    public Dropper drop;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,8 @@ public class ConveyorManager : MonoBehaviour
             if (spawnedActionTokens.Count == 6) continue;
 
             var token = Instantiate(GenerateRandomToken(), startPoint.position, Quaternion.identity, parent);
-            token.GetComponent<DragAndDrop>().manager = this;
+            token.GetComponent<ClickOnActionToken>().manager = this;
+            token.GetComponent<ClickOnActionToken>().drop = drop;
             spawnedActionTokens.Add(token);
 
             yield return null;

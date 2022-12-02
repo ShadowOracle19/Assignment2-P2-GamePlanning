@@ -28,28 +28,28 @@ public class Dropper : MonoBehaviour
             switch (currentType.type)
             {
                 case ActionTypeEnum.Attack:
-                    turnBasedManager.player.Attack(turnBasedManager.player.attack, turnBasedManager.enemy);
+                    turnBasedManager.player.Attack(currentType.effectNum, turnBasedManager.enemy);
                     DestroyToken();
 
 
                     break;
 
                 case ActionTypeEnum.Special:
-                    turnBasedManager.player.Attack(turnBasedManager.player.attack * 2, turnBasedManager.enemy);
+                    turnBasedManager.player.Attack(currentType.effectNum, turnBasedManager.enemy);
                     DestroyToken();
 
 
                     break;
 
                 case ActionTypeEnum.Defend:
-                    turnBasedManager.player.Defend(turnBasedManager.player);
+                    turnBasedManager.player.Defend(currentType.effectNum, turnBasedManager.player);
                     DestroyToken();
 
 
                     break;
 
                 case ActionTypeEnum.Heal:
-                    turnBasedManager.player.Heal(turnBasedManager.player, turnBasedManager.player.heal);
+                    turnBasedManager.player.Heal(turnBasedManager.player, currentType.effectNum);
                     DestroyToken();
 
                     break;

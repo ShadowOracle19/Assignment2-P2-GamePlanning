@@ -64,10 +64,10 @@ public class DataStats : MonoBehaviour
         }
     }
 
-    public void Defend(DataStats user)
+    public void Defend(int num, DataStats user)
     {
         user.defendHealthParent.SetActive(true);
-        user.defendHealth += defend;
+        user.defendHealth += num;
         user.defendHealthText.text = defendHealth.ToString();
     }
 

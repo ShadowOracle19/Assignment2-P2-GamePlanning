@@ -38,7 +38,7 @@ public class TurnBasedManager : MonoBehaviour
             }
             if(enemy.currentAction == EnemyActions.Defend)
             {
-                enemy.Defend(enemy);
+                enemy.Defend(Random.Range(1, 4), enemy);
             }
 
             enemy.ATBSlider.value = enemy.ATBSlider.minValue;

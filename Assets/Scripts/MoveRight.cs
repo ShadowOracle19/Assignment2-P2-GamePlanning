@@ -31,6 +31,14 @@ public class MoveRight : MonoBehaviour
         {
             itemInFront = collision.gameObject;
             itemBlocking = true;
+
+            if(itemInFront.GetComponent<ActionType>().type == GetComponent<ActionType>().type)
+            {
+                //Combine
+                itemInFront.GetComponent<ActionType>().CombineActionType(GetComponent<ActionType>().effectNum);
+                FindObjectOfType<ConveyorManager>().spawnedActionTokens.Remove(gameObject);
+                Destroy(gameObject);
+            }
         }
     }
 

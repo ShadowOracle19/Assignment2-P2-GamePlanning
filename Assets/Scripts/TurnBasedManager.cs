@@ -13,18 +13,24 @@ public class TurnBasedManager : MonoBehaviour
     public PlayerStats player;
     public EnemyStats enemy;
 
+    public GameObject map;
+    public MapNode currentNode;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        DisplayNextEnemyMove();
-        player.currentHealth = player.maxHealth;
-        enemy.currentHealth = enemy.maxHealth;
-    }
+    public ConveyorManager conveyorManager;
+
+    //// Start is called before the first frame update
+    //void Start()
+    //{
+    //    DisplayNextEnemyMove();
+    //    player.currentHealth = player.maxHealth;
+    //    enemy.currentHealth = enemy.maxHealth;
+    //}
 
     // Update is called once per frame
     void Update()
     {
+        enemy.currentHealth = Mathf.Clamp(enemy.currentHealth, 0, enemy.maxHealth);
+        player.currentHealth = Mathf.Clamp(player.currentHealth, 0, player.maxHealth);
 
         enemy.ATBSlider.value += Time.deltaTime * enemy.ATBSpeed;
 
@@ -46,13 +52,28 @@ public class TurnBasedManager : MonoBehaviour
         }
 
 
-        //if(playerHealth == 0 || enemyHealth == 0) //win/lose state
-        //{
-        //    playerHealth = playerMaxHealth;
-        //    enemyHealth = enemyMaxHealth;
-        //}
+        if(enemy.currentHealth == 0) //win/lose state
+        {
+            //end encounter
+            FinishEncounter();
+        }
+        else if(player.currentHealth == 0)
+        {
+            //activate player death state here
+        }
     }
 
+
+    public void StartEncounter(EnemyScriptable encounteredEnemy, MapNode _currentNode)
+    {
+        enemy.SetStats(encounteredEnemy);
+        player.currentHealth = player.maxHealth;
+        enemy.currentHealth = enemy.maxHealth;
+        DisplayNextEnemyMove();
+
+        StartCoroutine(conveyorManager.SpawnActionTokens());
+        currentNode = _currentNode;
+    }
 
     public void DisplayNextEnemyMove()
     {
@@ -68,5 +89,14 @@ public class TurnBasedManager : MonoBehaviour
             enemy.indicator.sprite = enemy.defendIndicator;
             enemy.currentAction = EnemyActions.Defend;
         }
+    }
+
+    public void FinishEncounter()
+    {
+        conveyorManager.DestroyTokens();
+        currentNode.finishedEncounter = true;
+        map.SetActive(true);
+        gameObject.SetActive(false);
+
     }
 }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Dropper
   - Destroy
+  - Token
   layers:
   - Default
   - TransparentFX

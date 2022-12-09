@@ -22,11 +22,10 @@ public class ConveyorManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine(SpawnActionTokens());
     }
 
 
-    IEnumerator SpawnActionTokens()
+    public IEnumerator SpawnActionTokens()
     {
         while(true)
         {
@@ -49,4 +48,16 @@ public class ConveyorManager : MonoBehaviour
 
         return token;
     }
+
+    public void DestroyTokens()
+    {
+        spawnedActionTokens.Clear();
+
+        foreach(Transform child in parent)
+        {
+            Destroy(child.gameObject);
+        }
+        StopCoroutine(SpawnActionTokens());
+    }
+
 }

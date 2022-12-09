@@ -21,16 +21,27 @@ public class MoveRight : MonoBehaviour
     void Update()
     {
         transform.position += Vector3.left * Time.deltaTime * speed;
+
+        if(itemInFront != null)
+        {
+            speed = 0;
+        }
+        else
+        {
+            speed = speedMax;
+        }
         
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        speed = 0;
         if(!itemBlocking)
         {
             itemInFront = collision.gameObject;
             itemBlocking = true;
+
+            if (!itemInFront.CompareTag("Token"))
+                return;
 
             if(itemInFront.GetComponent<ActionType>().type == GetComponent<ActionType>().type)
             {
@@ -42,12 +53,14 @@ public class MoveRight : MonoBehaviour
         }
     }
 
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if(collision.gameObject == itemInFront)
         {
-            speed = speedMax;
+            //speed = speedMax;
             itemBlocking = false;
+            itemInFront = null;
         }
     }
 }

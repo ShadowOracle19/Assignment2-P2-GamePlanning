@@ -4,25 +4,21 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-    public GameObject mapNode;
+    public List<EnemyScriptable> enemiesToEncounter = new List<EnemyScriptable>();
 
     public List<GameObject> nodes = new List<GameObject>();
-    public List<GameObject> activeNodes = new List<GameObject>();
 
     public int maxLevelCount;
 
     public Transform mapParent;
 
-    private float nodeOffsetx = 2.5f; //change this offset by 3 
-    private float nodeOffsety = 3.5f; //change this offset by 3 
-    private int currentNodesGeneratedInColumn = 0;
+    public EnemyScriptable[] enemyList;
 
     [Header("Grid Settings")]
     public int rows = 6; 
     public int columns = 7;
     public int nodesPerColumn = 3;
 
-    private Grid grid;
 
     // Start is called before the first frame update
     void Start()
@@ -38,38 +34,25 @@ public class MapGenerator : MonoBehaviour
 
     public void GenerateMap()
     {
-        for (int i = 0; i < columns; i++)//iterate through the columns
+        enemyList = Resources.LoadAll<EnemyScriptable>("Enemies");
+
+        foreach(EnemyScriptable enemy in enemyList)//add list of enemies from resource folder to enemiesToEncounter
         {
-
-            for(int j = 0; j < rows; j++)//iterate through the row in that column
-            {
-                var node = Instantiate(mapNode, new Vector2((nodeOffsetx * j),(nodeOffsety * i)), Quaternion.identity, mapParent);
-                node.GetComponent<MapNode>().row = j + 1;
-                node.GetComponent<MapNode>().column = i + 1;
-
-                nodes.Add(node);
-            }
+            enemiesToEncounter.Add(enemy);
         }
 
-        GeneratePath();
-    }
-
-    public void GeneratePath()
-    {
-        for (int i = 0; i < nodesPerColumn; i++)
+        foreach (Transform child in mapParent)
         {
-            GameObject currentNode = nodes[Random.Range(0, columns)];
-
-            nodes.Remove(currentNode);
-
-            activeNodes.Add(currentNode);
-            
-            currentNode.GetComponent<SpriteRenderer>().color = Color.red;
-            
-
-            
+            nodes.Add(child.gameObject);
         }
-        
+
+        foreach(GameObject node in nodes)
+        {
+            node.GetComponent<MapNode>().encounteredEnemy = enemiesToEncounter[Random.Range(0, enemiesToEncounter.Count)];
+
+        }
+        nodes[0].GetComponent<MapNode>().canInteract = true;
     }
+
 }
 

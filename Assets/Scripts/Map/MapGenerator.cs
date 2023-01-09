@@ -14,15 +14,14 @@ public class MapGenerator : MonoBehaviour
 
     public EnemyScriptable[] enemyList;
 
-    [Header("Grid Settings")]
-    public int rows = 6; 
-    public int columns = 7;
-    public int nodesPerColumn = 3;
+    public GameObject mapPrefab;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        var map = Instantiate(mapPrefab, this.transform);
+        mapParent = map.transform;
         GenerateMap();
     }
 
@@ -34,7 +33,7 @@ public class MapGenerator : MonoBehaviour
 
     public void GenerateMap()
     {
-        enemyList = Resources.LoadAll<EnemyScriptable>("Enemies");
+        enemyList = Resources.LoadAll<EnemyScriptable>("Enemies");//get list of enemies
 
         foreach(EnemyScriptable enemy in enemyList)//add list of enemies from resource folder to enemiesToEncounter
         {

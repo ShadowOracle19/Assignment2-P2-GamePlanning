@@ -13,7 +13,6 @@ public class TurnBasedManager : MonoBehaviour
     public PlayerStats player;
     public EnemyStats enemy;
 
-    public GameObject map;
     public MapNode currentNode;
 
     public ConveyorManager conveyorManager;
@@ -95,8 +94,8 @@ public class TurnBasedManager : MonoBehaviour
     {
         conveyorManager.DestroyTokens();
         currentNode.finishedEncounter = true;
-        map.SetActive(true);
-        gameObject.SetActive(false);
+        GameManager.Instance.map.SetActive(true);
+        GameManager.Instance.combat.SetActive(false);
 
     }
 }

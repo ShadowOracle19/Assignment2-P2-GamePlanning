@@ -8,9 +8,6 @@ public class MapNode : MonoBehaviour
 
     public List<MapNode> previousNode = new List<MapNode>();
 
-    public GameObject combat;
-    public GameObject map;
-
     public EnemyScriptable encounteredEnemy;
 
     public bool canInteract = false;
@@ -67,6 +64,12 @@ public class MapNode : MonoBehaviour
             if (new Vector3(myCamera.transform.position.x, myCamera.transform.position.y) == new Vector3(finalPos.x, finalPos.y))//once the camera reaches desired position break while loop
                 break;
             myCamera.transform.position = Vector3.Lerp(startingPos, new Vector3(finalPos.x, finalPos.y, -10), (elapsedTime / time));
+
+            //the player icon moving to the next map node
+            //GameManager.Instance.playerMoveSprite.transform.position = 
+            //    Vector3.Lerp(new Vector3(GameManager.Instance.playerMoveSprite.transform.position.x, 0.5f, GameManager.Instance.playerMoveSprite.transform.position.z), 
+            //    new Vector3(finalPos.x, 0.5f,finalPos.z), (elapsedTime / time));
+            GameManager.Instance.playerMoveSprite.transform.position = Vector3.Lerp(new Vector3(startingPos.x, startingPos.y), new Vector3(finalPos.x, finalPos.y), (elapsedTime / time));
             elapsedTime += Time.deltaTime;
             yield return null;
         }
@@ -85,11 +88,11 @@ public class MapNode : MonoBehaviour
 
         //once they reach the position run this code to start the encounter
         //note when we add more encounters run a bit of code to see what kind of encounter to run instead
-        combat.SetActive(true);
-        map.SetActive(false);
+        GameManager.Instance.combat.SetActive(true);
+        GameManager.Instance.map.SetActive(false);
 
         //if the encounter is an enemy run this line to start encounter
-        combat.GetComponent<TurnBasedManager>().StartEncounter(encounteredEnemy, this);
+        GameManager.Instance.combat.GetComponent<TurnBasedManager>().StartEncounter(encounteredEnemy, this);
         yield return null;
     }
 }

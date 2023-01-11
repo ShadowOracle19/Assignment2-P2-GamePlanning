@@ -829,10 +829,11 @@ MonoBehaviour:
   speakerName: {fileID: 680776019}
   leftSpeaker: {fileID: 734814674}
   rightSpeaker: {fileID: 296194146}
-  currentConversation: {fileID: 11400000, guid: 1a6d5eb433b0cc842aba5a2ef63919cd, type: 2}
-  lines: []
+  currentConversation: {fileID: 11400000, guid: 39d23f497c27a974ab024b08d1423c86, type: 2}
   textSpeed: 0.1
+  speedSelect: 0
   index: 0
+  character: 0
 --- !u!222 &624523920
 CanvasRenderer:
   m_ObjectHideFlags: 0

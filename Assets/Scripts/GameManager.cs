@@ -51,18 +51,18 @@ public class GameManager : MonoBehaviour
 
     public void StartCombatEncounter(CombatEncounter encounter)
     {
-        combatManager.StartEncounter(encounter.encounteredEnemy, node);
-
         combatUI.SetActive(true);
         map.SetActive(false);
+
+        combatManager.StartEncounter(encounter.encounteredEnemy, node);
     }
     public void StartDialogueEncounter(DialogueEncounter encounter)
     {
-        dialogueManager.currentConversation = encounter.desiredConversation;
-        dialogueManager.currentNode = node;
-
         dialogueUI.SetActive(true);
         map.SetActive(false);
+
+        dialogueManager.currentConversation = encounter.desiredConversation;
+        dialogueManager.currentNode = node;
     }
 
 }

@@ -700,6 +700,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: map
       value: 
@@ -728,6 +736,10 @@ PrefabInstance:
       propertyPath: connectingNodes.Array.data[1]
       value: 
       objectReference: {fileID: 9074572011631833586}
+    - target: {fileID: 5112613451803515041, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
     - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -920,6 +932,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: map
       value: 
@@ -928,6 +948,10 @@ PrefabInstance:
       propertyPath: combat
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: encounter
+      value: 
+      objectReference: {fileID: 11400000, guid: 5d33c965d994e5741bea9288c05c9d19, type: 2}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: encounteredEnemy
       value: 
@@ -952,6 +976,10 @@ PrefabInstance:
       propertyPath: connectingNodes.Array.data[1]
       value: 
       objectReference: {fileID: 6809482119502856797}
+    - target: {fileID: 5112613451803515041, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
     - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_RootOrder
       value: 1

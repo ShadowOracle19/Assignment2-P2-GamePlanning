@@ -32,6 +32,11 @@ public class GameManager : MonoBehaviour
     [Header("Combat")]
     public TurnBasedManager combatManager;
     public GameObject combatUI;
+
+    [Header("UI")]
+    public GameObject endEncounterUI;
+    public GameObject pausePanelUI;
+
     private void Awake()
     {
         _instance = this;
@@ -63,6 +68,23 @@ public class GameManager : MonoBehaviour
 
         dialogueManager.currentConversation = encounter.desiredConversation;
         dialogueManager.currentNode = node;
+    }
+
+    public void EndEncounter()
+    {
+
+    }
+
+    public void PauseGame()
+    {
+        pausePanelUI.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void ResumeGame()
+    {
+        pausePanelUI.SetActive(false);
+        Time.timeScale = 1;
     }
 
 }

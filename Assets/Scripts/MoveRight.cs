@@ -43,13 +43,14 @@ public class MoveRight : MonoBehaviour
             if (!itemInFront.CompareTag("Token"))
                 return;
 
-            if(itemInFront.GetComponent<ActionType>().type == GetComponent<ActionType>().type)
-            {
-                //Combine
-                itemInFront.GetComponent<ActionType>().CombineActionType(GetComponent<ActionType>().effectNum);
-                FindObjectOfType<ConveyorManager>().spawnedActionTokens.Remove(gameObject);
-                Destroy(gameObject);
-            }
+            //Token Combine fuctionality
+            //if(itemInFront.GetComponent<ActionType>().type == GetComponent<ActionType>().type)
+            //{
+            //    //Combine
+            //    itemInFront.GetComponent<ActionType>().CombineActionType(GetComponent<ActionType>().effectNum);
+            //    FindObjectOfType<ConveyorManager>().spawnedActionTokens.Remove(gameObject);
+            //    Destroy(gameObject);
+            //}
         }
     }
 

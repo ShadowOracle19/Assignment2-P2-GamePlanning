@@ -15,21 +15,15 @@ public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
     public TextMeshProUGUI speakerName;
-
     public Image leftSpeaker;
     public Image rightSpeaker;
-
     public Conversation currentConversation;
-
-
-    public float textSpeed;
-
+    private float textSpeed;
     public TextSpeed speedSelect;
-
-
     public int index;
 
-    public currentCharacter character;
+    public MapNode currentNode;
+
 
     
 
@@ -44,8 +38,22 @@ public class Dialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        character = currentConversation.lines[index].speakerSide;
-        
+        switch (speedSelect)//variable text speed
+        {
+            case TextSpeed.Slow:
+                textSpeed = 0.15f;
+                break;
+            case TextSpeed.Medium:
+                textSpeed = 0.1f;
+                break;
+            case TextSpeed.Fast:
+                textSpeed = 0.05f;
+                break;
+            default:
+                textSpeed = 0.1f;
+                break;
+        }
+
 
         if(Input.GetMouseButtonDown(0))
         {
@@ -101,9 +109,30 @@ public class Dialogue : MonoBehaviour
             textComponent.text = string.Empty;
             StartCoroutine(TypeLine());
         }
-        else
+        else//finish dialogue
         {
-            gameObject.SetActive(false);
+            currentNode.finishedEncounter = true;
+            GameManager.Instance.map.SetActive(true);
+            GameManager.Instance.dialogueUI.SetActive(false);
+        }
+    }
+
+    public void SetTextSpeed(int num)//0 - slow, 1 - medium, 2 - fast
+    {
+        switch (num)
+        {
+            case 0:
+                speedSelect = TextSpeed.Slow;
+                break;
+            case 1:
+                speedSelect = TextSpeed.Medium;
+                break;
+            case 2:
+                speedSelect = TextSpeed.Fast;
+                break;
+            default:
+                speedSelect = TextSpeed.Medium;
+                break;
         }
     }
 }

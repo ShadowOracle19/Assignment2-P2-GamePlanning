@@ -95,7 +95,7 @@ public class TurnBasedManager : MonoBehaviour
         conveyorManager.DestroyTokens();
         currentNode.finishedEncounter = true;
         GameManager.Instance.map.SetActive(true);
-        GameManager.Instance.combat.SetActive(false);
+        GameManager.Instance.combatUI.SetActive(false);
 
     }
 }

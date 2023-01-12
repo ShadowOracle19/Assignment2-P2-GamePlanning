@@ -709,6 +709,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: encounter
+      value: 
+      objectReference: {fileID: 11400000, guid: 5921a5025d387b8448986f1e8921fe60, type: 2}
+    - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: encounteredEnemy
       value: 
       objectReference: {fileID: 11400000, guid: 3d06e3c94be824e41bd4726034a60a25, type: 2}

@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MapNode : MonoBehaviour
 {
     public List<GameObject> connectingNodes = new List<GameObject>();
 
     public List<MapNode> previousNode = new List<MapNode>();
-
-    public EnemyScriptable encounteredEnemy;
 
     public bool canInteract = false;
 
@@ -18,6 +17,9 @@ public class MapNode : MonoBehaviour
 
     public GameObject selectable;
     public GameObject selected;
+
+    public BaseEncounter encounter;
+
 
     public void Start()
     {
@@ -88,11 +90,11 @@ public class MapNode : MonoBehaviour
 
         //once they reach the position run this code to start the encounter
         //note when we add more encounters run a bit of code to see what kind of encounter to run instead
-        GameManager.Instance.combat.SetActive(true);
-        GameManager.Instance.map.SetActive(false);
-
         //if the encounter is an enemy run this line to start encounter
-        GameManager.Instance.combat.GetComponent<TurnBasedManager>().StartEncounter(encounteredEnemy, this);
+        GameManager.Instance.node = this;
+
+        encounter.StartEncounter();
+
         yield return null;
     }
 }

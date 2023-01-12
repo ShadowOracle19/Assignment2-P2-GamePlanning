@@ -33,23 +33,23 @@ public class MapGenerator : MonoBehaviour
 
     public void GenerateMap()
     {
-        enemyList = Resources.LoadAll<EnemyScriptable>("Enemies");//get list of enemies
+        //enemyList = Resources.LoadAll<EnemyScriptable>("Enemies");//get list of enemies
 
-        foreach(EnemyScriptable enemy in enemyList)//add list of enemies from resource folder to enemiesToEncounter
-        {
-            enemiesToEncounter.Add(enemy);
-        }
+        //foreach(EnemyScriptable enemy in enemyList)//add list of enemies from resource folder to enemiesToEncounter
+        //{
+        //    enemiesToEncounter.Add(enemy);
+        //}
 
         foreach (Transform child in mapParent)
         {
             nodes.Add(child.gameObject);
         }
 
-        foreach(GameObject node in nodes)
-        {
-            node.GetComponent<MapNode>().encounteredEnemy = enemiesToEncounter[Random.Range(0, enemiesToEncounter.Count)];
+        //foreach(GameObject node in nodes)
+        //{
+        //    node.GetComponent<MapNode>().encounteredEnemy = enemiesToEncounter[Random.Range(0, enemiesToEncounter.Count)];
 
-        }
+        //}
         nodes[0].GetComponent<MapNode>().canInteract = true;
     }
 

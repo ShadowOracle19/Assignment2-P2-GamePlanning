@@ -19,10 +19,19 @@ public class GameManager : MonoBehaviour
     }
     #endregion
 
-    public GameObject combat;
-    public GameObject map;
-    public GameObject playerMoveSprite;//this sprite is only shown on the map to move to each node
 
+    [Header("Map")]
+    public GameObject playerMoveSprite;//this sprite is only shown on the map to move to each node
+    public GameObject map;
+    public MapNode node;
+
+    [Header("Dialogue")]
+    public Dialogue dialogueManager;
+    public GameObject dialogueUI;
+
+    [Header("Combat")]
+    public TurnBasedManager combatManager;
+    public GameObject combatUI;
     private void Awake()
     {
         _instance = this;
@@ -39,4 +48,21 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    public void StartCombatEncounter(CombatEncounter encounter)
+    {
+        combatManager.StartEncounter(encounter.encounteredEnemy, node);
+
+        combatUI.SetActive(true);
+        map.SetActive(false);
+    }
+    public void StartDialogueEncounter(DialogueEncounter encounter)
+    {
+        dialogueManager.currentConversation = encounter.desiredConversation;
+        dialogueManager.currentNode = node;
+
+        dialogueUI.SetActive(true);
+        map.SetActive(false);
+    }
+
 }

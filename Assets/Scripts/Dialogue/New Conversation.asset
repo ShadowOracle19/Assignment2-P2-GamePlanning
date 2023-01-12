@@ -17,10 +17,13 @@ MonoBehaviour:
   lines:
   - character: {fileID: 11400000, guid: a914c3837811cf544bd119ecdafd32d5, type: 2}
     speakerSide: 0
-    text: Hello Tori Vega
+    text: 'A bright streak flashes from your pointing finger to a point you choose
+      within range then blossoms with a low roar into an explosion of flame. '
   - character: {fileID: 11400000, guid: 2dd0a156e88204c4a8d794ac5571fb86, type: 2}
     speakerSide: 1
-    text: Hi Rick Star
+    text: Each creature in a 20-foot radius Sphere centered on that point must make
+      a Dexterity saving throw.
   - character: {fileID: 11400000, guid: a914c3837811cf544bd119ecdafd32d5, type: 2}
     speakerSide: 0
-    text: ITS PATRICK
+    text: A target takes 8d6 fire damage on a failed save, or half as much damage
+      on a successful one.

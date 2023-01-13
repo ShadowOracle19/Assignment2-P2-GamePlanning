@@ -36,6 +36,7 @@ public class GameManager : MonoBehaviour
     [Header("UI")]
     public GameObject endEncounterUI;
     public GameObject pausePanelUI;
+    public GameObject shopMenuUI;
 
     private void Awake()
     {
@@ -68,6 +69,12 @@ public class GameManager : MonoBehaviour
 
         dialogueManager.currentConversation = encounter.desiredConversation;
         dialogueManager.currentNode = node;
+    }
+
+    public void StartShopEncounter()
+    {
+        shopMenuUI.SetActive(true);
+        map.SetActive(false);
     }
 
     public void EndEncounter()

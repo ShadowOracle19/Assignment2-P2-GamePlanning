@@ -7,4 +7,9 @@ public class Character : ScriptableObject
 {
     public string fullName;
     public Sprite portrait;
+
+    public Sprite happy;
+    public Sprite sad;
+    public Sprite angry;
+    public Sprite scared;
 }

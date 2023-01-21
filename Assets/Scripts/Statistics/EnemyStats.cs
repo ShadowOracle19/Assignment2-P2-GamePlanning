@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.EventSystems;
 
 public enum EnemyActions
 {
@@ -10,7 +11,7 @@ public enum EnemyActions
     Defend
 }
 
-public class EnemyStats : DataStats
+public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public EnemyScriptable currentEnemy;
 
@@ -24,9 +25,14 @@ public class EnemyStats : DataStats
 
     public TextMeshProUGUI enemyName;
 
+    public bool enemyIsTargeted = false;
+    public bool enemyIsHovered = false;
+    public Image targetIcon;
+
     // Start is called before the first frame update
     void Start()
     {
+        targetIcon.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -34,6 +40,17 @@ public class EnemyStats : DataStats
     {
         healthText.text = currentHealth + "/" + maxHealth;
         healthSlider.value = currentHealth;
+
+        if(enemyIsTargeted)
+        {
+            targetIcon.gameObject.SetActive(true);
+            targetIcon.color = Color.red;
+        }
+        else if(!enemyIsTargeted && !enemyIsHovered)
+        {
+            targetIcon.gameObject.SetActive(false);
+            targetIcon.color = Color.white;
+        }
     }
 
     public void SetStats(EnemyScriptable encounteredEnemy)
@@ -51,9 +68,27 @@ public class EnemyStats : DataStats
         attack = currentEnemy.attack;
 
         defend = currentEnemy.defend;
+        healthSlider.maxValue = maxHealth;
 
         ATBSpeed = currentEnemy.ATBSpeed;
         ATBSlider.value = 0;
     }
 
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        TurnBasedManager.Instance.TargetNewEnemy(this);
+    }
+
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        targetIcon.gameObject.SetActive(true);
+        targetIcon.color = Color.white;
+        enemyIsHovered = true;
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        targetIcon.gameObject.SetActive(false);
+        enemyIsHovered = false;
+    }
 }

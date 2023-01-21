@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour
         combatUI.SetActive(true);
         map.SetActive(false);
 
-        combatManager.StartEncounter(encounter.encounteredEnemy, node);
+        combatManager.StartEncounter(encounter.encounteredEnemies, node);
     }
     public void StartDialogueEncounter(DialogueEncounter encounter)
     {

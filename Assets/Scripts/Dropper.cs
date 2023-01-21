@@ -7,8 +7,6 @@ public class Dropper : MonoBehaviour
     public ActionType currentType;
 
 
-    public TurnBasedManager turnBasedManager;
-
     // Start is called before the first frame update
     void Start()
     {
@@ -20,42 +18,44 @@ public class Dropper : MonoBehaviour
     {
         if(currentType != null)
         {
-            turnBasedManager.player.ATBSlider.value += Time.deltaTime * turnBasedManager.player.ATBSpeed;
+            TurnBasedManager.Instance.player.ATBSlider.value += Time.deltaTime * TurnBasedManager.Instance.player.ATBSpeed;
 
         }
-        if(turnBasedManager.player.ATBSlider.value == turnBasedManager.player.ATBSlider.maxValue)
+        if(TurnBasedManager.Instance.player.ATBSlider.value == TurnBasedManager.Instance.player.ATBSlider.maxValue)
         {
             switch (currentType.type)
             {
                 case ActionTypeEnum.Attack:
-                    turnBasedManager.player.Attack(currentType.effectNum, turnBasedManager.enemy);
+                    if (TurnBasedManager.Instance.targetedEnemy == null) return;
+                    TurnBasedManager.Instance.player.Attack(currentType.effectNum, TurnBasedManager.Instance.targetedEnemy);
                     DestroyToken();
 
 
                     break;
 
                 case ActionTypeEnum.Special:
-                    turnBasedManager.player.Attack(currentType.effectNum, turnBasedManager.enemy);
+                    if (TurnBasedManager.Instance.targetedEnemy == null) return;
+                    TurnBasedManager.Instance.player.Attack(currentType.effectNum, TurnBasedManager.Instance.targetedEnemy);
                     DestroyToken();
 
 
                     break;
 
                 case ActionTypeEnum.Defend:
-                    turnBasedManager.player.Defend(currentType.effectNum, turnBasedManager.player);
+                    TurnBasedManager.Instance.player.Defend(currentType.effectNum, TurnBasedManager.Instance.player);
                     DestroyToken();
 
 
                     break;
 
                 case ActionTypeEnum.Heal:
-                    turnBasedManager.player.Heal(turnBasedManager.player, currentType.effectNum);
+                    TurnBasedManager.Instance.player.Heal(TurnBasedManager.Instance.player, currentType.effectNum);
                     DestroyToken();
 
                     break;
 
                 default:
-                    turnBasedManager.player.ATBSlider.value = turnBasedManager.player.ATBSlider.minValue;
+                    TurnBasedManager.Instance.player.ATBSlider.value = TurnBasedManager.Instance.player.ATBSlider.minValue;
                     break;
             }
         }
@@ -66,7 +66,7 @@ public class Dropper : MonoBehaviour
     {
         Destroy(currentType.gameObject);
         currentType = null;
-        turnBasedManager.player.ATBSlider.value = turnBasedManager.player.ATBSlider.minValue;
+        TurnBasedManager.Instance.player.ATBSlider.value = TurnBasedManager.Instance.player.ATBSlider.minValue;
 
     }
 

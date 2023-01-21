@@ -719,7 +719,7 @@ PrefabInstance:
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: encounter
       value: 
-      objectReference: {fileID: 11400000, guid: 5921a5025d387b8448986f1e8921fe60, type: 2}
+      objectReference: {fileID: 11400000, guid: 5d33c965d994e5741bea9288c05c9d19, type: 2}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: encounteredEnemy
       value: 

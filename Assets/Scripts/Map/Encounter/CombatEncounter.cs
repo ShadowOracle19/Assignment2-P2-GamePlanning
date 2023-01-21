@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Encounter", menuName = "ScriptableObjects/Encounters/Combat")]
 public class CombatEncounter : BaseEncounter
 {
-    public EnemyScriptable encounteredEnemy;
+    public List<EnemyScriptable> encounteredEnemies;
 
     public override void StartEncounter()
     {

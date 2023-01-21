@@ -13,3 +13,10 @@ MonoBehaviour:
   m_Name: Combat
   m_EditorClassIdentifier: 
   encounteredEnemy: {fileID: 11400000, guid: fd9f3358d42b9b2489a62b3149255a39, type: 2}
+  encounteredEnemies:
+  - {fileID: 11400000, guid: fd9f3358d42b9b2489a62b3149255a39, type: 2}
+  - {fileID: 11400000, guid: fd9f3358d42b9b2489a62b3149255a39, type: 2}
+  - {fileID: 11400000, guid: fd9f3358d42b9b2489a62b3149255a39, type: 2}
+  - {fileID: 11400000, guid: fd9f3358d42b9b2489a62b3149255a39, type: 2}
+  - {fileID: 11400000, guid: fd9f3358d42b9b2489a62b3149255a39, type: 2}
+  - {fileID: 11400000, guid: fd9f3358d42b9b2489a62b3149255a39, type: 2}

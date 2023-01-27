@@ -106,24 +106,24 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
         currentEnemy = encounteredEnemy;
 
 
-        enemyName.text = currentenemyName;
+        enemyName.text = currentEnemy.enemyName;
 
-        enemyImage.sprite = currentenemySprite;
+        enemyImage.sprite = currentEnemy.enemySprite;
 
-        maxHealth = currentmaxHealth;
-        currentHealth = currentmaxHealth;
+        maxHealth = currentEnemy.maxHealth;
+        currentHealth = currentEnemy.maxHealth;
 
-        attack = currentattack;
+        attack = currentEnemy.attack;
 
-        defend = currentdefend;
+        defend = currentEnemy.defend;
         healthSlider.maxValue = maxHealth;
 
-        ATBSpeed = currentATBSpeed;
+        ATBSpeed = currentEnemy.ATBSpeed;
         ATBSlider.value = 0;
 
-        highHealth = encounteredhighHealth;
-        midHealth = encounteredmidHealth;
-        lowHealth = encounteredlowHealth;
+        highHealth = currentEnemy.highHealth;
+        midHealth = currentEnemy.midHealth;
+        lowHealth = currentEnemy.lowHealth;
 
     }
 

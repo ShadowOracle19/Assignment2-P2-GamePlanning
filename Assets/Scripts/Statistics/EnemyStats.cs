@@ -27,7 +27,16 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
     public int ATBSpeed = 1;
 
     public EnemyActions currentAction;
-    public EnemyHealthStates currentState;
+    public EnemyStates currentState;
+
+    private EnemyStates highHealth;
+    private EnemyStates midHealth;
+    private EnemyStates lowHealth;
+
+    private float attackChance;
+    private float attackPercent = 50.0f;
+
+
     public Image enemyImage;
     public Image indicator;
     public Sprite attackIndicator;
@@ -65,15 +74,30 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
 
         if(currentHealth/maxHealth >= 0.7f)//enemy at max/high health
         {
-            currentState = EnemyHealthStates.HighHealth;
+            currentState = highHealth;
         }
         else if(currentHealth / maxHealth >= 0.4f)//enemy at mid health
         {
-            currentState = EnemyHealthStates.MediumHealth;
+            currentState = midHealth;
         }
         else if(currentHealth / maxHealth <= 0.3f)//enemy at low health
         {
-            currentState = EnemyHealthStates.LowHealth;
+            currentState = lowHealth;
+        }
+
+        switch (currentState)
+        {
+            case EnemyStates.Normal:
+                attackPercent = 50;
+                break;
+            case EnemyStates.Aggressive:
+                attackPercent = 25;
+                break;
+            case EnemyStates.Defensive:
+                attackPercent = 75;
+                break;
+            default:
+                break;
         }
     }
 
@@ -82,21 +106,45 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
         currentEnemy = encounteredEnemy;
 
 
-        enemyName.text = currentEnemy.enemyName;
+        enemyName.text = currentenemyName;
 
-        enemyImage.sprite = currentEnemy.enemySprite;
+        enemyImage.sprite = currentenemySprite;
 
-        maxHealth = currentEnemy.maxHealth;
-        currentHealth = currentEnemy.maxHealth;
+        maxHealth = currentmaxHealth;
+        currentHealth = currentmaxHealth;
 
-        attack = currentEnemy.attack;
+        attack = currentattack;
 
-        defend = currentEnemy.defend;
+        defend = currentdefend;
         healthSlider.maxValue = maxHealth;
 
-        ATBSpeed = currentEnemy.ATBSpeed;
+        ATBSpeed = currentATBSpeed;
         ATBSlider.value = 0;
+
+        highHealth = encounteredhighHealth;
+        midHealth = encounteredmidHealth;
+        lowHealth = encounteredlowHealth;
+
     }
+
+    public void DisplayNextEnemyMove()
+    {
+        attackChance = Random.Range(0, 100);
+
+        //attack will activate if number is higher then attack
+        //attack will happen the lower attack percent is set
+        if (attackChance > attackPercent)
+        {
+            indicator.sprite = attackIndicator;
+            currentAction = EnemyActions.Attack;
+        }
+        else //defend
+        {
+            indicator.sprite = defendIndicator;
+            currentAction = EnemyActions.Defend;
+        }
+    }
+
 
     public void OnPointerClick(PointerEventData eventData)
     {

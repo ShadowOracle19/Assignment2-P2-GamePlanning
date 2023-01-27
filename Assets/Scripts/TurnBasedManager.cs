@@ -110,6 +110,7 @@ public class TurnBasedManager : MonoBehaviour
         LoadEnemies(enemiesToEncounter);
 
         //enemy.SetStats(encounteredEnemy);
+        player.healthSlider.maxValue = player.maxHealth;
         player.currentHealth = player.maxHealth;
         //enemy.currentHealth = enemy.maxHealth;
         //DisplayNextEnemyMove();

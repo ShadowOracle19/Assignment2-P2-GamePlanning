@@ -11,6 +11,15 @@ public enum EnemyActions
     Defend
 }
 
+public enum EnemyHealthStates
+{
+    HighHealth,
+    MediumHealth,
+    LowHealth
+}
+
+
+
 public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
     public EnemyScriptable currentEnemy;
@@ -18,6 +27,7 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
     public int ATBSpeed = 1;
 
     public EnemyActions currentAction;
+    public EnemyHealthStates currentState;
     public Image enemyImage;
     public Image indicator;
     public Sprite attackIndicator;
@@ -40,6 +50,7 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
     {
         healthText.text = currentHealth + "/" + maxHealth;
         healthSlider.value = currentHealth;
+        Debug.Log("Current health percent for " + gameObject.name + ": " + currentHealth / maxHealth);
 
         if(enemyIsTargeted)
         {
@@ -50,6 +61,19 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
         {
             targetIcon.gameObject.SetActive(false);
             targetIcon.color = Color.white;
+        }
+
+        if(currentHealth/maxHealth >= 0.7f)//enemy at max/high health
+        {
+            currentState = EnemyHealthStates.HighHealth;
+        }
+        else if(currentHealth / maxHealth >= 0.4f)//enemy at mid health
+        {
+            currentState = EnemyHealthStates.MediumHealth;
+        }
+        else if(currentHealth / maxHealth <= 0.3f)//enemy at low health
+        {
+            currentState = EnemyHealthStates.LowHealth;
         }
     }
 

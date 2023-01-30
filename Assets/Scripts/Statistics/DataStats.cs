@@ -7,11 +7,11 @@ using TMPro;
 public class DataStats : MonoBehaviour
 {
     [Header("Stats")]
-    public int currentHealth;
-    public int maxHealth = 10;
-    public int attack = 2;
-    public int defend = 2;
-    public int defendHealth = 0;
+    public float currentHealth;
+    public float maxHealth = 10;
+    public float attack = 2;
+    public float defend = 2;
+    public float defendHealth = 0;
 
     [Header("UI")]
     public TextMeshProUGUI healthText;
@@ -34,11 +34,11 @@ public class DataStats : MonoBehaviour
         
     }
 
-    public void Attack(int damage, DataStats victim)
+    public void Attack(float damage, DataStats victim)
     {
         if(victim.defendHealth > 0)
         {
-            int tempDamage = damage;
+            var tempDamage = damage;
             damage -= victim.defendHealth;
             victim.defendHealth -= tempDamage;
             victim.defendHealthText.text = victim.defendHealth.ToString();

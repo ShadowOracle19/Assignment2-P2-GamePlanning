@@ -110,6 +110,7 @@ public class TurnBasedManager : MonoBehaviour
         LoadEnemies(enemiesToEncounter);
 
         //enemy.SetStats(encounteredEnemy);
+        player.healthSlider.maxValue = player.maxHealth;
         player.currentHealth = player.maxHealth;
         //enemy.currentHealth = enemy.maxHealth;
         //DisplayNextEnemyMove();
@@ -130,22 +131,6 @@ public class TurnBasedManager : MonoBehaviour
             enemies[i].SetStats(enemiesToEncounter[i]);
         }
     }
-
-    //public void DisplayNextEnemyMove()
-    //{
-    //    attackChance = Random.Range(0, 100);
-    //    //attack will activate if number is above 50
-    //    if (attackChance > attackPercent)
-    //    {
-    //        enemy.indicator.sprite = enemy.attackIndicator;
-    //        enemy.currentAction = EnemyActions.Attack;
-    //    }
-    //    else //defend
-    //    {
-    //        enemy.indicator.sprite = enemy.defendIndicator;
-    //        enemy.currentAction = EnemyActions.Defend;
-    //    }
-    //}
 
     public void FinishEncounter()
     {

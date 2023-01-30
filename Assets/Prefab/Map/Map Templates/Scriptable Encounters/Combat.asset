@@ -12,11 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acc5130bbdfbbb44a52215b117309bd, type: 3}
   m_Name: Combat
   m_EditorClassIdentifier: 
-  encounteredEnemy: {fileID: 11400000, guid: fd9f3358d42b9b2489a62b3149255a39, type: 2}
   encounteredEnemies:
-  - {fileID: 11400000, guid: fd9f3358d42b9b2489a62b3149255a39, type: 2}
-  - {fileID: 11400000, guid: fd9f3358d42b9b2489a62b3149255a39, type: 2}
-  - {fileID: 11400000, guid: fd9f3358d42b9b2489a62b3149255a39, type: 2}
-  - {fileID: 11400000, guid: fd9f3358d42b9b2489a62b3149255a39, type: 2}
-  - {fileID: 11400000, guid: fd9f3358d42b9b2489a62b3149255a39, type: 2}
-  - {fileID: 11400000, guid: fd9f3358d42b9b2489a62b3149255a39, type: 2}
+  - {fileID: 11400000, guid: 2d378b3e4adf71348a00310d250e0e14, type: 2}
+  - {fileID: 11400000, guid: 2d378b3e4adf71348a00310d250e0e14, type: 2}
+  - {fileID: 11400000, guid: 2d378b3e4adf71348a00310d250e0e14, type: 2}
+  - {fileID: 11400000, guid: 2d378b3e4adf71348a00310d250e0e14, type: 2}

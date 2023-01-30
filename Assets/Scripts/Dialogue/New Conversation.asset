@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speakerleft: {fileID: 11400000, guid: a914c3837811cf544bd119ecdafd32d5, type: 2}
   speakerRight: {fileID: 11400000, guid: 2dd0a156e88204c4a8d794ac5571fb86, type: 2}
+  speakerMiddle: {fileID: 0}
   lines:
   - character: {fileID: 11400000, guid: a914c3837811cf544bd119ecdafd32d5, type: 2}
     speakerSide: 0

@@ -17,6 +17,7 @@ public class Dialogue : MonoBehaviour
     public TextMeshProUGUI speakerName;
     public Image leftSpeaker;
     public Image rightSpeaker;
+    public Image middleSpeaker;
     public Conversation currentConversation;
     private float textSpeed;
     public TextSpeed speedSelect;
@@ -73,8 +74,42 @@ public class Dialogue : MonoBehaviour
     {
         index = 0;
 
-        leftSpeaker.sprite = currentConversation.speakerleft.portrait;
-        rightSpeaker.sprite = currentConversation.speakerRight.portrait;
+        
+        
+        //if there is no speaker set it to false
+        if (currentConversation.speakerleft == null)
+        {
+            leftSpeaker.gameObject.SetActive(false);
+        }
+        if(currentConversation.speakerRight == null)
+        {
+            rightSpeaker.gameObject.SetActive(false);
+        }
+        if(currentConversation.speakerMiddle == null)
+        {
+            middleSpeaker.gameObject.SetActive(false);
+        }
+
+        //if there is a speaker set it active and set the portait 
+        if (currentConversation.speakerleft != null)
+        {
+            leftSpeaker.gameObject.SetActive(true);
+            leftSpeaker.sprite = currentConversation.speakerleft.portrait;
+        }
+        if (currentConversation.speakerRight != null)
+        {
+            Debug.Log("um hello?");
+            rightSpeaker.gameObject.SetActive(true);
+            rightSpeaker.sprite = currentConversation.speakerRight.portrait;
+        }
+        if (currentConversation.speakerMiddle != null)
+        {
+            middleSpeaker.gameObject.SetActive(true);
+            middleSpeaker.sprite = currentConversation.speakerMiddle.portrait;
+        }
+
+
+
         StartCoroutine(TypeLine());
     }
 
@@ -84,11 +119,19 @@ public class Dialogue : MonoBehaviour
         if (currentConversation.lines[index].speakerSide == currentCharacter.LEFT)//Character left is speaking
         {
             rightSpeaker.color = new Color(0.6f, 0.6f, 0.6f);
+            middleSpeaker.color = new Color(0.6f, 0.6f, 0.6f);
             leftSpeaker.color = new Color(1, 1, 1);
         }
         else if(currentConversation.lines[index].speakerSide == currentCharacter.RIGHT)//character right is speaking
         {
             rightSpeaker.color = new Color(1, 1, 1);
+            middleSpeaker.color = new Color(0.6f, 0.6f, 0.6f);
+            leftSpeaker.color = new Color(0.6f, 0.6f, 0.6f);
+        }
+        else if(currentConversation.lines[index].speakerSide == currentCharacter.MIDDLE)//character right is speaking
+        {
+            rightSpeaker.color = new Color(0.6f, 0.6f, 0.6f);
+            middleSpeaker.color = new Color(1, 1, 1);
             leftSpeaker.color = new Color(0.6f, 0.6f, 0.6f);
         }
 

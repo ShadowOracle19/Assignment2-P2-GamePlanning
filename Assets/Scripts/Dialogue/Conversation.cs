@@ -6,7 +6,8 @@ using UnityEngine;
 public enum currentCharacter
 {
     LEFT,
-    RIGHT
+    RIGHT,
+    MIDDLE
 }
 
 [System.Serializable]
@@ -26,6 +27,7 @@ public class Conversation : ScriptableObject
 {
     public Character speakerleft;
     public Character speakerRight;
+    public Character speakerMiddle;
     public Line[] lines;
 }
 

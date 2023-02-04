@@ -12,19 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358bbf9753e925845b6baca7f6c14818, type: 3}
   m_Name: New Conversation
   m_EditorClassIdentifier: 
-  speakerleft: {fileID: 11400000, guid: a914c3837811cf544bd119ecdafd32d5, type: 2}
-  speakerRight: {fileID: 11400000, guid: 2dd0a156e88204c4a8d794ac5571fb86, type: 2}
+  speakerleft: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+  speakerRight: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
   speakerMiddle: {fileID: 0}
   lines:
-  - character: {fileID: 11400000, guid: a914c3837811cf544bd119ecdafd32d5, type: 2}
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
     speakerSide: 0
     text: 'A bright streak flashes from your pointing finger to a point you choose
       within range then blossoms with a low roar into an explosion of flame. '
-  - character: {fileID: 11400000, guid: 2dd0a156e88204c4a8d794ac5571fb86, type: 2}
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
     speakerSide: 1
     text: Each creature in a 20-foot radius Sphere centered on that point must make
       a Dexterity saving throw.
-  - character: {fileID: 11400000, guid: a914c3837811cf544bd119ecdafd32d5, type: 2}
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
     speakerSide: 0
     text: A target takes 8d6 fire damage on a failed save, or half as much damage
       on a successful one.

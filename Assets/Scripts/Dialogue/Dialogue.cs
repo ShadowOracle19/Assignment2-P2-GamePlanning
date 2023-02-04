@@ -94,18 +94,18 @@ public class Dialogue : MonoBehaviour
         if (currentConversation.speakerleft != null)
         {
             leftSpeaker.gameObject.SetActive(true);
-            leftSpeaker.sprite = currentConversation.speakerleft.portrait;
+            leftSpeaker.sprite = currentConversation.speakerleft.neutral;
         }
         if (currentConversation.speakerRight != null)
         {
             Debug.Log("um hello?");
             rightSpeaker.gameObject.SetActive(true);
-            rightSpeaker.sprite = currentConversation.speakerRight.portrait;
+            rightSpeaker.sprite = currentConversation.speakerRight.neutral;
         }
         if (currentConversation.speakerMiddle != null)
         {
             middleSpeaker.gameObject.SetActive(true);
-            middleSpeaker.sprite = currentConversation.speakerMiddle.portrait;
+            middleSpeaker.sprite = currentConversation.speakerMiddle.neutral;
         }
 
 

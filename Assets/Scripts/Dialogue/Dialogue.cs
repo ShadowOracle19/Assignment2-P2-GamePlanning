@@ -54,20 +54,6 @@ public class Dialogue : MonoBehaviour
                 textSpeed = 0.1f;
                 break;
         }
-
-
-        if(Input.GetMouseButtonDown(0))
-        {
-            if(textComponent.text == currentConversation.lines[index].text)
-            {
-                NextLine();
-            }
-            else
-            {
-                StopAllCoroutines();
-                textComponent.text = currentConversation.lines[index].text;
-            }
-        }
     }
 
     void StartDialogue()
@@ -176,6 +162,19 @@ public class Dialogue : MonoBehaviour
             default:
                 speedSelect = TextSpeed.Medium;
                 break;
+        }
+    }
+
+    public void DialogueClick()
+    {
+        if (textComponent.text == currentConversation.lines[index].text)
+        {
+            NextLine();
+        }
+        else
+        {
+            StopAllCoroutines();
+            textComponent.text = currentConversation.lines[index].text;
         }
     }
 }

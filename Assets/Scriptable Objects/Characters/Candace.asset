@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Candace
   m_EditorClassIdentifier: 
   fullName: Candace
-  neutral: {fileID: 21300000, guid: 33604dadc3a0e3d469748422efe6906a, type: 3}
-  happy: {fileID: 21300000, guid: 57890eb8acfd4794ba1bcb81420114a0, type: 3}
-  sad: {fileID: 21300000, guid: 449fe33502b308747ab19e20a98408e4, type: 3}
-  angry: {fileID: 21300000, guid: fa96c7391e446e549bc3e0f38a4858a4, type: 3}
-  suprised: {fileID: 21300000, guid: f709c53a5d7ccf041b4c91797b678f2d, type: 3}
+  neutral: {fileID: 21300000, guid: a4062cc0fe6c15747a6678094e53c85b, type: 3}
+  happy: {fileID: 21300000, guid: 0d8a83b1b7bdbbb4cb48712c488bbadc, type: 3}
+  sad: {fileID: 21300000, guid: 36d2b551906eaee43aa1806c01cc9f8c, type: 3}
+  angry: {fileID: 21300000, guid: c0838386c0f644943870bbb1c38913e2, type: 3}
+  suprised: {fileID: 21300000, guid: 66988a039f05714479a6a1e7eb28412d, type: 3}

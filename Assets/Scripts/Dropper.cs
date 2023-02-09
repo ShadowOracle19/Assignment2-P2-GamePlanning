@@ -34,7 +34,8 @@ public class Dropper : MonoBehaviour
         {
             if (TurnBasedManager.Instance.targetedEnemy != null)
             {
-                TurnBasedManager.Instance.player.Attack(currentToken.currentToken.damageAmount, TurnBasedManager.Instance.targetedEnemy, currentToken.currentToken.isAoe);
+                
+                TurnBasedManager.Instance.player.Attack(currentToken.currentToken.damageAmount, TurnBasedManager.Instance.currentPlayerSprite.GetComponent<Animator>(), TurnBasedManager.Instance.targetedEnemy, currentToken.currentToken.isAoe);
             }
             TurnBasedManager.Instance.player.Defend(currentToken.currentToken.defendAmount, TurnBasedManager.Instance.player);
             TurnBasedManager.Instance.player.Heal(TurnBasedManager.Instance.player, currentToken.currentToken.healingAmount);

@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c84a380b4f65046b85e3ac15f58dbb, type: 3}
+  m_Name: Shield
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 3e9e450d3e546764f9ed6dac0845f608, type: 3}
+  isAoe: 0
+  isPiercing: 0
+  isChangeStance: 0
+  healingAmount: 0
+  damageAmount: 0
+  defendAmount: 4
+  character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}

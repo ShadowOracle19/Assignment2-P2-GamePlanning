@@ -4,7 +4,12 @@ using UnityEngine;
 
 public class ConveyorManager : MonoBehaviour
 {
-    public List<GameObject> actionPrefabList = new List<GameObject>();
+    public List<ActionTokens> availablePiercingActionTokens = new List<ActionTokens>();
+    public List<ActionTokens> availableSlashingActionTokens = new List<ActionTokens>();
+
+    public bool isPiercing = false;//if false set slashing, if true set piercing
+
+    public GameObject baseToken;
 
     [SerializeField]
     private Transform startPoint;
@@ -30,9 +35,13 @@ public class ConveyorManager : MonoBehaviour
         while(true)
         {
             yield return new WaitForSeconds(spawnSpeed);
-            if (spawnedActionTokens.Count == 6) continue;
+            if (spawnedActionTokens.Count == 4) continue;
 
-            var token = Instantiate(GenerateRandomToken(), startPoint.position, Quaternion.identity, parent);
+            var token = Instantiate(baseToken, startPoint.position, Quaternion.identity, parent);
+
+            token.GetComponent<ReadTokenValue>().currentToken = GenerateRandomToken();
+            token.gameObject.name = token.GetComponent<ReadTokenValue>().currentToken.name;
+
             token.GetComponent<ClickOnActionToken>().manager = this;
             token.GetComponent<ClickOnActionToken>().drop = drop;
             spawnedActionTokens.Add(token);
@@ -42,11 +51,18 @@ public class ConveyorManager : MonoBehaviour
         
     }
 
-    private GameObject GenerateRandomToken()
+    private ActionTokens GenerateRandomToken()
     {
-        var token = actionPrefabList[Random.Range(0, actionPrefabList.Count)];
-
-        return token;
+        if(isPiercing)
+        {
+            var token = availablePiercingActionTokens[Random.Range(0, availablePiercingActionTokens.Count)];
+            return token;
+        }
+        else
+        {
+            var token = availableSlashingActionTokens[Random.Range(0, availableSlashingActionTokens.Count)];
+            return token;
+        }
     }
 
     public void DestroyTokens()

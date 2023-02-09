@@ -12,10 +12,12 @@ public class ActionTokens : ScriptableObject
     //if this is set to false it will be set to slashing. if set to trye it will be piercing
     public bool isPiercing = false;
 
+    public bool isChangeStance = false; //only set to true if you want to change player stance
+
     public int healingAmount = 0;
     public int damageAmount = 0;
     public int defendAmount = 0;
 
-    public Sprite neutral;
-    public Sprite angry;
+
+    public Character character;
 }

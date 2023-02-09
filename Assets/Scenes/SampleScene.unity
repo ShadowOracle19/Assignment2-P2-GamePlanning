@@ -1279,6 +1279,9 @@ MonoBehaviour:
   - {fileID: 3076853945078549372, guid: 09d824ce45c692b42849811106ab1db4, type: 3}
   - {fileID: 1809418740338401017, guid: abb963e53bed4d944a533402961f75cf, type: 3}
   - {fileID: 5676299433522646083, guid: 0b59f11fb27bde24091185a0612a67af, type: 3}
+  availableActionTokens:
+  - {fileID: 11400000, guid: dbffd669110724a4e8ccdbc39703578d, type: 2}
+  baseToken: {fileID: 5947604041129361723, guid: 55582531171d46a45af82463d20910e0, type: 3}
   startPoint: {fileID: 2144474637}
   parent: {fileID: 936025568}
   spawnedActionTokens: []

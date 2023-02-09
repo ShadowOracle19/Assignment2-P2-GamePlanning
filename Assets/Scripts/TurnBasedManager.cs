@@ -37,6 +37,13 @@ public class TurnBasedManager : MonoBehaviour
 
     public ConveyorManager conveyorManager;
 
+    public Animator combatAnim;
+    public Image currentPlayerSprite;
+    public Image nextPlayerSprite;
+    public TextMeshProUGUI currentPlayerName;
+    public Character currentOnScreenCharacter;
+    public Character nextScreenCharacter;
+
     private void Start()
     {
         _instance = this;
@@ -45,7 +52,7 @@ public class TurnBasedManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        player.healthSlider.value = player.currentHealth;
         player.currentHealth = Mathf.Clamp(player.currentHealth, 0, player.maxHealth);
 
         foreach(EnemyStats enemy in enemies)
@@ -67,26 +74,6 @@ public class TurnBasedManager : MonoBehaviour
                 }
             }
         }
-
-        
-
-        //if(enemy.ATBSlider.value == enemy.ATBSlider.maxValue)
-        //{
-        //    Debug.Log("Action");
-        //    if(enemy.currentAction == EnemyActions.Attack)
-        //    {
-
-        //        enemy.Attack(enemy.attack, player);
-        //    }
-        //    if(enemy.currentAction == EnemyActions.Defend)
-        //    {
-        //        enemy.Defend(Random.Range(1, 4), enemy);
-        //    }
-
-        //    enemy.ATBSlider.value = enemy.ATBSlider.minValue;
-        //    //DisplayNextEnemyMove();
-        //}
-
 
         if(enemies.Count == 0) //win/lose state
         {
@@ -147,5 +134,13 @@ public class TurnBasedManager : MonoBehaviour
 
         targetedEnemy = newEnemyTarget;
         targetedEnemy.enemyIsTargeted = true;
+    }
+
+    public void SwapSprites()
+    {
+        Debug.Log("swap");
+        combatAnim.SetBool("SwapSprite", false);
+        currentPlayerSprite.sprite = nextPlayerSprite.sprite;
+        currentOnScreenCharacter = nextScreenCharacter;
     }
 }

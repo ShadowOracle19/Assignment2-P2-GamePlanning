@@ -14,7 +14,7 @@ public class ClickOnActionToken : MonoBehaviour
         movementScript.enabled = false;
         manager.spawnedActionTokens.Remove(gameObject);
         transform.position = drop.gameObject.transform.position;
-        drop.DropToken(GetComponent<ActionType>());
+        drop.DropToken(GetComponent<ReadTokenValue>());
     }
 
 

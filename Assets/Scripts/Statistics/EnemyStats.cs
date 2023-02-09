@@ -59,7 +59,6 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
     {
         healthText.text = currentHealth + "/" + maxHealth;
         healthSlider.value = currentHealth;
-        Debug.Log("Current health percent for " + gameObject.name + ": " + currentHealth / maxHealth);
 
         if(enemyIsTargeted)
         {

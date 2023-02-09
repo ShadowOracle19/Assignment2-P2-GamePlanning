@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ConveyorManager : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class ConveyorManager : MonoBehaviour
     public List<ActionTokens> availableSlashingActionTokens = new List<ActionTokens>();
 
     public bool isPiercing = false;//if false set slashing, if true set piercing
+    public Image stanceIndicator;
+    public Sprite piercingIcon;
+    public Sprite slashingIcon;
 
     public GameObject baseToken;
 
@@ -29,6 +33,17 @@ public class ConveyorManager : MonoBehaviour
     {
     }
 
+    private void Update()
+    {
+        if(isPiercing)
+        {
+            stanceIndicator.sprite = piercingIcon;
+        }
+        else
+        {
+            stanceIndicator.sprite = slashingIcon;
+        }
+    }
 
     public IEnumerator SpawnActionTokens()
     {

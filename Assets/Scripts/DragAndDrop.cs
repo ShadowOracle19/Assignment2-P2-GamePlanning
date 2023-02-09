@@ -53,12 +53,12 @@ public class DragAndDrop : MonoBehaviour
             transform.position = collision.transform.position;
             transform.parent = collision.transform;
 
-            if(collision.GetComponent<Dropper>().currentType != null)
+            if(collision.GetComponent<Dropper>().currentToken != null)
             {
-                Destroy(collision.GetComponent<Dropper>().currentType.gameObject);
+                Destroy(collision.GetComponent<Dropper>().currentToken.gameObject);
             }
 
-            collision.GetComponent<Dropper>().currentType = gameObject.GetComponent<ActionType>() ;
+            collision.GetComponent<Dropper>().currentToken = gameObject.GetComponent<ReadTokenValue>() ;
         }
     }
 

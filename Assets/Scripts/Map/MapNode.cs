@@ -28,6 +28,20 @@ public class MapNode : MonoBehaviour
 
     private void OnMouseDown()
     {
+        GameManager.Instance.amountOfRations -= 1;
+        GameManager.Instance.amountOfRations = Mathf.Clamp(GameManager.Instance.amountOfRations, 0 , 999);
+        if (GameManager.Instance.amountOfRations <= 0)
+        {
+            GameManager.Instance.amountOfTimeWithoutRations += 1;
+            if(GameManager.Instance.amountOfTimeWithoutRations >= 4)
+            {
+                //hunger check
+                if(Random.Range(0, 100) <= 50)//if the random value is below or equal to 50 take damage
+                {
+                    GameManager.Instance.player.currentHealth -= 2;
+                }
+            }
+        }
         StartCoroutine(SmoothLerp(3));
     }
 

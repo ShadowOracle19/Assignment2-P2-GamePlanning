@@ -34,10 +34,10 @@ public class DataStats : MonoBehaviour
         
     }
 
-    public void Attack(float damage, Animator anim, DataStats victim, bool isAoe)
+    public void Attack(float damage,  DataStats victim, bool isAoe)
     {
         if(damage <= 0) return;
-        anim.SetBool("attacking", true);
+        
         float totalDamage = damage;
         if(isAoe)//aoe only works for player attacking enemy
         {
@@ -72,7 +72,6 @@ public class DataStats : MonoBehaviour
                     continue;
                 }
             }
-            anim.SetBool("attacking", false);
             return;
         }
 
@@ -88,7 +87,6 @@ public class DataStats : MonoBehaviour
                 victim.defendHealthParent.SetActive(false);
                 victim.currentHealth -= damage;
                 victim.healthSlider.value = victim.currentHealth;
-                anim.SetBool("attacking", false);
                 return;
             }
             else if (victim.defendHealth <= 0)
@@ -101,7 +99,6 @@ public class DataStats : MonoBehaviour
         {
             victim.currentHealth -= damage;
             victim.healthSlider.value = victim.currentHealth;
-            anim.SetBool("attacking", false);
             return;
         }
     }

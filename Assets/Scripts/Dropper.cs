@@ -16,7 +16,8 @@ public class Dropper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentToken != null)
+
+        if (currentToken != null)
         {
             
             if((TurnBasedManager.Instance.currentOnScreenCharacter != currentToken.currentToken.character))
@@ -24,7 +25,7 @@ public class Dropper : MonoBehaviour
                 TurnBasedManager.Instance.nextPlayerSprite.sprite = currentToken.currentToken.character.neutral;
                 TurnBasedManager.Instance.currentPlayerName.text = currentToken.currentToken.character.name;
                 TurnBasedManager.Instance.nextScreenCharacter = currentToken.currentToken.character;
-                TurnBasedManager.Instance.combatAnim.SetBool("SwapSprite", true);
+                TurnBasedManager.Instance.combatAnim.SetBool("SwapSprite", true);//SwapSprite
             }
 
             TurnBasedManager.Instance.player.ATBSlider.value += Time.deltaTime * TurnBasedManager.Instance.player.ATBSpeed;
@@ -34,8 +35,9 @@ public class Dropper : MonoBehaviour
         {
             if (TurnBasedManager.Instance.targetedEnemy != null)
             {
-                
-                TurnBasedManager.Instance.player.Attack(currentToken.currentToken.damageAmount, TurnBasedManager.Instance.currentPlayerSprite.GetComponent<Animator>(), TurnBasedManager.Instance.targetedEnemy, currentToken.currentToken.isAoe);
+                TurnBasedManager.Instance.combatAnim.SetBool("Attacking", true);
+                TurnBasedManager.Instance.player.Attack(currentToken.currentToken.damageAmount, TurnBasedManager.Instance.targetedEnemy, currentToken.currentToken.isAoe);
+                //TurnBasedManager.Instance.combatAnim.SetBool("Attacking", false);
             }
             TurnBasedManager.Instance.player.Defend(currentToken.currentToken.defendAmount, TurnBasedManager.Instance.player);
             TurnBasedManager.Instance.player.Heal(TurnBasedManager.Instance.player, currentToken.currentToken.healingAmount);
@@ -64,5 +66,6 @@ public class Dropper : MonoBehaviour
         }
         currentToken = token;
         TurnBasedManager.Instance.player.ATBSlider.value = TurnBasedManager.Instance.player.ATBSlider.minValue;
+        TurnBasedManager.Instance.combatAnim.SetBool("SwapSprite", false);//SwapSprite
     }
 }

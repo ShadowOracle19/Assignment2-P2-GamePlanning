@@ -139,7 +139,13 @@ public class TurnBasedManager : MonoBehaviour
     public void SwapSprites()
     {
         combatAnim.SetBool("SwapSprite", false);
+        combatAnim.SetBool("Attacking", false);
         currentPlayerSprite.sprite = nextPlayerSprite.sprite;
         currentOnScreenCharacter = nextScreenCharacter;
+    }
+
+    public void AngrySpriteSwap()
+    {
+        currentPlayerSprite.sprite = currentOnScreenCharacter.angry;
     }
 }

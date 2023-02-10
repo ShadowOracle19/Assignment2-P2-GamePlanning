@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
     {
         playerHealthText.text = "Health: " + player.currentHealth.ToString() + "/" + player.maxHealth.ToString();
         rationsAmountText.text = "Rations Available: " + amountOfRations.ToString();
-        medkitAmountText.text = "Medkits Available: " + amountOfMedkits.ToString();
+        medkitAmountText.text = "X " + amountOfMedkits.ToString();
     }
 
     public void StartCombatEncounter(CombatEncounter encounter)
@@ -94,17 +94,7 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void PauseGame()
-    {
-        pausePanelUI.SetActive(true);
-        Time.timeScale = 0;
-    }
-
-    public void ResumeGame()
-    {
-        pausePanelUI.SetActive(false);
-        Time.timeScale = 1;
-    }
+    
 
     public void UseMedkit()
     {

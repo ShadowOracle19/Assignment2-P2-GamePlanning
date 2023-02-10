@@ -16,7 +16,6 @@ public class Dropper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         if (currentToken != null)
         {
             
@@ -33,7 +32,7 @@ public class Dropper : MonoBehaviour
         }
         if(TurnBasedManager.Instance.player.ATBSlider.value == TurnBasedManager.Instance.player.ATBSlider.maxValue)
         {
-            if (TurnBasedManager.Instance.targetedEnemy != null)
+            if ((TurnBasedManager.Instance.targetedEnemy != null || currentToken.currentToken.isAoe) && currentToken.currentToken.damageAmount > 0)
             {
                 TurnBasedManager.Instance.combatAnim.SetBool("Attacking", true);
                 TurnBasedManager.Instance.player.Attack(currentToken.currentToken.damageAmount, TurnBasedManager.Instance.targetedEnemy, currentToken.currentToken.isAoe);
@@ -43,6 +42,8 @@ public class Dropper : MonoBehaviour
             TurnBasedManager.Instance.player.Heal(TurnBasedManager.Instance.player, currentToken.currentToken.healingAmount);
             if(currentToken.currentToken.isChangeStance)
             {
+
+                conveyorManager.DestroyTokens();
                 conveyorManager.isPiercing = !conveyorManager.isPiercing;
             }
             DestroyToken();
@@ -55,6 +56,7 @@ public class Dropper : MonoBehaviour
         Destroy(currentToken.gameObject);
         currentToken = null;
         TurnBasedManager.Instance.player.ATBSlider.value = TurnBasedManager.Instance.player.ATBSlider.minValue;
+
 
     }
 

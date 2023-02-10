@@ -42,7 +42,6 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
     public Sprite attackIndicator;
     public Sprite defendIndicator;
 
-    public TextMeshProUGUI enemyName;
 
     public bool enemyIsTargeted = false;
     public bool enemyIsHovered = false;
@@ -57,6 +56,24 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
     // Update is called once per frame
     void Update()
     {
+        if(ATBSlider.value == ATBSlider.maxValue)
+        {
+            switch (currentAction)
+            {
+                case EnemyActions.Attack:
+                    Attack(currentEnemy.attack, TurnBasedManager.Instance.player, false);
+                    ATBSlider.value = 0;
+                    break;
+                case EnemyActions.Defend:
+                    Defend(currentEnemy.defend, this);
+                    ATBSlider.value = 0;
+                    break;
+                default:
+                    break;
+            }
+            
+        }
+
         healthText.text = currentHealth + "/" + maxHealth;
         healthSlider.value = currentHealth;
 
@@ -103,9 +120,6 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
     public void SetStats(EnemyScriptable encounteredEnemy)
     {
         currentEnemy = encounteredEnemy;
-
-
-        enemyName.text = currentEnemy.enemyName;
 
         enemyImage.sprite = currentEnemy.enemySprite;
 

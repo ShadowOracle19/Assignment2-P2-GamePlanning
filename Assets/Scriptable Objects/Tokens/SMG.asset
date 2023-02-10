@@ -17,6 +17,6 @@ MonoBehaviour:
   isPiercing: 1
   isChangeStance: 0
   healingAmount: 0
-  damageAmount: 4
+  damageAmount: 2
   defendAmount: 0
   character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}

@@ -8,6 +8,8 @@ public class ConveyorManager : MonoBehaviour
     public List<ActionTokens> availablePiercingActionTokens = new List<ActionTokens>();
     public List<ActionTokens> availableSlashingActionTokens = new List<ActionTokens>();
 
+    public int maxTokens = 4;
+
     public bool isPiercing = false;//if false set slashing, if true set piercing
     public Image stanceIndicator;
     public Sprite piercingIcon;
@@ -28,13 +30,9 @@ public class ConveyorManager : MonoBehaviour
 
     public Dropper drop;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     private void Update()
     {
+        //this swaps the stance indictaor to show piercing or slashing
         if(isPiercing)
         {
             stanceIndicator.sprite = piercingIcon;
@@ -45,16 +43,33 @@ public class ConveyorManager : MonoBehaviour
         }
     }
 
+    //this ienumertator will spawn tokens on the conveyor and set them up
     public IEnumerator SpawnActionTokens()
     {
-        while(true)
+        while(true)//infinite loop :P
         {
-            yield return new WaitForSeconds(spawnSpeed);
-            if (spawnedActionTokens.Count == 4) continue;
+            yield return new WaitForSeconds(spawnSpeed);//delays spawn based on spawn speed
+            if (spawnedActionTokens.Count == maxTokens) continue;//if there are a certain amount of spawned tokens dont run the rest of the code
 
             var token = Instantiate(baseToken, startPoint.position, Quaternion.identity, parent);
 
             token.GetComponent<ReadTokenValue>().currentToken = GenerateRandomToken();
+
+            //checks if there is already a stance change token and if there is reroll the token
+            //this wont stop multiple spawning at once but should spawn less
+            if(spawnedActionTokens.Count > 0)
+            {
+                foreach (var tokenCheck in spawnedActionTokens)
+                {
+                    if(tokenCheck.GetComponent<ReadTokenValue>().currentToken.isChangeStance == token.GetComponent<ReadTokenValue>().currentToken.isChangeStance)
+                    {
+                        token.GetComponent<ReadTokenValue>().currentToken = GenerateRandomToken();
+                        break;
+                    }
+                    
+                }
+            }
+
             token.gameObject.name = token.GetComponent<ReadTokenValue>().currentToken.name;
 
             token.GetComponent<ClickOnActionToken>().manager = this;
@@ -66,13 +81,17 @@ public class ConveyorManager : MonoBehaviour
         
     }
 
+    //this will generate a random token from a desired list
     private ActionTokens GenerateRandomToken()
     {
+        //if it is piercing it will pull tokens from piercing tokens list
         if(isPiercing)
         {
             var token = availablePiercingActionTokens[Random.Range(0, availablePiercingActionTokens.Count)];
+
             return token;
         }
+        //if it is not piercing it will pull tokens from slashing tokens list
         else
         {
             var token = availableSlashingActionTokens[Random.Range(0, availableSlashingActionTokens.Count)];
@@ -80,6 +99,7 @@ public class ConveyorManager : MonoBehaviour
         }
     }
 
+    //destroys all tokens created
     public void DestroyTokens()
     {
         spawnedActionTokens.Clear();

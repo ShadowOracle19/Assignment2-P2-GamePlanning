@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59e4b4419a6fed3428c92e9df524fcd4, type: 3}
-  m_Name: pokemon
+  m_Script: {fileID: 11500000, guid: eb801507dae125e42bbe894fb3ff041f, type: 3}
+  m_Name: MC
   m_EditorClassIdentifier: 
-  enemySprite: {fileID: 21300000, guid: 2a7bc7df293e71c4484a3f0e22e5ff0e, type: 3}
-  enemyName: snorlax
-  maxHealth: 8
-  attack: 3
-  defend: 5
-  ATBSpeed: 6
+  fullName: You
+  neutral: {fileID: 0}
+  happy: {fileID: 0}
+  sad: {fileID: 0}
+  angry: {fileID: 0}
+  suprised: {fileID: 0}

@@ -20,6 +20,8 @@ public class MapNode : MonoBehaviour
 
     public BaseEncounter encounter;
 
+    public bool isCameraMoveToken = false;
+    public Transform newCameraPoint;
 
     public void Start()
     {
@@ -71,15 +73,16 @@ public class MapNode : MonoBehaviour
     private IEnumerator SmoothLerp(float time)
     {
         selected.SetActive(true);
-        Vector3 startingPos = myCamera.transform.position;
+        Vector3 startingPos = GameManager.Instance.playerMoveSprite.transform.position;
         Vector3 finalPos = this.transform.position;
         float elapsedTime = 0;
 
         while (elapsedTime < time)
         {
-            if (new Vector3(myCamera.transform.position.x, myCamera.transform.position.y) == new Vector3(finalPos.x, finalPos.y))//once the camera reaches desired position break while loop
+            if (new Vector3(GameManager.Instance.playerMoveSprite.transform.position.x, GameManager.Instance.playerMoveSprite.transform.position.y) 
+                == new Vector3(finalPos.x, finalPos.y))//once the camera reaches desired position break while loop
                 break;
-            myCamera.transform.position = Vector3.Lerp(startingPos, new Vector3(finalPos.x, finalPos.y, -10), (elapsedTime / time));
+            //myCamera.transform.position = Vector3.Lerp(startingPos, new Vector3(finalPos.x, finalPos.y, -10), (elapsedTime / time));
 
             //the player icon moving to the next map node
             //GameManager.Instance.playerMoveSprite.transform.position = 
@@ -108,7 +111,10 @@ public class MapNode : MonoBehaviour
         GameManager.Instance.node = this;
 
         encounter.StartEncounter();
-
+        if(isCameraMoveToken)
+        {
+            myCamera.transform.position = newCameraPoint.position;
+        }
         yield return null;
     }
 }

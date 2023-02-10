@@ -42,10 +42,12 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI playerHealthText;
     public TextMeshProUGUI rationsAmountText;
     public TextMeshProUGUI medkitAmountText;
+    public TextMeshProUGUI capsAmountText;
 
     [Header("Supplies")]
     public int amountOfRations = 5;
     public int amountOfMedkits = 2;
+    public int caps = 99;
     public int amountOfTimeWithoutRations = 0;
 
     private void Awake()
@@ -64,6 +66,7 @@ public class GameManager : MonoBehaviour
     {
         playerHealthText.text = "Health: " + player.currentHealth.ToString() + "/" + player.maxHealth.ToString();
         rationsAmountText.text = "Rations Available: " + amountOfRations.ToString();
+        capsAmountText.text = "Caps: " + caps.ToString();
         medkitAmountText.text = "X " + amountOfMedkits.ToString();
     }
 

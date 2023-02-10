@@ -96,11 +96,8 @@ public class TurnBasedManager : MonoBehaviour
 
         LoadEnemies(enemiesToEncounter);
 
-        //enemy.SetStats(encounteredEnemy);
         player.healthSlider.value = player.currentHealth;
         player.healthSlider.maxValue = player.maxHealth;
-        //enemy.currentHealth = enemy.maxHealth;
-        //DisplayNextEnemyMove();
 
         StartCoroutine(conveyorManager.SpawnActionTokens());
         currentNode = _currentNode;
@@ -115,6 +112,7 @@ public class TurnBasedManager : MonoBehaviour
                 enemyBacklog.Add(enemiesToEncounter[i]);
                 continue;
             }
+            enemies[i].gameObject.SetActive(true);
             enemies[i].SetStats(enemiesToEncounter[i]);
         }
     }

@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     public TurnBasedManager combatManager;
     public GameObject combatUI;
     public PlayerStats player;
+    public List<ActionTokens> actionTokens;
 
     [Header("UI")]
     public GameObject endEncounterUI;
@@ -43,6 +44,8 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI rationsAmountText;
     public TextMeshProUGUI medkitAmountText;
     public TextMeshProUGUI capsAmountText;
+    public GameObject rewardBasePopup;
+    public Transform popupParent;
 
     [Header("Supplies")]
     public int amountOfRations = 5;
@@ -94,10 +97,13 @@ public class GameManager : MonoBehaviour
 
     public void EndEncounter()
     {
-
+        node.encounter.GiveReward();
     }
 
-    
+    public void RewardPopup()
+    {
+
+    }
 
     public void UseMedkit()
     {

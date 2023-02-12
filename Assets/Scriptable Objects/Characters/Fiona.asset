@@ -18,3 +18,4 @@ MonoBehaviour:
   sad: {fileID: 21300000, guid: b245630013fa37244a85d666af8aef04, type: 3}
   angry: {fileID: 21300000, guid: 8afd84ff505181f4a923954031b323f3, type: 3}
   suprised: {fileID: 21300000, guid: 5dd6e3f2c901cf54c91f9a4089f74dfd, type: 3}
+  namePlate: {fileID: 21300000, guid: facf09a90d8cc24429fd4250f2db8ee6, type: 3}

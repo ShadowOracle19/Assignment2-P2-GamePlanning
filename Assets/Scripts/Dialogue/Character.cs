@@ -12,4 +12,6 @@ public class Character : ScriptableObject
     public Sprite sad;
     public Sprite angry;
     public Sprite suprised;
+
+    public Sprite namePlate;
 }

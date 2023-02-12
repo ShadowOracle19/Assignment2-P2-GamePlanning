@@ -5,15 +5,15 @@ using UnityEngine.UI;
 
 public class ConveyorManager : MonoBehaviour
 {
-    public List<ActionTokens> availablePiercingActionTokens = new List<ActionTokens>();
-    public List<ActionTokens> availableSlashingActionTokens = new List<ActionTokens>();
+    public List<ActionTokens> availableRangedActionTokens = new List<ActionTokens>();
+    public List<ActionTokens> availableMeleeActionTokens = new List<ActionTokens>();
 
     public int maxTokens = 4;
 
     public bool isPiercing = false;//if false set slashing, if true set piercing
     public Image stanceIndicator;
-    public Sprite piercingIcon;
-    public Sprite slashingIcon;
+    public Sprite rangedIcon;
+    public Sprite meleeIcon;
 
     public GameObject baseToken;
 
@@ -35,11 +35,11 @@ public class ConveyorManager : MonoBehaviour
         //this swaps the stance indictaor to show piercing or slashing
         if(isPiercing)
         {
-            stanceIndicator.sprite = piercingIcon;
+            stanceIndicator.sprite = rangedIcon;
         }
         else
         {
-            stanceIndicator.sprite = slashingIcon;
+            stanceIndicator.sprite = meleeIcon;
         }
     }
 
@@ -55,22 +55,25 @@ public class ConveyorManager : MonoBehaviour
 
             token.GetComponent<ReadTokenValue>().currentToken = GenerateRandomToken();
 
+            
+
+            token.gameObject.name = token.GetComponent<ReadTokenValue>().currentToken.name;
+
             //checks if there is already a stance change token and if there is reroll the token
             //this wont stop multiple spawning at once but should spawn less
-            if(spawnedActionTokens.Count > 0)
+            if (spawnedActionTokens.Count > 0 && token.GetComponent<ReadTokenValue>().currentToken.isChangeStance)
             {
                 foreach (var tokenCheck in spawnedActionTokens)
                 {
-                    if(tokenCheck.GetComponent<ReadTokenValue>().currentToken.isChangeStance == token.GetComponent<ReadTokenValue>().currentToken.isChangeStance)
+                    if (tokenCheck.gameObject.name == token.gameObject.name)
                     {
                         token.GetComponent<ReadTokenValue>().currentToken = GenerateRandomToken();
+                        Debug.Log("Switched");
                         break;
                     }
-                    
+
                 }
             }
-
-            token.gameObject.name = token.GetComponent<ReadTokenValue>().currentToken.name;
 
             token.GetComponent<ClickOnActionToken>().manager = this;
             token.GetComponent<ClickOnActionToken>().drop = drop;
@@ -87,14 +90,15 @@ public class ConveyorManager : MonoBehaviour
         //if it is piercing it will pull tokens from piercing tokens list
         if(isPiercing)
         {
-            var token = availablePiercingActionTokens[Random.Range(0, availablePiercingActionTokens.Count)];
+            var token = availableRangedActionTokens[Random.Range(0, availableRangedActionTokens.Count)];
 
             return token;
         }
         //if it is not piercing it will pull tokens from slashing tokens list
         else
         {
-            var token = availableSlashingActionTokens[Random.Range(0, availableSlashingActionTokens.Count)];
+            var token = availableMeleeActionTokens[Random.Range(0, availableMeleeActionTokens.Count)];
+
             return token;
         }
     }

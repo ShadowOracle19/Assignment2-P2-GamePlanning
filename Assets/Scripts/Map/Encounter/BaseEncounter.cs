@@ -14,9 +14,12 @@ public class BaseEncounter : ScriptableObject
 
     public virtual void GiveReward()
     {
-        if(reward.numberOfAddedMedkits > 0)
+       
+        if (reward.numberOfAddedMedkits > 0)
         {
             GameManager.Instance.amountOfMedkits += reward.numberOfAddedMedkits;
+            var popup = Instantiate(GameManager.Instance.rewardBasePopup, GameManager.Instance.popupParent);
+            popup.GetComponent<RewardPopup>().whatRewardTextSays = ""
         }
         if (reward.numberOfAddedCaps > 0)
         {

@@ -64,6 +64,11 @@ public class TurnBasedManager : MonoBehaviour
 
         foreach(EnemyStats enemy in enemies)
         {
+            if(!enemy.gameObject.activeInHierarchy)
+            {
+                enemies.Remove(enemy);
+            }
+
             enemy.currentHealth = Mathf.Clamp(enemy.currentHealth, 0, enemy.maxHealth);
             enemy.ATBSlider.value += Time.deltaTime * enemy.ATBSpeed;
 

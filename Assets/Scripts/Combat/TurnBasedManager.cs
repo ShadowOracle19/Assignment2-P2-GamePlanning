@@ -48,8 +48,7 @@ public class TurnBasedManager : MonoBehaviour
     public struct KillData
     {
         public string targetName;
-        public string tokenName;
-        public int playerHealthOnEnemyDeath;
+        public float playerHealthOnEnemyDeath;
     }
 
     private void Start()
@@ -73,8 +72,7 @@ public class TurnBasedManager : MonoBehaviour
                 var data = new KillData()
                 {
                     targetName = enemy.currentEnemy.name,
-                    tokenName = conveyorManager.drop.currentToken.currentToken.name,
-                    playerHealthOnEnemyDeath = (int)player.currentHealth
+                    playerHealthOnEnemyDeath = player.currentHealth
 
                 };
 

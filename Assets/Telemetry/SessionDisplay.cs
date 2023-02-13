@@ -8,7 +8,14 @@ public class SessionDisplay : MonoBehaviour
     public TextMeshProUGUI text;
     public void OnSuccess(int sessionIndex)
     {
-        text.text = $"Session: {sessionIndex}";
+        if(sessionIndex < 0)
+        {
+            text.text = $"Offline Session: {sessionIndex}";
+        }
+        else
+        {
+            text.text = $"Online Session: {sessionIndex}";
+        }
     }
 
     public void OnFail(string error)

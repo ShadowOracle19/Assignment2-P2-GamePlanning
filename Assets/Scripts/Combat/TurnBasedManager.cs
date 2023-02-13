@@ -44,6 +44,14 @@ public class TurnBasedManager : MonoBehaviour
     public Character currentOnScreenCharacter;
     public Character nextScreenCharacter;
 
+    [System.Serializable]
+    public struct KillData
+    {
+        public string targetName;
+        public string tokenName;
+        public int playerHealthOnEnemyDeath;
+    }
+
     private void Start()
     {
         _instance = this;
@@ -62,6 +70,15 @@ public class TurnBasedManager : MonoBehaviour
 
             if(enemy.currentHealth == 0)
             {
+                var data = new KillData()
+                {
+                    targetName = enemy.currentEnemy.name,
+                    tokenName = conveyorManager.drop.currentToken.currentToken.name,
+                    playerHealthOnEnemyDeath = (int)player.currentHealth
+
+                };
+
+                TelemetryLogger.Log(this, "kill", data);
                 if(enemyBacklog.Count != 0)
                 {
                     enemy.SetStats(enemyBacklog[0]);
@@ -85,6 +102,7 @@ public class TurnBasedManager : MonoBehaviour
             //activate player death state here
         }
     }
+
 
 
     public void StartEncounter(List<EnemyScriptable> enemiesToEncounter, MapNode _currentNode)

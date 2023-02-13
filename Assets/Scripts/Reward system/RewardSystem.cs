@@ -23,5 +23,9 @@ public class RewardSystem : ScriptableObject
     public int numberOfAddedMedkits;
     public int numberOfAddedCaps;
 
+    public Sprite medkitSprite;
+    public Sprite capSprite;
+    public Sprite rationSprite;
+
     public ModifyToken[] tokensToModify;
 }

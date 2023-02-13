@@ -225,6 +225,7 @@ GameObject:
   - component: {fileID: 3870029603004597887}
   - component: {fileID: 3870029603004597885}
   - component: {fileID: 3870029603004597886}
+  - component: {fileID: 22231735571213961}
   m_Layer: 5
   m_Name: RewardPopup
   m_TagString: Untagged
@@ -348,6 +349,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 0
+--- !u!114 &22231735571213961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3870029603004597883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c4dfc9ea0ee7ee48beb8669798c2b12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3870029603172436307
 GameObject:
   m_ObjectHideFlags: 0

@@ -120,6 +120,7 @@ public class TurnBasedManager : MonoBehaviour
     public void FinishEncounter()
     {
         conveyorManager.DestroyTokens();
+        currentNode.encounter.GiveReward();
         currentNode.finishedEncounter = true;
         GameManager.Instance.map.SetActive(true);
         GameManager.Instance.combatUI.SetActive(false);

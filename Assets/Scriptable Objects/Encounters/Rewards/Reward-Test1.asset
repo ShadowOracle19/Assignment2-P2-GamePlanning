@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: abd41c58a9139314f87b7918bd68ff03, type: 3}
   m_Name: Reward-Test1
   m_EditorClassIdentifier: 
-  numberOfAddedRations: 0
-  numberOfAddedMedkits: 0
-  numberOfAddedCaps: 0
+  numberOfAddedRations: 5
+  numberOfAddedMedkits: 3
+  numberOfAddedCaps: 20
+  medkitSprite: {fileID: 21300000, guid: 8a3aa7dfa7b1c754d910605d69a78369, type: 3}
+  capSprite: {fileID: 21300000, guid: 99657eb17faa99047a0c5f1bb995af39, type: 3}
+  rationSprite: {fileID: 21300000, guid: 31dc8be6d1c98d64f92211b090e5fba1, type: 3}
   tokensToModify: []

@@ -18,7 +18,6 @@ public class Dropper : MonoBehaviour
     {
         if (currentToken != null)
         {
-            
             if((TurnBasedManager.Instance.currentOnScreenCharacter != currentToken.currentToken.character))
             {
                 TurnBasedManager.Instance.nextPlayerSprite.sprite = currentToken.currentToken.character.neutral;
@@ -53,6 +52,7 @@ public class Dropper : MonoBehaviour
 
     public void DestroyToken()
     {
+        TelemetryLogger.Log(this, "Token Used", currentToken.currentToken.name);
         Destroy(currentToken.gameObject);
         currentToken = null;
         TurnBasedManager.Instance.player.ATBSlider.value = TurnBasedManager.Instance.player.ATBSlider.minValue;

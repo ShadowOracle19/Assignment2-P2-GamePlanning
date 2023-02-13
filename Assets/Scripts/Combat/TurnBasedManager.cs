@@ -44,6 +44,13 @@ public class TurnBasedManager : MonoBehaviour
     public Character currentOnScreenCharacter;
     public Character nextScreenCharacter;
 
+    [System.Serializable]
+    public struct KillData
+    {
+        public string targetName;
+        public float playerHealthOnEnemyDeath;
+    }
+
     private void Start()
     {
         _instance = this;
@@ -57,11 +64,24 @@ public class TurnBasedManager : MonoBehaviour
 
         foreach(EnemyStats enemy in enemies)
         {
+            if(!enemy.gameObject.activeInHierarchy)
+            {
+                enemies.Remove(enemy);
+            }
+
             enemy.currentHealth = Mathf.Clamp(enemy.currentHealth, 0, enemy.maxHealth);
             enemy.ATBSlider.value += Time.deltaTime * enemy.ATBSpeed;
 
             if(enemy.currentHealth == 0)
             {
+                var data = new KillData()
+                {
+                    targetName = enemy.currentEnemy.name,
+                    playerHealthOnEnemyDeath = player.currentHealth
+
+                };
+
+                TelemetryLogger.Log(this, "kill", data);
                 if(enemyBacklog.Count != 0)
                 {
                     enemy.SetStats(enemyBacklog[0]);
@@ -85,6 +105,7 @@ public class TurnBasedManager : MonoBehaviour
             //activate player death state here
         }
     }
+
 
 
     public void StartEncounter(List<EnemyScriptable> enemiesToEncounter, MapNode _currentNode)

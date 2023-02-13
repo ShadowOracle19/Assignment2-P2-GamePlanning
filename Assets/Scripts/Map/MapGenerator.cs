@@ -39,6 +39,8 @@ public class MapGenerator : MonoBehaviour
         //{
         //    enemiesToEncounter.Add(enemy);
         //}
+        Debug.Log("Generate Map");
+        TelemetryLogger.ChangeSection(this, mapPrefab.name);
 
         foreach (Transform child in mapParent)
         {

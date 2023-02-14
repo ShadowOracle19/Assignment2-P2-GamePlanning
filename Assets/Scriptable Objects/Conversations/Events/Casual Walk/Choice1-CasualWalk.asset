@@ -14,8 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   options:
   - conversationBranch: {fileID: 11400000, guid: 6354ccc6f03e8a948a8f5db2fe43b71f, type: 2}
+    rewardSystem: {fileID: 11400000, guid: 58cd11bce2e3441419583fea7e8ea0f7, type: 2}
+    combatEncounter: {fileID: 0}
     text: Check it out.
   - conversationBranch: {fileID: 11400000, guid: 11144319128134e47bb3544f1a9ff454, type: 2}
+    rewardSystem: {fileID: 0}
+    combatEncounter: {fileID: 0}
     text: Leave it alone.
-  - conversationBranch: {fileID: 0}
-    text: 
+  - conversationBranch: {fileID: 11400000, guid: 6354ccc6f03e8a948a8f5db2fe43b71f, type: 2}
+    rewardSystem: {fileID: 0}
+    combatEncounter: {fileID: 11400000, guid: 407c3733f064d6f4cb3e594bed612b04, type: 2}
+    text: Combat

@@ -3100,6 +3100,7 @@ MonoBehaviour:
   - {fileID: 1271559706}
   - {fileID: 111692255}
   - {fileID: 73186921}
+  dialogueCombat: {fileID: 0}
 --- !u!222 &624523920
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -10,12 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: abd41c58a9139314f87b7918bd68ff03, type: 3}
-  m_Name: CasualWalk-Reward-CheckitOut
+  m_Name: New Reward Set
   m_EditorClassIdentifier: 
   numberOfAddedRations: 0
-  numberOfAddedMedkits: 1
+  numberOfAddedMedkits: 0
   numberOfAddedCaps: 0
   medkitSprite: {fileID: 0}
   capSprite: {fileID: 0}
   rationSprite: {fileID: 0}
-  tokensToModify: []
+  tokensToModify:
+  - tokenToModify: {fileID: 0}
+    newSprite: {fileID: 0}
+    newHealingAmount: 0
+    newDamageAmount: 0
+    newDefendAmount: 0
+    newUser: {fileID: 0}

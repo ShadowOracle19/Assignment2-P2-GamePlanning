@@ -9,13 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: abd41c58a9139314f87b7918bd68ff03, type: 3}
-  m_Name: CasualWalk-Reward-CheckitOut
+  m_Script: {fileID: 11500000, guid: 6190c5494682caf4eae3e55e53b768ab, type: 3}
+  m_Name: Dialogue
   m_EditorClassIdentifier: 
-  numberOfAddedRations: 0
-  numberOfAddedMedkits: 1
-  numberOfAddedCaps: 0
-  medkitSprite: {fileID: 0}
-  capSprite: {fileID: 0}
-  rationSprite: {fileID: 0}
-  tokensToModify: []
+  reward: {fileID: 0}
+  desiredConversation: {fileID: 11400000, guid: de05fd165972fe24a8650e0433e362c4, type: 2}

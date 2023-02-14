@@ -115,18 +115,21 @@ public class Dialogue : MonoBehaviour
             rightSpeaker.color = new Color(0.6f, 0.6f, 0.6f);
             middleSpeaker.color = new Color(0.6f, 0.6f, 0.6f);
             leftSpeaker.color = new Color(1, 1, 1);
+            ChangeCharacterEmotion(leftSpeaker, currentConversation.speakerleft, currentConversation.lines[index].currentEmotion);
+        }
+        else if (currentConversation.lines[index].speakerSide == currentCharacter.MIDDLE)//character right is speaking
+        {
+            rightSpeaker.color = new Color(0.6f, 0.6f, 0.6f);
+            middleSpeaker.color = new Color(1, 1, 1);
+            leftSpeaker.color = new Color(0.6f, 0.6f, 0.6f);
+            ChangeCharacterEmotion(middleSpeaker, currentConversation.speakerMiddle, currentConversation.lines[index].currentEmotion);
         }
         else if(currentConversation.lines[index].speakerSide == currentCharacter.RIGHT)//character right is speaking
         {
             rightSpeaker.color = new Color(1, 1, 1);
             middleSpeaker.color = new Color(0.6f, 0.6f, 0.6f);
             leftSpeaker.color = new Color(0.6f, 0.6f, 0.6f);
-        }
-        else if(currentConversation.lines[index].speakerSide == currentCharacter.MIDDLE)//character right is speaking
-        {
-            rightSpeaker.color = new Color(0.6f, 0.6f, 0.6f);
-            middleSpeaker.color = new Color(1, 1, 1);
-            leftSpeaker.color = new Color(0.6f, 0.6f, 0.6f);
+            ChangeCharacterEmotion(rightSpeaker, currentConversation.speakerRight, currentConversation.lines[index].currentEmotion);
         }
         else
         {
@@ -181,15 +184,14 @@ public class Dialogue : MonoBehaviour
     {
         if(chosenOption.combatEncounter != null)
         {
-            dialogueCombat = chosenOption.combatEncounter;
+            dialogueCombat = chosenOption.combatEncounter; if (chosenOption.combatEncounter.reward != null)
+            {
+                currentNode.encounter.reward = chosenOption.combatEncounter.reward;
+            }
         }
         if(chosenOption.rewardSystem != null )
         {
             currentNode.encounter.reward = chosenOption.rewardSystem;
-        }
-        else if(chosenOption.combatEncounter.reward != null)
-        {
-            currentNode.encounter.reward = chosenOption.combatEncounter.reward;
         }
         choiceButtons.SetActive(false);
         currentConversation = chosenOption.conversationBranch;
@@ -242,6 +244,35 @@ public class Dialogue : MonoBehaviour
         {
             StopAllCoroutines();
             textComponent.text = currentConversation.lines[index].text;
+        }
+    }
+
+    public void ChangeCharacterEmotion(Image speakerImage, Character currentSpeakingCharacter, characterEmotion currentEmotion)
+    {
+        switch (currentEmotion)
+        {
+            case characterEmotion.NEUTRAL:
+                speakerImage.sprite = currentSpeakingCharacter.neutral;
+                break;
+
+            case characterEmotion.HAPPY:
+                speakerImage.sprite = currentSpeakingCharacter.happy;
+                break;
+
+            case characterEmotion.SAD:
+                speakerImage.sprite = currentSpeakingCharacter.sad;
+                break;
+
+            case characterEmotion.ANGRY:
+                speakerImage.sprite = currentSpeakingCharacter.angry;
+                break;
+
+            case characterEmotion.SUPRISED:
+                speakerImage.sprite = currentSpeakingCharacter.suprised;
+                break;
+
+            default:
+                break;
         }
     }
 }

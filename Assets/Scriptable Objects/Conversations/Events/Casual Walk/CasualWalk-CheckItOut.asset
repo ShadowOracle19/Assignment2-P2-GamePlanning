@@ -17,8 +17,8 @@ MonoBehaviour:
   speakerMiddle: {fileID: 0}
   lines:
   - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
-    speakerSide: 3
-    finalLine: 0
+    speakerSide: 0
+    currentEmotion: 1
     text: Candace skips on over and plants her face with her hands right onto the
       window. A glistening white medkit stares back, awesome! It might not be full
       to the brim as she hoped, but this will probably excuse her if the others catch

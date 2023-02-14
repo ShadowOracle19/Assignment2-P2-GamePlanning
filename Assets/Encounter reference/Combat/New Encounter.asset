@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1acc5130bbdfbbb44a52215b117309bd, type: 3}
   m_Name: New Encounter
   m_EditorClassIdentifier: 
-  reward: {fileID: 11400000, guid: 3e25dbb9f538a4042bd2ee905ce5b15f, type: 2}
+  reward: {fileID: 0}
   encounteredEnemies:
-  - {fileID: 11400000, guid: d765d601c6575f44d8c6bfc5be2688a9, type: 2}
-  - {fileID: 11400000, guid: d765d601c6575f44d8c6bfc5be2688a9, type: 2}
+  - {fileID: 11400000, guid: 7ab52eab3e61079488977e14edb0dbcb, type: 2}
+  - {fileID: 11400000, guid: 7ab52eab3e61079488977e14edb0dbcb, type: 2}
+  - {fileID: 11400000, guid: 7ab52eab3e61079488977e14edb0dbcb, type: 2}

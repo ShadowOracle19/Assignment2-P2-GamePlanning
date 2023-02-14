@@ -11,6 +11,15 @@ public enum currentCharacter
     NONE
 }
 
+public enum characterEmotion
+{
+    NEUTRAL,
+    HAPPY,
+    SAD,
+    ANGRY,
+    SUPRISED
+}
+
 [System.Serializable]
 public struct Line
 {
@@ -19,7 +28,7 @@ public struct Line
     
     public currentCharacter speakerSide;
 
-    public bool finalLine;
+    public characterEmotion currentEmotion;
 
     [TextArea(2, 5)]
     public string text;

@@ -109,6 +109,8 @@ MonoBehaviour:
   selectable: {fileID: 8699875166239405090}
   selected: {fileID: 5862112357473088619}
   encounter: {fileID: 0}
+  isCameraMoveToken: 0
+  newCameraPoint: {fileID: 0}
 --- !u!61 &1994314333629482230
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -181,7 +183,7 @@ LineRenderer:
   - {x: 0, y: 0, z: 1}
   m_Parameters:
     serializedVersion: 3
-    widthMultiplier: 1
+    widthMultiplier: 0.5
     widthCurve:
       serializedVersion: 2
       m_Curve:

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8965c9063a039f40a225b2b11222591, type: 3}
+  m_Name: IAH-Choices
+  m_EditorClassIdentifier: 
+  options:
+  - conversationBranch: {fileID: 11400000, guid: 74120940357bbf64bbb6f48058db5fa6, type: 2}
+    rewardSystem: {fileID: 0}
+    combatEncounter: {fileID: 0}
+    text: Let Shaw climb over.
+  - conversationBranch: {fileID: 11400000, guid: 703268666631ade41b7a6737d441dd71, type: 2}
+    rewardSystem: {fileID: 0}
+    combatEncounter: {fileID: 11400000, guid: 4b8cda11f73a5224cb9719a4d728b8f7, type: 2}
+    text: Let Candace climb over.

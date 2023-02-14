@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358bbf9753e925845b6baca7f6c14818, type: 3}
+  m_Name: OMT-Intro
+  m_EditorClassIdentifier: 
+  speakerleft: {fileID: 11400000, guid: 3c3c9cbc2014a674881005133d48e72d, type: 2}
+  speakerRight: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+  speakerMiddle: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+  lines:
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 2
+    currentEmotion: 1
+    text: "\u201CGuys, look over there!\u201D Candace points towards an alley with
+      two giant dumpsters."
+  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+    speakerSide: 1
+    currentEmotion: 0
+    text: "\u201CIncredible, garbage,\u201D Jerry says in an unamused manner as Candace
+      runs toward it."
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 2
+    currentEmotion: 2
+    text: "Candace ignores her, \u201CBoost me up, I wanna see what\u2019s inside.
+      Please?\u201D"
+  choice: {fileID: 0}

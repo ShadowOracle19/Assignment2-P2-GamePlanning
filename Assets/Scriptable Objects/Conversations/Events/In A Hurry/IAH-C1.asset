@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358bbf9753e925845b6baca7f6c14818, type: 3}
+  m_Name: IAH-C1
+  m_EditorClassIdentifier: 
+  speakerleft: {fileID: 0}
+  speakerRight: {fileID: 0}
+  speakerMiddle: {fileID: 11400000, guid: 3c3c9cbc2014a674881005133d48e72d, type: 2}
+  lines:
+  - character: {fileID: 11400000, guid: 3c3c9cbc2014a674881005133d48e72d, type: 2}
+    speakerSide: 2
+    currentEmotion: 4
+    text: "The ladder breaks beneath her with a final push to hop the fence. Shaw
+      is thankfully tall enough to easily reach the lock and frees it with record
+      speed for the group to continue forward. \r\n"
+  choice: {fileID: 0}

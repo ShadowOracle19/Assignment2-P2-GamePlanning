@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8965c9063a039f40a225b2b11222591, type: 3}
-  m_Name: Choice1-CasualWalk
+  m_Name: CW-Choices
   m_EditorClassIdentifier: 
   options:
   - conversationBranch: {fileID: 11400000, guid: 6354ccc6f03e8a948a8f5db2fe43b71f, type: 2}
@@ -21,7 +21,7 @@ MonoBehaviour:
     rewardSystem: {fileID: 0}
     combatEncounter: {fileID: 0}
     text: Leave it alone.
-  - conversationBranch: {fileID: 11400000, guid: 6354ccc6f03e8a948a8f5db2fe43b71f, type: 2}
+  - conversationBranch: {fileID: 0}
     rewardSystem: {fileID: 0}
     combatEncounter: {fileID: 11400000, guid: 407c3733f064d6f4cb3e594bed612b04, type: 2}
     text: Combat

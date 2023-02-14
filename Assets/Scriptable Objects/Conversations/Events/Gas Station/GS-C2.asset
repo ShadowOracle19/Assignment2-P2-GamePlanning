@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358bbf9753e925845b6baca7f6c14818, type: 3}
+  m_Name: GS-C2
+  m_EditorClassIdentifier: 
+  speakerleft: {fileID: 0}
+  speakerRight: {fileID: 0}
+  speakerMiddle: {fileID: 11400000, guid: e820afaca5571b747b0afaa83bc36078, type: 2}
+  lines:
+  - character: {fileID: 11400000, guid: e820afaca5571b747b0afaa83bc36078, type: 2}
+    speakerSide: 2
+    currentEmotion: 1
+    text: "\u201CThanks, enjoy the meal!\u201D\r\n\r\n\u201CThank you, you too\u2026\u201D
+      Fiona adds when everyone starts to walk away. The group cringes hearing this.\r"
+  choice: {fileID: 0}

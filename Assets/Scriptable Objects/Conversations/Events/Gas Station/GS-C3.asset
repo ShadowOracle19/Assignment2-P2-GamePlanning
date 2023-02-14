@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358bbf9753e925845b6baca7f6c14818, type: 3}
+  m_Name: GS-C3
+  m_EditorClassIdentifier: 
+  speakerleft: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+  speakerRight: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+  speakerMiddle: {fileID: 11400000, guid: 3c3c9cbc2014a674881005133d48e72d, type: 2}
+  lines:
+  - character: {fileID: 11400000, guid: 3c3c9cbc2014a674881005133d48e72d, type: 2}
+    speakerSide: 2
+    currentEmotion: 4
+    text: "Shaw takes a good look around the place before they excitedly turn back
+      towards the group, \u201CGuys, I don\u2019t think there\u2019s anyone else
+      here. We could kill him and take everything he has!\u201D\r\n\r\nNot worrying
+      about her voice, the man obviously hears this and squeaks.\r\n\r\n\u201CWhat?
+      No!\u201D\r\n\r\nHe pulls a shotgun from the back of the counter and points
+      it towards you all screaming, \u201COUT! OUT! NOW!\u201D\r\n"
+  choice: {fileID: 0}

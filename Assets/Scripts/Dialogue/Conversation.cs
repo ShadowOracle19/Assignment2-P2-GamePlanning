@@ -7,7 +7,8 @@ public enum currentCharacter
 {
     LEFT,
     RIGHT,
-    MIDDLE
+    MIDDLE,
+    NONE
 }
 
 [System.Serializable]
@@ -17,6 +18,8 @@ public struct Line
 
     
     public currentCharacter speakerSide;
+
+    public bool finalLine;
 
     [TextArea(2, 5)]
     public string text;
@@ -29,6 +32,9 @@ public class Conversation : ScriptableObject
     public Character speakerRight;
     public Character speakerMiddle;
     public Line[] lines;
+
+    public Choice choice;
+ 
 }
 
 

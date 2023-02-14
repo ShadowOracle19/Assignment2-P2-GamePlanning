@@ -23,16 +23,20 @@ public class Dialogue : MonoBehaviour
     public TextSpeed speedSelect;
     public int index;
 
+    public TextMeshProUGUI checkTextSize;
+
     public MapNode currentNode;
 
-
-    
+    [Header("Choices")]
+    public Choice choices;
+    public GameObject choiceButtons;
+    public List<GameObject> choiceButtonsList;
+    public CombatEncounter dialogueCombat;
 
     // Start is called before the first frame update
     void Start()
     {
-        textComponent.text = string.Empty;
-        speakerName.text = string.Empty;
+        choiceButtons.SetActive(false);
         StartDialogue();
     }
 
@@ -59,9 +63,11 @@ public class Dialogue : MonoBehaviour
     void StartDialogue()
     {
         index = 0;
+        textComponent.text = string.Empty;
+        speakerName.text = string.Empty;
 
-        
-        
+
+
         //if there is no speaker set it to false
         if (currentConversation.speakerleft == null)
         {
@@ -101,6 +107,8 @@ public class Dialogue : MonoBehaviour
 
     IEnumerator TypeLine()
     {
+        checkTextSize.text = currentConversation.lines[index].text;
+        yield return new WaitForSeconds(0.1f);
         //whichever side is speaking change color to 255 and the other side to 70
         if (currentConversation.lines[index].speakerSide == currentCharacter.LEFT)//Character left is speaking
         {
@@ -120,11 +128,18 @@ public class Dialogue : MonoBehaviour
             middleSpeaker.color = new Color(1, 1, 1);
             leftSpeaker.color = new Color(0.6f, 0.6f, 0.6f);
         }
+        else
+        {
+            rightSpeaker.color = new Color(1, 1, 1);
+            middleSpeaker.color = new Color(1, 1, 1);
+            leftSpeaker.color = new Color(1, 1, 1);
+        }
 
         //type each character 1 by 1 
         foreach (char c in currentConversation.lines[index].text.ToCharArray())
         {
             speakerName.text = currentConversation.lines[index].character.fullName;
+            textComponent.fontSize = checkTextSize.fontSize;
             textComponent.text += c;
             yield return new WaitForSeconds(textSpeed);
         }
@@ -140,9 +155,61 @@ public class Dialogue : MonoBehaviour
         }
         else//finish dialogue
         {
-            currentNode.finishedEncounter = true;
-            GameManager.Instance.map.SetActive(true);
-            GameManager.Instance.dialogueUI.SetActive(false);
+            if(currentConversation.choice != null)
+            {
+                LoadChoices(currentConversation.choice);
+                Debug.Log("Choice found");
+            }
+            else
+            {
+                if(dialogueCombat != null)
+                {
+                    GameManager.Instance.StartCombatEncounter(dialogueCombat);
+                    dialogueCombat = null;
+                    GameManager.Instance.dialogueUI.SetActive(false);
+                    return;
+                }
+                currentNode.encounter.GiveReward();
+                currentNode.finishedEncounter = true;
+                GameManager.Instance.map.SetActive(true);
+                GameManager.Instance.dialogueUI.SetActive(false);
+            }
+        }
+    }
+
+    public void LoadDialogueOption(Option chosenOption)
+    {
+        if(chosenOption.combatEncounter != null)
+        {
+            dialogueCombat = chosenOption.combatEncounter;
+        }
+        if(chosenOption.rewardSystem != null )
+        {
+            currentNode.encounter.reward = chosenOption.rewardSystem;
+        }
+        else if(chosenOption.combatEncounter.reward != null)
+        {
+            currentNode.encounter.reward = chosenOption.combatEncounter.reward;
+        }
+        choiceButtons.SetActive(false);
+        currentConversation = chosenOption.conversationBranch;
+        StartDialogue();
+    }
+
+    public void LoadChoices(Choice currentChoices)
+    {
+        choiceButtons.SetActive(true);
+
+        for (int i = 0; i < choiceButtonsList.Count; i++)
+        {
+            if (currentChoices.options[i].conversationBranch == null)
+            {
+                Debug.Log(choiceButtonsList[i].gameObject.name + " Hidden");
+                choiceButtonsList[i].gameObject.SetActive(false);
+                continue;
+            }
+            choiceButtonsList[i].gameObject.SetActive(true);
+            choiceButtonsList[i].GetComponent<ChoiceButton>().option = currentChoices.options[i];
         }
     }
 

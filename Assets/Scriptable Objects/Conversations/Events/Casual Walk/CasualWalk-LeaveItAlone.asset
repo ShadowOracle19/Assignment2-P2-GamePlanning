@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 358bbf9753e925845b6baca7f6c14818, type: 3}
+  m_Name: CasualWalk-LeaveItAlone
+  m_EditorClassIdentifier: 
+  speakerleft: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+  speakerRight: {fileID: 0}
+  speakerMiddle: {fileID: 0}
+  lines:
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 3
+    finalLine: 0
+    text: "What if it was another zombie? She\u2019s too early in the day to deal
+      with that right now. With that thought, she continued by, eyeing the various
+      broken windows and imagining what each building looked like before it all went
+      downhill."
+  choice: {fileID: 0}

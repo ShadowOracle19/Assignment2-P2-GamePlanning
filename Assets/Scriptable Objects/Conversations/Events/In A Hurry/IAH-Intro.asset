@@ -47,4 +47,4 @@ MonoBehaviour:
     text: " When it\u2019s clear it\u2019s not going to budge, Fiona grabs a rusty
       ladder on the side and places it down.  \u201CThis ladder is too unstable,
       we gotta choose someone to do it for us.\u201D\r\n"
-  choice: {fileID: 0}
+  choice: {fileID: 11400000, guid: 2bbdc6d73a1488a4fbbf2b19db5c7037, type: 2}

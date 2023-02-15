@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6190c5494682caf4eae3e55e53b768ab, type: 3}
   m_Name: OMT-Event
   m_EditorClassIdentifier: 
-  reward: {fileID: 11400000, guid: 391ce509aa7e9994ebf6adc51e5638a9, type: 2}
-  desiredConversation: {fileID: 11400000, guid: 74de19177678a2c48acccea9f7f8f312, type: 2}
+  reward: {fileID: 0}
+  desiredConversation: {fileID: 11400000, guid: 479d8b892a9fb884bad79f096b1e7c85, type: 2}

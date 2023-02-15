@@ -44,9 +44,33 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6991815215147551128}
     m_Modifications:
+    - target: {fileID: 1297009290489793777, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297009290489793777, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297009290489793777, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1297009290489793777, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 6.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 9.79
       objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: map
@@ -56,6 +80,10 @@ PrefabInstance:
       propertyPath: combat
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: encounter
+      value: 
+      objectReference: {fileID: 11400000, guid: f6afc5a405a054e4c98b00cb0018df44, type: 2}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: encounteredEnemy
       value: 
@@ -87,14 +115,6 @@ PrefabInstance:
     - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_RootOrder
       value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -139,6 +159,30 @@ PrefabInstance:
     - target: {fileID: 5112613451803515052, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_Name
       value: Map node (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862112357473088619, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528883943692106578, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528883943692106578, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528883943692106578, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6528883943692106578, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699875166239405090, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
@@ -262,6 +306,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 6.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 9.79
+      objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: map
       value: 
@@ -270,6 +322,10 @@ PrefabInstance:
       propertyPath: combat
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: encounter
+      value: 
+      objectReference: {fileID: 11400000, guid: 5954f62e6593343498849b32d5a8929b, type: 2}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: encounteredEnemy
       value: 
@@ -297,14 +353,6 @@ PrefabInstance:
     - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -483,6 +531,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 6.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 9.79
+      objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: map
       value: 
@@ -491,6 +547,10 @@ PrefabInstance:
       propertyPath: combat
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: encounter
+      value: 
+      objectReference: {fileID: 11400000, guid: 5673031038be547428e23c23abc01afa, type: 2}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: encounteredEnemy
       value: 
@@ -514,14 +574,6 @@ PrefabInstance:
     - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -702,11 +754,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1
+      value: 6.32
       objectReference: {fileID: 0}
     - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1
+      value: 9.79
       objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: map
@@ -719,7 +771,7 @@ PrefabInstance:
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: encounter
       value: 
-      objectReference: {fileID: 11400000, guid: c78280508d6ffdc48acfc36bdec2a948, type: 2}
+      objectReference: {fileID: 11400000, guid: 5d33c965d994e5741bea9288c05c9d19, type: 2}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: encounteredEnemy
       value: 
@@ -736,21 +788,9 @@ PrefabInstance:
       propertyPath: connectingNodes.Array.data[1]
       value: 
       objectReference: {fileID: 9074572011631833586}
-    - target: {fileID: 5112613451803515041, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
     - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_RootOrder
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -795,6 +835,14 @@ PrefabInstance:
     - target: {fileID: 5112613451803515052, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_Name
       value: Map node
+      objectReference: {fileID: 0}
+    - target: {fileID: 5862112357473088619, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8699875166239405090, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
@@ -934,11 +982,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
-      value: 1
+      value: 6.32
       objectReference: {fileID: 0}
     - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
-      value: 1
+      value: 9.79
       objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: map
@@ -951,7 +999,7 @@ PrefabInstance:
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: encounter
       value: 
-      objectReference: {fileID: 11400000, guid: 5d33c965d994e5741bea9288c05c9d19, type: 2}
+      objectReference: {fileID: 11400000, guid: c78280508d6ffdc48acfc36bdec2a948, type: 2}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: encounteredEnemy
       value: 
@@ -976,21 +1024,9 @@ PrefabInstance:
       propertyPath: connectingNodes.Array.data[1]
       value: 
       objectReference: {fileID: 6809482119502856797}
-    - target: {fileID: 5112613451803515041, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
     - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_RootOrder
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1170,6 +1206,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 6.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1994314333629482230, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 9.79
+      objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: map
       value: 
@@ -1178,6 +1222,10 @@ PrefabInstance:
       propertyPath: combat
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: encounter
+      value: 
+      objectReference: {fileID: 11400000, guid: 1b3ba90035b1da3459289d229599e4a2, type: 2}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: encounteredEnemy
       value: 
@@ -1193,14 +1241,6 @@ PrefabInstance:
     - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_RootOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515043, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: m_LocalPosition.x

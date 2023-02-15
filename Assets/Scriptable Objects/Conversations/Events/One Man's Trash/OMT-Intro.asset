@@ -31,4 +31,4 @@ MonoBehaviour:
     currentEmotion: 2
     text: "Candace ignores her, \u201CBoost me up, I wanna see what\u2019s inside.
       Please?\u201D"
-  choice: {fileID: 0}
+  choice: {fileID: 11400000, guid: f54917aeaa1d8a54bbde6a7b8560c7f2, type: 2}

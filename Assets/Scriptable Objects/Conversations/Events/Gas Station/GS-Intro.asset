@@ -37,4 +37,4 @@ MonoBehaviour:
     speakerSide: 1
     currentEmotion: 4
     text: The crew give each other pointed looks.
-  choice: {fileID: 0}
+  choice: {fileID: 11400000, guid: 8a8ea3bc2009bfa4cb12cc11d0c07fae, type: 2}

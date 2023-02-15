@@ -16,17 +16,13 @@ MonoBehaviour:
   - conversationBranch: {fileID: 11400000, guid: c0f4f9caa54e6ad48a9595c32f9a0186, type: 2}
     rewardSystem: {fileID: 11400000, guid: fec274d2f55959d438f62b378e6d1680, type: 2}
     combatEncounter: {fileID: 0}
-    text: 'Buy Rations.
-
-      -5 Caps
+    text: 'Buy Rations. -5 Caps
 
 '
   - conversationBranch: {fileID: 11400000, guid: 0e6b8a19823de4340ada1d3e579717ea, type: 2}
     rewardSystem: {fileID: 11400000, guid: a4fc6ebed391cd44db4baf16b2f993fe, type: 2}
     combatEncounter: {fileID: 0}
-    text: 'Trade Rations.
-
-      -1 Medkit
+    text: 'Trade Rations. -1 Medkit
 
 '
   - conversationBranch: {fileID: 11400000, guid: 1ffdee6e6701e2245b7bd34093c2d2a3, type: 2}

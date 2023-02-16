@@ -781,7 +781,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0ffeae602918c0f41b257e360cd925ef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 40cf9bba650fd7549b409368d33a3bfb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4060,8 +4060,8 @@ MonoBehaviour:
   currentState: 0
   enemyImage: {fileID: 555162316}
   indicator: {fileID: 1248423892}
-  attackIndicator: {fileID: 21300000, guid: 0ffeae602918c0f41b257e360cd925ef, type: 3}
-  defendIndicator: {fileID: 21300000, guid: e812cd790a3e4a24b89e276f1f754c9e, type: 3}
+  attackIndicator: {fileID: 21300000, guid: 40cf9bba650fd7549b409368d33a3bfb, type: 3}
+  defendIndicator: {fileID: 21300000, guid: f679501ac7946834d808d742b87572cf, type: 3}
   enemyIsTargeted: 0
   enemyIsHovered: 0
   targetIcon: {fileID: 1135932075}
@@ -6038,8 +6038,8 @@ MonoBehaviour:
   currentState: 0
   enemyImage: {fileID: 1876178394}
   indicator: {fileID: 146929992}
-  attackIndicator: {fileID: 21300000, guid: 0ffeae602918c0f41b257e360cd925ef, type: 3}
-  defendIndicator: {fileID: 21300000, guid: e812cd790a3e4a24b89e276f1f754c9e, type: 3}
+  attackIndicator: {fileID: 21300000, guid: 40cf9bba650fd7549b409368d33a3bfb, type: 3}
+  defendIndicator: {fileID: 21300000, guid: f679501ac7946834d808d742b87572cf, type: 3}
   enemyIsTargeted: 0
   enemyIsHovered: 0
   targetIcon: {fileID: 187904479}
@@ -6087,7 +6087,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 532.7, y: -136}
+  m_AnchoredPosition: {x: 532.7, y: -164}
   m_SizeDelta: {x: 137.3981, y: 137.3981}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1012818570
@@ -6110,7 +6110,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e812cd790a3e4a24b89e276f1f754c9e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f679501ac7946834d808d742b87572cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7115,7 +7115,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e812cd790a3e4a24b89e276f1f754c9e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f679501ac7946834d808d742b87572cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -7330,8 +7330,8 @@ MonoBehaviour:
   currentState: 0
   enemyImage: {fileID: 860360705}
   indicator: {fileID: 1836156229}
-  attackIndicator: {fileID: 21300000, guid: 0ffeae602918c0f41b257e360cd925ef, type: 3}
-  defendIndicator: {fileID: 21300000, guid: e812cd790a3e4a24b89e276f1f754c9e, type: 3}
+  attackIndicator: {fileID: 21300000, guid: 40cf9bba650fd7549b409368d33a3bfb, type: 3}
+  defendIndicator: {fileID: 21300000, guid: f679501ac7946834d808d742b87572cf, type: 3}
   enemyIsTargeted: 0
   enemyIsHovered: 0
   targetIcon: {fileID: 1028249388}
@@ -7799,7 +7799,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0ffeae602918c0f41b257e360cd925ef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 40cf9bba650fd7549b409368d33a3bfb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8000,7 +8000,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e812cd790a3e4a24b89e276f1f754c9e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f679501ac7946834d808d742b87572cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12226,7 +12226,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0ffeae602918c0f41b257e360cd925ef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 40cf9bba650fd7549b409368d33a3bfb, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -13477,7 +13477,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: e812cd790a3e4a24b89e276f1f754c9e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f679501ac7946834d808d742b87572cf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

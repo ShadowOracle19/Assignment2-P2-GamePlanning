@@ -73,13 +73,25 @@ public class Dialogue : MonoBehaviour
         {
             leftSpeaker.gameObject.SetActive(false);
         }
+        else
+        {
+            leftSpeaker.gameObject.SetActive(true);
+        }
         if(currentConversation.speakerRight == null)
         {
             rightSpeaker.gameObject.SetActive(false);
         }
-        if(currentConversation.speakerMiddle == null)
+        else
+        {
+            rightSpeaker.gameObject.SetActive(true);
+        }
+        if (currentConversation.speakerMiddle == null)
         {
             middleSpeaker.gameObject.SetActive(false);
+        }
+        else
+        {
+            middleSpeaker.gameObject.SetActive(true);
         }
 
         //if there is a speaker set it active and set the portait 

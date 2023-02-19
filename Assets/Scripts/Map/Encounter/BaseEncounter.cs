@@ -26,14 +26,14 @@ public class BaseEncounter : ScriptableObject
         {
             GameManager.Instance.caps += reward.numberOfAddedCaps;
             var popup = Instantiate(GameManager.Instance.rewardBasePopup, GameManager.Instance.popupParent);
-            popup.GetComponent<RewardPopup>().whatRewardTextSays = reward.numberOfAddedMedkits + " Caps";
+            popup.GetComponent<RewardPopup>().whatRewardTextSays = reward.numberOfAddedCaps + " Caps";
             popup.GetComponent<RewardPopup>().rewardIcon.sprite = reward.capSprite;
         }
         if (reward.numberOfAddedRations > 0)
         {
             GameManager.Instance.amountOfRations += reward.numberOfAddedRations;
             var popup = Instantiate(GameManager.Instance.rewardBasePopup, GameManager.Instance.popupParent);
-            popup.GetComponent<RewardPopup>().whatRewardTextSays = reward.numberOfAddedMedkits + " Rations";
+            popup.GetComponent<RewardPopup>().whatRewardTextSays = reward.numberOfAddedRations + " Rations";
             popup.GetComponent<RewardPopup>().rewardIcon.sprite = reward.rationSprite;
         }
         if(reward.tokensToModify.Length > 0)

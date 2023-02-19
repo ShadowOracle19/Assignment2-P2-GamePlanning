@@ -37,7 +37,7 @@ public class Dialogue : MonoBehaviour
     void Start()
     {
         choiceButtons.SetActive(false);
-        StartDialogue();
+        //StartDialogue();
     }
 
     // Update is called once per frame
@@ -60,7 +60,7 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    void StartDialogue()
+    public void StartDialogue()
     {
         index = 0;
         textComponent.text = string.Empty;
@@ -102,7 +102,6 @@ public class Dialogue : MonoBehaviour
         }
         if (currentConversation.speakerRight != null)
         {
-            Debug.Log("um hello?");
             rightSpeaker.gameObject.SetActive(true);
             rightSpeaker.sprite = currentConversation.speakerRight.neutral;
         }
@@ -173,7 +172,6 @@ public class Dialogue : MonoBehaviour
             if(currentConversation.choice != null)
             {
                 LoadChoices(currentConversation.choice);
-                Debug.Log("Choice found");
             }
             else
             {
@@ -184,7 +182,8 @@ public class Dialogue : MonoBehaviour
                     GameManager.Instance.dialogueUI.SetActive(false);
                     return;
                 }
-                currentNode.encounter.GiveReward();
+                if(currentNode.encounter.reward != null) currentNode.encounter.GiveReward();
+
                 currentNode.finishedEncounter = true;
                 GameManager.Instance.map.SetActive(true);
                 GameManager.Instance.dialogueUI.SetActive(false);
@@ -196,9 +195,14 @@ public class Dialogue : MonoBehaviour
     {
         if(chosenOption.combatEncounter != null)
         {
-            dialogueCombat = chosenOption.combatEncounter; if (chosenOption.combatEncounter.reward != null)
+            dialogueCombat = chosenOption.combatEncounter; 
+            if (chosenOption.combatEncounter.reward != null)
             {
                 currentNode.encounter.reward = chosenOption.combatEncounter.reward;
+            }
+            else
+            {
+                currentNode.encounter.reward = null;
             }
         }
         if(chosenOption.rewardSystem != null )

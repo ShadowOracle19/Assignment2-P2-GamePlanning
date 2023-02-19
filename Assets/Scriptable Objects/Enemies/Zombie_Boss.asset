@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemySprite: {fileID: 21300000, guid: 6598629e445972241adb22934b83376d, type: 3}
   enemyName: Zombie Boss
-  maxHealth: 30
-  attack: 4
+  maxHealth: 15
+  attack: 3
   defend: 2
   ATBSpeed: 5
   highHealth: 2

@@ -90,19 +90,22 @@ public class MapNode : MonoBehaviour
             //    new Vector3(finalPos.x, 0.5f,finalPos.z), (elapsedTime / time));
             GameManager.Instance.playerMoveSprite.transform.position = Vector3.Lerp(new Vector3(startingPos.x, startingPos.y), new Vector3(finalPos.x, finalPos.y), (elapsedTime / time));
             elapsedTime += Time.deltaTime;
+
+            //Disable all other interactable nodes
+            for (int i = 0; i < previousNode.Count; i++)
+            {
+                previousNode[i].finishedEncounter = false;
+                foreach (var node in previousNode[i].connectingNodes)
+                {
+                    node.GetComponent<MapNode>().canInteract = false;
+                    node.GetComponent<MapNode>().selectable.SetActive(false);
+                }
+            }
+
             yield return null;
         }
 
-        //Disable all other interactable nodes
-        for (int i = 0; i < previousNode.Count; i++)
-        {
-            previousNode[i].finishedEncounter = false;
-            foreach (var node in previousNode[i].connectingNodes)
-            {
-                node.GetComponent<MapNode>().canInteract = false;
-                node.GetComponent<MapNode>().selectable.SetActive(false);
-            }
-        }
+        
 
 
         //once they reach the position run this code to start the encounter

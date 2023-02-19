@@ -21,3 +21,7 @@ MonoBehaviour:
     rewardSystem: {fileID: 0}
     combatEncounter: {fileID: 11400000, guid: 4b8cda11f73a5224cb9719a4d728b8f7, type: 2}
     text: Let Candace climb over.
+  - conversationBranch: {fileID: 0}
+    rewardSystem: {fileID: 0}
+    combatEncounter: {fileID: 0}
+    text: 

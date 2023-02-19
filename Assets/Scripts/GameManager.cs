@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
 
         dialogueManager.currentConversation = encounter.desiredConversation;
         dialogueManager.currentNode = node;
+        dialogueManager.StartDialogue();
     }
 
     public void StartShopEncounter()

@@ -21,8 +21,14 @@ MonoBehaviour:
     currentEmotion: 4
     text: "Shaw takes a good look around the place before they excitedly turn back
       towards the group, \u201CGuys, I don\u2019t think there\u2019s anyone else
-      here. We could kill him and take everything he has!\u201D\r\n\r\nNot worrying
-      about her voice, the man obviously hears this and squeaks.\r\n\r\n\u201CWhat?
-      No!\u201D\r\n\r\nHe pulls a shotgun from the back of the counter and points
-      it towards you all screaming, \u201COUT! OUT! NOW!\u201D\r\n"
+      here. We could kill him and take everything he has!\u201D\r"
+  - character: {fileID: 11400000, guid: 3c3c9cbc2014a674881005133d48e72d, type: 2}
+    speakerSide: 2
+    currentEmotion: 4
+    text: "Not worrying about her voice, the man obviously hears this and squeaks.\r"
+  - character: {fileID: 11400000, guid: 3c3c9cbc2014a674881005133d48e72d, type: 2}
+    speakerSide: 2
+    currentEmotion: 4
+    text: "\u201CWhat? No!\" He pulls a shotgun from the back of the counter and
+      points it towards you all screaming, \u201COUT! OUT! NOW!\u201D\r"
   choice: {fileID: 0}

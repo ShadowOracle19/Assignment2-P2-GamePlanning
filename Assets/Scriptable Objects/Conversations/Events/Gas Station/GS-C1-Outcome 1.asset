@@ -15,7 +15,7 @@ MonoBehaviour:
   numberOfAddedRations: 1
   numberOfAddedMedkits: 0
   numberOfAddedCaps: -5
-  medkitSprite: {fileID: 0}
+  medkitSprite: {fileID: 21300000, guid: 8a3aa7dfa7b1c754d910605d69a78369, type: 3}
   capSprite: {fileID: 0}
-  rationSprite: {fileID: 0}
+  rationSprite: {fileID: 21300000, guid: 99657eb17faa99047a0c5f1bb995af39, type: 3}
   tokensToModify: []

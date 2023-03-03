@@ -40,7 +40,13 @@ public class TurnBasedManager : MonoBehaviour
     public Animator combatAnim;
     public Image currentPlayerSprite;
     public Image nextPlayerSprite;
+
+    public Image currentPlayerNameplate;
+    public Image nextPlayerNameplate;
+
     public TextMeshProUGUI currentPlayerName;
+
+
     public Character currentOnScreenCharacter;
     public Character nextScreenCharacter;
 
@@ -161,6 +167,8 @@ public class TurnBasedManager : MonoBehaviour
         combatAnim.SetBool("SwapSprite", false);
         combatAnim.SetBool("Attacking", false);
         currentPlayerSprite.sprite = nextPlayerSprite.sprite;
+
+        currentPlayerNameplate.sprite = nextPlayerNameplate.sprite;
         currentOnScreenCharacter = nextScreenCharacter;
     }
 

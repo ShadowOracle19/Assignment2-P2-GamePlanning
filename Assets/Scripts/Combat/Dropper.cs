@@ -21,6 +21,7 @@ public class Dropper : MonoBehaviour
             if((TurnBasedManager.Instance.currentOnScreenCharacter != currentToken.currentToken.character))
             {
                 TurnBasedManager.Instance.nextPlayerSprite.sprite = currentToken.currentToken.character.neutral;
+                TurnBasedManager.Instance.nextPlayerNameplate.sprite = currentToken.currentToken.character.namePlate;
                 TurnBasedManager.Instance.currentPlayerName.text = currentToken.currentToken.character.name;
                 TurnBasedManager.Instance.nextScreenCharacter = currentToken.currentToken.character;
                 TurnBasedManager.Instance.combatAnim.SetBool("SwapSprite", true);//SwapSprite

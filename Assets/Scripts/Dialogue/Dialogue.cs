@@ -58,6 +58,12 @@ public class Dialogue : MonoBehaviour
                 textSpeed = 0.1f;
                 break;
         }
+
+        if(Input.GetKeyDown(KeyCode.LeftArrow) && !GameManager.Instance.isGamePaused)
+        {
+            PreviousLine();
+        }
+        textComponent.fontSize = checkTextSize.fontSize;
     }
 
     public void StartDialogue()
@@ -189,6 +195,22 @@ public class Dialogue : MonoBehaviour
                 GameManager.Instance.dialogueUI.SetActive(false);
             }
         }
+    }
+
+    void PreviousLine()
+    {
+        if(index == 0)
+        {
+            return;
+        }
+        index--;
+        textComponent.text = string.Empty;
+        checkTextSize.text = string.Empty;
+
+        checkTextSize.text = currentConversation.lines[index].text;
+        StopAllCoroutines();
+        textComponent.fontSize = checkTextSize.fontSize;
+        textComponent.text = currentConversation.lines[index].text;
     }
 
     public void LoadDialogueOption(Option chosenOption)

@@ -53,6 +53,8 @@ public class GameManager : MonoBehaviour
     public int caps = 99;
     public int amountOfTimeWithoutRations = 0;
 
+    public bool isGamePaused = false;
+
     private void Awake()
     {
         _instance = this;

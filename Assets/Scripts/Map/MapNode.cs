@@ -23,6 +23,10 @@ public class MapNode : MonoBehaviour
     public bool isCameraMoveToken = false;
     public Transform newCameraPoint;
 
+    [Header("If this node is the final map set the next map here")]
+    public MapGenerator mapGenerator;
+    public GameObject nextMap;
+
     public void Start()
     {
         myCamera = Camera.main;
@@ -53,11 +57,19 @@ public class MapNode : MonoBehaviour
 
         if (finishedEncounter)
         {
+            //check if there are no connecting nodes
+            if (connectingNodes.Count == 0)
+            {
+                Destroy(mapGenerator.mapParent.gameObject);
+                mapGenerator.GenerateMap(nextMap);
+            }
+
             foreach (var node in connectingNodes)
             {
                 node.GetComponent<MapNode>().canInteract = true;
             }
             canInteract = false;
+
         }
 
         if(canInteract)

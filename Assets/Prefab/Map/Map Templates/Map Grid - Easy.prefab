@@ -773,6 +773,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 5d33c965d994e5741bea9288c05c9d19, type: 2}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: canInteract
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: encounteredEnemy
       value: 
       objectReference: {fileID: 11400000, guid: 3d06e3c94be824e41bd4726034a60a25, type: 2}
@@ -1223,6 +1227,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: nextMap
+      value: 
+      objectReference: {fileID: 6991815215147551131, guid: b97c2c5091d089f41a209d376620039c, type: 3}
+    - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: encounter
       value: 
       objectReference: {fileID: 11400000, guid: 1b3ba90035b1da3459289d229599e4a2, type: 2}
@@ -1232,7 +1240,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: 3d06e3c94be824e41bd4726034a60a25, type: 2}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: connectingNodes.Array.size
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: connectingNodes.Array.data[0]

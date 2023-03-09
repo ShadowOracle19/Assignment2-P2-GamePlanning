@@ -17,6 +17,15 @@ public struct ShopkeeperDialogue
     public List<string> sellItem;
 }
 
+[System.Serializable]
+public struct CurrentShoppingSession
+{
+    public int numberOfRationsBought;
+    public int numberOfMedkitsBought;
+    public int numberOfRationsSold;
+    public int numberOfMedkitsSold;
+}
+
 public class ShopManager : MonoBehaviour
 {
     public int rationsPrice;
@@ -25,6 +34,8 @@ public class ShopManager : MonoBehaviour
     public bool isSelling = false;
 
     public ShopkeeperDialogue dialogue;
+
+    public CurrentShoppingSession currentShoppingSession;
 
     [Header("UI Elements")]
     public Image buyingImage;
@@ -37,8 +48,11 @@ public class ShopManager : MonoBehaviour
     public TextMeshProUGUI shopkeeperDialogueText;
     public TextMeshProUGUI shopkeeperDialogueTextCheckSize;
 
-    
 
+    private void OnEnable()
+    {
+        StartCoroutine(TypeText(dialogue.entry[UnityEngine.Random.Range(0, dialogue.entry.Count)]));
+    }
 
     // Update is called once per frame
     void Update()
@@ -66,7 +80,6 @@ public class ShopManager : MonoBehaviour
 
     public void Buy()
     {
-        int randomInt = UnityEngine.Random.Range(1, 3);
         isSelling = false;
         StartCoroutine(TypeText(dialogue.switchToBuy[UnityEngine.Random.Range(0, dialogue.switchToBuy.Count)]));
     }
@@ -84,6 +97,7 @@ public class ShopManager : MonoBehaviour
             StartCoroutine(TypeText(dialogue.sellItem[UnityEngine.Random.Range(0, dialogue.sellItem.Count)]));
             GameManager.Instance.amountOfRations -= 1;
             GameManager.Instance.caps += rationsPrice/2;
+            currentShoppingSession.numberOfRationsSold += 1;
         }
         else
         {
@@ -92,6 +106,7 @@ public class ShopManager : MonoBehaviour
             StartCoroutine(TypeText(dialogue.purchaseItem[UnityEngine.Random.Range(0, dialogue.purchaseItem.Count)]));
             GameManager.Instance.amountOfRations += 1;
             GameManager.Instance.caps -= rationsPrice;
+            currentShoppingSession.numberOfRationsBought += 1;
         }
     }
 
@@ -102,6 +117,7 @@ public class ShopManager : MonoBehaviour
             StartCoroutine(TypeText(dialogue.sellItem[UnityEngine.Random.Range(0, dialogue.sellItem.Count)]));
             GameManager.Instance.amountOfMedkits -= 1;
             GameManager.Instance.caps += medkitPrice / 2;
+            currentShoppingSession.numberOfMedkitsSold += 1;
         }
         else
         {
@@ -110,6 +126,7 @@ public class ShopManager : MonoBehaviour
             StartCoroutine(TypeText(dialogue.purchaseItem[UnityEngine.Random.Range(0, dialogue.purchaseItem.Count)]));
             GameManager.Instance.amountOfMedkits += 1;
             GameManager.Instance.caps -= medkitPrice;
+            currentShoppingSession.numberOfMedkitsBought += 1;
         }
     }
 
@@ -134,7 +151,7 @@ public class ShopManager : MonoBehaviour
 
     public void EndEncounter()
     {
-
+        TelemetryLogger.Log(this, "Items bought", currentShoppingSession);
         StartCoroutine(TypeText(dialogue.leave[UnityEngine.Random.Range(0, dialogue.leave.Count)]));
     }
 }

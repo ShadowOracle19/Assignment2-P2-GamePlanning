@@ -18,6 +18,7 @@ public class ChoiceButton : MonoBehaviour
 
     public void OnChoiceSelect()
     {
+        TelemetryLogger.Log(this, $"Choice Selected from {dialogueManager.currentConversation.name}: {option.text}");
         dialogueManager.LoadDialogueOption(option);
     }
 }

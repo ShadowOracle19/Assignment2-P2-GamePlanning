@@ -4,6 +4,18 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[System.Serializable]
+public struct CurrentTokenUsage
+{
+    public int bandage;
+    public int chainsaw;
+    public int changeStance;
+    public int knife;
+    public int pistol;
+    public int shield;
+    public int smg;
+}
+
 public class TurnBasedManager : MonoBehaviour
 {
     #region Turn base manager instance
@@ -50,12 +62,8 @@ public class TurnBasedManager : MonoBehaviour
     public Character currentOnScreenCharacter;
     public Character nextScreenCharacter;
 
-    [System.Serializable]
-    public struct KillData
-    {
-        public string targetName;
-        public float playerHealthOnEnemyDeath;
-    }
+
+    public CurrentTokenUsage tokenUsage;
 
     private void Start()
     {
@@ -80,14 +88,6 @@ public class TurnBasedManager : MonoBehaviour
 
             if(enemy.currentHealth == 0)
             {
-                var data = new KillData()
-                {
-                    targetName = enemy.currentEnemy.name,
-                    playerHealthOnEnemyDeath = player.currentHealth
-
-                };
-
-                TelemetryLogger.Log(this, "kill", data);
                 if(enemyBacklog.Count != 0)
                 {
                     enemy.SetStats(enemyBacklog[0]);
@@ -141,11 +141,22 @@ public class TurnBasedManager : MonoBehaviour
             }
             enemies[i].gameObject.SetActive(true);
             enemies[i].SetStats(enemiesToEncounter[i]);
+            TargetNewEnemy(enemies[i]);
         }
     }
 
     public void FinishEncounter()
     {
+        TelemetryLogger.Log(this, $"Token's used through combat {currentNode.encounter.name}", tokenUsage);
+
+        tokenUsage.bandage = 0;
+        tokenUsage.chainsaw = 0;
+        tokenUsage.changeStance = 0;
+        tokenUsage.knife = 0;
+        tokenUsage.pistol = 0;
+        tokenUsage.shield = 0;
+        tokenUsage.smg = 0;
+
         conveyorManager.DestroyTokens();
         currentNode.encounter.GiveReward();
         currentNode.finishedEncounter = true;

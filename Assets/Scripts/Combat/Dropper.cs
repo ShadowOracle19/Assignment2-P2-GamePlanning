@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class Dropper : MonoBehaviour
 {
     public ReadTokenValue currentToken;
@@ -46,14 +48,53 @@ public class Dropper : MonoBehaviour
                 conveyorManager.DestroyTokens();
                 conveyorManager.isPiercing = !conveyorManager.isPiercing;
             }
-            DestroyToken();
+            UseToken();
         }
         
     }
 
+    public void UseToken()
+    {
+        switch (currentToken.currentToken.tokenName)
+        {
+            case "bandage":
+                TurnBasedManager.Instance.tokenUsage.bandage += 1;
+                break;
+
+            case "chainsaw":
+                TurnBasedManager.Instance.tokenUsage.chainsaw += 1;
+                break;
+
+            case "changeStance":
+                TurnBasedManager.Instance.tokenUsage.changeStance += 1;
+                break;
+
+            case "knife":
+                TurnBasedManager.Instance.tokenUsage.knife += 1;
+                break;
+
+            case "pistol":
+                TurnBasedManager.Instance.tokenUsage.pistol += 1;
+                break;
+
+            case "shield":
+                TurnBasedManager.Instance.tokenUsage.shield += 1;
+                break;
+
+            case "smg":
+                TurnBasedManager.Instance.tokenUsage.smg += 1;
+                break;
+
+            default:
+                Debug.Log("Token doesn't exist");
+                break;
+        }
+
+        DestroyToken();
+    }
+
     public void DestroyToken()
     {
-        TelemetryLogger.Log(this, "Token Used", currentToken.currentToken.name);
         Destroy(currentToken.gameObject);
         currentToken = null;
         TurnBasedManager.Instance.player.ATBSlider.value = TurnBasedManager.Instance.player.ATBSlider.minValue;

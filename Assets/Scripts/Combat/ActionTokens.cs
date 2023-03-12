@@ -6,6 +6,7 @@ using UnityEngine;
 public class ActionTokens : ScriptableObject
 {
     public Sprite icon;
+    public string tokenName;
 
     public bool isAoe = false;
 

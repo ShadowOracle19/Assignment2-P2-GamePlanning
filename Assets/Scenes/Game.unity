@@ -2044,6 +2044,7 @@ MonoBehaviour:
   spawnedActionTokens: []
   spawnSpeed: 1
   drop: {fileID: 2064931013}
+  reserve: {fileID: 1127689319}
 --- !u!4 &239859752
 Transform:
   m_ObjectHideFlags: 0
@@ -3068,7 +3069,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 384319909}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1218203146}
+        m_TargetAssemblyTypeName: ShopManager, Assembly-CSharp
+        m_MethodName: EndEncounter
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &384319909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6496,7 +6509,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &893327093
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9135,7 +9148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1127689318}
-  - component: {fileID: 1127689316}
+  - component: {fileID: 1127689319}
   m_Layer: 0
   m_Name: Player Action Reserve
   m_TagString: Dropper
@@ -9143,20 +9156,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1127689316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1127689315}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35525193cf3c0bd41b3bc95cff8ed103, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  currentToken: {fileID: 0}
-  conveyorManager: {fileID: 239859751}
 --- !u!4 &1127689318
 Transform:
   m_ObjectHideFlags: 0
@@ -9173,6 +9172,19 @@ Transform:
   m_Father: {fileID: 161172333}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1127689319
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127689315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efd23390e86d94244b239f5074cced83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentToken: {fileID: 0}
 --- !u!1 &1129052279
 GameObject:
   m_ObjectHideFlags: 0
@@ -9758,6 +9770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e70eef157e979748b19b5869e8f947c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentNode: {fileID: 0}
   rationsPrice: 6
   medkitPrice: 4
   isSelling: 0
@@ -13084,9 +13097,10 @@ MonoBehaviour:
   combatUI: {fileID: 161172332}
   player: {fileID: 752860938}
   actionTokens: []
+  shop: {fileID: 1218203146}
   endEncounterUI: {fileID: 0}
   pausePanelUI: {fileID: 907762974}
-  shopMenuUI: {fileID: 0}
+  shopMenuUI: {fileID: 893327092}
   playerHealthText: {fileID: 1611118160}
   rationsAmountText: {fileID: 866196391}
   medkitAmountText: {fileID: 2020237646}
@@ -13727,7 +13741,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1635472647
 Transform:
   m_ObjectHideFlags: 0

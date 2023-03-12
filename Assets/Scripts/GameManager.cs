@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
     public PlayerStats player;
     public List<ActionTokens> actionTokens;
 
+    [Header("Shop")]
+    public ShopManager shop;
+
     [Header("UI")]
     public GameObject endEncounterUI;
     public GameObject pausePanelUI;
@@ -96,6 +99,8 @@ public class GameManager : MonoBehaviour
     {
         shopMenuUI.SetActive(true);
         map.SetActive(false);
+
+        shop.currentNode = node;
     }
 
     public void EndEncounter()

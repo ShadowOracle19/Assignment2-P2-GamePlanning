@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+
 public class ConveyorManager : MonoBehaviour
 {
     public List<ActionTokens> availableRangedActionTokens = new List<ActionTokens>();
@@ -29,6 +31,8 @@ public class ConveyorManager : MonoBehaviour
     private float spawnSpeed = 1.0f;
 
     public Dropper drop;
+    public Reserve reserve;
+
 
     private void Update()
     {
@@ -77,6 +81,7 @@ public class ConveyorManager : MonoBehaviour
 
             token.GetComponent<ClickOnActionToken>().manager = this;
             token.GetComponent<ClickOnActionToken>().drop = drop;
+            token.GetComponent<ClickOnActionToken>().reserve = reserve;
             spawnedActionTokens.Add(token);
 
             yield return null;

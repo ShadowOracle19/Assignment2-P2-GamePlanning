@@ -8,6 +8,7 @@ public class ClickOnActionToken : MonoBehaviour
 
     public ConveyorManager manager;
     public Dropper drop;
+    public Reserve reserve;
 
     public void OnMouseDown()
     {
@@ -17,6 +18,23 @@ public class ClickOnActionToken : MonoBehaviour
         drop.DropToken(GetComponent<ReadTokenValue>());
     }
 
+    public void OnMouseOver()
+    {
+        if(Input.GetMouseButtonDown(1))
+        {
+            movementScript.enabled = false;
+            manager.spawnedActionTokens.Remove(gameObject);
+            transform.position = reserve.gameObject.transform.position;
+
+            if(reserve.currentToken != null)
+            {
+                Destroy(reserve.currentToken.gameObject);
+                reserve.currentToken = null;
+            }
+
+            reserve.currentToken = GetComponent<ReadTokenValue>();
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

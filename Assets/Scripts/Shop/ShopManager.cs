@@ -28,6 +28,9 @@ public struct CurrentShoppingSession
 
 public class ShopManager : MonoBehaviour
 {
+
+    public MapNode currentNode;
+
     public int rationsPrice;
     public int medkitPrice;
 
@@ -153,5 +156,8 @@ public class ShopManager : MonoBehaviour
     {
         TelemetryLogger.Log(this, "Items bought", currentShoppingSession);
         StartCoroutine(TypeText(dialogue.leave[UnityEngine.Random.Range(0, dialogue.leave.Count)]));
+        currentNode.finishedEncounter = true;
+        GameManager.Instance.map.SetActive(true);
+        GameManager.Instance.shopMenuUI.SetActive(false);
     }
 }

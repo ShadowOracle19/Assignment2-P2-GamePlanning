@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Chainshaw
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: d9da6c3e1cf670e48bd5c17b24d6301a, type: 3}
+  tokenName: chainsaw
   isAoe: 0
   isPiercing: 0
   isChangeStance: 0

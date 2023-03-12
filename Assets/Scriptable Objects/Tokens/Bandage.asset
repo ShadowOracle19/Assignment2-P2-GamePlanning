@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Bandage
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 31dc8be6d1c98d64f92211b090e5fba1, type: 3}
+  tokenName: bandage
   isAoe: 0
   isPiercing: 0
   isChangeStance: 0

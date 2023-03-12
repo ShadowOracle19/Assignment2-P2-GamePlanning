@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Knife
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 7741db8ed3d26e345bde212f7f611b75, type: 3}
+  tokenName: knife
   isAoe: 0
   isPiercing: 0
   isChangeStance: 0

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Change Stance
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: f7d4e21798785114eb0115a8d3b8120c, type: 3}
+  tokenName: changeStance
   isAoe: 0
   isPiercing: 0
   isChangeStance: 1

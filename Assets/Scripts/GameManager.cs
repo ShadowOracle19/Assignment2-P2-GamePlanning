@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -39,6 +40,12 @@ public class GameManager : MonoBehaviour
     [Header("Shop")]
     public ShopManager shop;
 
+    [Header("Tutorials")]
+    public GameObject tutorialCanvas;
+    public GameObject combatTutorial;
+    public GameObject mapTutorial;
+    public GameObject eventTutorial;
+
     [Header("UI")]
     public GameObject endEncounterUI;
     public GameObject pausePanelUI;
@@ -58,6 +65,15 @@ public class GameManager : MonoBehaviour
 
     public bool isGamePaused = false;
 
+    [Header("Timer")]
+    float timer = 0.0f;
+    public int seconds;
+    bool gameFinished = false;
+
+    [Header("Game finished")]
+    public GameObject sceneRoot;
+    public GameObject endGameScreen;
+
     private void Awake()
     {
         _instance = this;
@@ -67,6 +83,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         player.currentHealth = player.maxHealth;
+        gameFinished = false;
     }
 
     // Update is called once per frame
@@ -76,6 +93,12 @@ public class GameManager : MonoBehaviour
         rationsAmountText.text = "Rations Available: " + amountOfRations.ToString();
         capsAmountText.text = "Caps: " + caps.ToString();
         medkitAmountText.text = "X " + amountOfMedkits.ToString();
+
+        if(!gameFinished)
+        {
+            timer += Time.deltaTime;
+            seconds = (int)(timer % 60);
+        }
     }
 
     public void StartCombatEncounter(CombatEncounter encounter)
@@ -120,6 +143,32 @@ public class GameManager : MonoBehaviour
         amountOfMedkits -= 1;
         player.currentHealth += (int)(player.maxHealth / 2);//the player will heal 50% of their max health
         player.currentHealth = Mathf.Clamp(player.currentHealth, 0, player.maxHealth);
+    }
+
+    public void PauseGame()
+    {
+        Time.timeScale = 0;
+        isGamePaused = true;
+    }
+
+    public void ResumeGame()
+    {
+        Time.timeScale = 1;
+        isGamePaused = false;
+    }
+
+    public void EndGame()
+    {
+        gameFinished = true;
+        TelemetryLogger.Log(this, "Time taken to finish game", seconds);
+        endGameScreen.SetActive(true);
+        sceneRoot.SetActive(false);
+        combatUI.SetActive(false);
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
 }

@@ -23,7 +23,9 @@ public class MapNode : MonoBehaviour
     public bool isCameraMoveToken = false;
     public Transform newCameraPoint;
 
-    [Header("If this node is the final map set the next map here")]
+    [Header("End Map Stuff")]
+    public bool isEndOfMap = false;
+    public bool isEndOfGame = false; //only set this to true when the player is at the final node of the game
     public MapGenerator mapGenerator;
     public GameObject nextMap;
 
@@ -58,8 +60,12 @@ public class MapNode : MonoBehaviour
         if (finishedEncounter)
         {
             //check if there are no connecting nodes
-            if (connectingNodes.Count == 0)
+            if (isEndOfMap)
             {
+                if(isEndOfGame)
+                {
+
+                }
                 Destroy(mapGenerator.mapParent.gameObject);
                 mapGenerator.GenerateMap(nextMap);
             }

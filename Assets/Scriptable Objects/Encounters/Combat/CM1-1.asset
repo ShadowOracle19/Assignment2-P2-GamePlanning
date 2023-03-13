@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: CM1-1
   m_EditorClassIdentifier: 
   reward: {fileID: 11400000, guid: 3e25dbb9f538a4042bd2ee905ce5b15f, type: 2}
+  isTutorial: 1
   encounteredEnemies:
   - {fileID: 11400000, guid: d765d601c6575f44d8c6bfc5be2688a9, type: 2}

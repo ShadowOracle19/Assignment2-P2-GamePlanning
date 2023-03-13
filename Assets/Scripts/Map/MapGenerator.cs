@@ -18,6 +18,10 @@ public class MapGenerator : MonoBehaviour
     void Start()
     {
         GenerateMap(beginningMapPrefab);
+
+        GameManager.Instance.tutorialCanvas.SetActive(true);
+        GameManager.Instance.mapTutorial.SetActive(true);
+        GameManager.Instance.PauseGame();
     }
 
     public void GenerateMap(GameObject newMap)

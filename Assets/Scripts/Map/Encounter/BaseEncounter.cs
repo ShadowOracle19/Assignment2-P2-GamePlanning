@@ -2,9 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class BaseEncounter : ScriptableObject
 {
     public RewardSystem reward;
+
+    public bool isTutorial;
+    
 
     public virtual void StartEncounter()
     {

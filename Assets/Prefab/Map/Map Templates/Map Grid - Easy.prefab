@@ -557,6 +557,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 1b3ba90035b1da3459289d229599e4a2, type: 2}
     - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: isEndOfMap
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
+      propertyPath: isEndOfGame
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5112613451803515040, guid: c4fbd01a40b36b34c817a36970f78ecb, type: 3}
       propertyPath: encounteredEnemy
       value: 
       objectReference: {fileID: 11400000, guid: 3d06e3c94be824e41bd4726034a60a25, type: 2}

@@ -64,7 +64,8 @@ public class MapNode : MonoBehaviour
             {
                 if(isEndOfGame)
                 {
-
+                    GameManager.Instance.EndGame();
+                    return;
                 }
                 Destroy(mapGenerator.mapParent.gameObject);
                 mapGenerator.GenerateMap(nextMap);

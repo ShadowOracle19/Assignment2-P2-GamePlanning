@@ -16,5 +16,5 @@ MonoBehaviour:
   secret: silence looting
   _version: 2.0
   _serverURL: https://dd-telemetry2.herokuapp.com
-  serverCommunication: 0
+  serverCommunication: 1
   debugLogging: 0

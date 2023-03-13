@@ -50,6 +50,9 @@ public class MapNode : MonoBehaviour
                 }
             }
         }
+
+        TelemetryLogger.Log(this, $"Selected Node Encounter {encounter.name}");
+
         StartCoroutine(SmoothLerp(3));
     }
 

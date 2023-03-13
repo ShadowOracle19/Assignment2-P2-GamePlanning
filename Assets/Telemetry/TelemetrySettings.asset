@@ -15,6 +15,6 @@ MonoBehaviour:
   userName: Team Rocket
   secret: silence looting
   _version: 2.0
-  _serverURL: https://dd-telemetry2.herokuapp.com
-  serverCommunication: 1
+  _serverURL: https://dd-telemetry2.herokuapp.com/
+  serverCommunication: 2
   debugLogging: 0

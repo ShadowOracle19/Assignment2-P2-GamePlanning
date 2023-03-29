@@ -35,11 +35,11 @@ MonoBehaviour:
     speakerSide: 2
     currentEmotion: 4
     text: Not worrying about her voice, the man obviously hears this and squeaks.
-  - character: {fileID: 0}
+  - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
     speakerSide: 3
     currentEmotion: 0
     text: "\u201CWhat? No!\u201D"
-  - character: {fileID: 0}
+  - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
     speakerSide: 3
     currentEmotion: 0
     text: "He pulls a shotgun from the back of the counter and points it towards

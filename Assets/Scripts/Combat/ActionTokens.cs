@@ -21,4 +21,6 @@ public class ActionTokens : ScriptableObject
 
 
     public Character character;
+
+    public string tooltipInfo;
 }

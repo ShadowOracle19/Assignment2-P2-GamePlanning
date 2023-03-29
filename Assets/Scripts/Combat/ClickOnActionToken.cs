@@ -10,13 +10,15 @@ public class ClickOnActionToken : MonoBehaviour
     public Dropper drop;
     public Reserve reserve;
 
-    public void OnMouseDown()
-    {
-        movementScript.enabled = false;
-        manager.spawnedActionTokens.Remove(gameObject);
-        transform.position = drop.gameObject.transform.position;
-        drop.DropToken(GetComponent<ReadTokenValue>());
-    }
+    public GameObject toolTip;
+
+    //public void OnMouseDown()
+    //{
+    //    movementScript.enabled = false;
+    //    manager.spawnedActionTokens.Remove(gameObject);
+    //    transform.position = drop.gameObject.transform.position;
+    //    drop.DropToken(GetComponent<ReadTokenValue>());
+    //}
 
     public void OnMouseOver()
     {
@@ -33,6 +35,13 @@ public class ClickOnActionToken : MonoBehaviour
             }
 
             reserve.currentToken = GetComponent<ReadTokenValue>();
+        }
+        else if(Input.GetMouseButtonDown(0))
+        {
+            movementScript.enabled = false;
+            manager.spawnedActionTokens.Remove(gameObject);
+            transform.position = drop.gameObject.transform.position;
+            drop.DropToken(GetComponent<ReadTokenValue>());
         }
     }
 

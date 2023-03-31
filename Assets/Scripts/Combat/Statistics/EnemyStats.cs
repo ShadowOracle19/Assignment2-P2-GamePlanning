@@ -22,10 +22,12 @@ public enum EnemyHealthStates
 
 public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    [Header("Enemy Stats")]
     public EnemyScriptable currentEnemy;
 
     public int ATBSpeed = 1;
-
+    
+    [Header("Enemy states")]
     public EnemyActions currentAction;
     public EnemyStates currentState;
 
@@ -36,32 +38,37 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
     private float attackChance;
     private float attackPercent = 50.0f;
 
-
+    [Header("Enemy Sprites")]
     public Image enemyImage;
     public Image indicator;
     public Sprite attackIndicator;
     public Sprite defendIndicator;
 
-
+    [Header("Target objects")]
     public bool enemyIsTargeted = false;
     public bool enemyIsHovered = false;
     public Image targetIcon;
+    public Image targettedSprite;
 
     // Start is called before the first frame update
     void Start()
     {
         targetIcon.gameObject.SetActive(false);
+        targettedSprite.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+        //When the action time bar fills to max it will use the desired action being either attack or defend        
         if(ATBSlider.value == ATBSlider.maxValue)
         {
             switch (currentAction)
             {
                 case EnemyActions.Attack:
                     Attack(currentEnemy.attack, TurnBasedManager.Instance.player, false);
+                    TurnBasedManager.Instance.combatAnim.SetBool("Attacked", true);
                     ATBSlider.value = 0;
                     break;
                 case EnemyActions.Defend:
@@ -74,17 +81,23 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
             
         }
 
+        //Display the health left of the enemy
         healthText.text = currentHealth + "/" + maxHealth;
         healthSlider.value = currentHealth;
 
+        //If the enemy is targeted set all the target stuff to true
         if(enemyIsTargeted)
         {
+            enemyImage.gameObject.SetActive(false);
             targetIcon.gameObject.SetActive(true);
+            targettedSprite.gameObject.SetActive(true);
             targetIcon.color = Color.red;
         }
         else if(!enemyIsTargeted && !enemyIsHovered)
         {
+            enemyImage.gameObject.SetActive(true);
             targetIcon.gameObject.SetActive(false);
+            targettedSprite.gameObject.SetActive(false);
             targetIcon.color = Color.white;
         }
 
@@ -122,6 +135,7 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
         currentEnemy = encounteredEnemy;
 
         enemyImage.sprite = currentEnemy.enemySprite;
+        targettedSprite.sprite = currentEnemy.targetedEnemySprite;
 
         maxHealth = currentEnemy.maxHealth;
         currentHealth = currentEnemy.maxHealth;

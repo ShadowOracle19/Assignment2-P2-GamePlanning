@@ -13,6 +13,7 @@ public enum EnemyStates
 public class EnemyScriptable : ScriptableObject
 {
     public Sprite enemySprite;
+    public Sprite targetedEnemySprite;
     public string enemyName;
 
     [Header("Stats")]

@@ -22,6 +22,8 @@ public class ClickOnActionToken : MonoBehaviour
 
     public void OnMouseOver()
     {
+        toolTip.gameObject.SetActive(true);
+
         if(Input.GetMouseButtonDown(1))
         {
             movementScript.enabled = false;
@@ -45,9 +47,20 @@ public class ClickOnActionToken : MonoBehaviour
         }
     }
 
+    private void OnMouseExit()
+    {
+        toolTip.gameObject.SetActive(false);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
         movementScript = GetComponent<MoveRight>();
+    }
+
+    private void Update()
+    {
+        toolTip.GetComponent<ToolTipPopup>().tokenName.text = GetComponent<ReadTokenValue>().currentToken.tokenName;
+        toolTip.GetComponent<ToolTipPopup>().tokenDescription.text = GetComponent<ReadTokenValue>().currentToken.tooltipInfo;
     }
 }

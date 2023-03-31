@@ -21,3 +21,4 @@ MonoBehaviour:
   damageAmount: 6
   defendAmount: 0
   character: {fileID: 11400000, guid: 3c3c9cbc2014a674881005133d48e72d, type: 2}
+  tooltipInfo: Deal <color=red>6</color> damage.

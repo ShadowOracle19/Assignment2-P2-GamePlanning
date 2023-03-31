@@ -18,6 +18,7 @@ MonoBehaviour:
   isPiercing: 1
   isChangeStance: 0
   healingAmount: 0
-  damageAmount: 1
+  damageAmount: 3
   defendAmount: 0
   character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+  tooltipInfo: Deal <color=red>3</color> damage to all enemies.

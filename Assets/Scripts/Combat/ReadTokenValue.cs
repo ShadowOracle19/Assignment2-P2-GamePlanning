@@ -7,7 +7,6 @@ public class ReadTokenValue : MonoBehaviour
 {
     public ActionTokens currentToken;
     public SpriteRenderer icon;
-    public TextMeshProUGUI tooltipText;
 
     private void Start()
     {

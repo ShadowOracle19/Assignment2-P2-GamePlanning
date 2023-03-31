@@ -9,6 +9,10 @@ public class Dropper : MonoBehaviour
     public ReadTokenValue currentToken;
     public ConveyorManager conveyorManager;
 
+    public GameObject square;
+    public Sprite noToken;
+    public Sprite hasToken;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +24,11 @@ public class Dropper : MonoBehaviour
     {
         if (currentToken != null)
         {
+            square.GetComponent<SpriteRenderer>().sprite = hasToken;
             if((TurnBasedManager.Instance.currentOnScreenCharacter != currentToken.currentToken.character))
             {
                 TurnBasedManager.Instance.nextPlayerSprite.sprite = currentToken.currentToken.character.neutral;
                 TurnBasedManager.Instance.nextPlayerNameplate.sprite = currentToken.currentToken.character.namePlate;
-                TurnBasedManager.Instance.currentPlayerName.text = currentToken.currentToken.character.name;
                 TurnBasedManager.Instance.nextScreenCharacter = currentToken.currentToken.character;
                 TurnBasedManager.Instance.combatAnim.SetBool("SwapSprite", true);//SwapSprite
             }
@@ -32,6 +36,12 @@ public class Dropper : MonoBehaviour
             TurnBasedManager.Instance.player.ATBSlider.value += Time.deltaTime * TurnBasedManager.Instance.player.ATBSpeed;
 
         }
+        else
+        {
+            square.GetComponent<SpriteRenderer>().sprite = noToken;
+        }
+
+
         if(TurnBasedManager.Instance.player.ATBSlider.value == TurnBasedManager.Instance.player.ATBSlider.maxValue)
         {
             if ((TurnBasedManager.Instance.targetedEnemy != null || currentToken.currentToken.isAoe) && currentToken.currentToken.damageAmount > 0)
@@ -106,7 +116,10 @@ public class Dropper : MonoBehaviour
     {
         if(currentToken != null)
         {
-            DestroyToken();
+            currentToken.gameObject.GetComponent<ClickOnActionToken>().enabled = false;
+            currentToken.gameObject.GetComponent<ReadTokenValue>().icon.color = Color.gray;
+            currentToken.gameObject.GetComponent<Rigidbody2D>().gravityScale = 1;
+            currentToken.gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(Random.Range(-4, 4), Random.Range(2, 4)), ForceMode2D.Impulse);
         }
         currentToken = token;
         TurnBasedManager.Instance.player.ATBSlider.value = TurnBasedManager.Instance.player.ATBSlider.minValue;

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Zombie_Basic
   m_EditorClassIdentifier: 
   enemySprite: {fileID: 21300000, guid: d55e0c7bdbdd0374a9c85434534259bb, type: 3}
+  targetedEnemySprite: {fileID: 21300000, guid: f47e584c2145a6f4cbbdee3aefcf64bc, type: 3}
   enemyName: 
   maxHealth: 10
   attack: 2

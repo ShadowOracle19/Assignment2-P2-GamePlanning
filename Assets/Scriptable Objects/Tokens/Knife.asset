@@ -21,3 +21,4 @@ MonoBehaviour:
   damageAmount: 4
   defendAmount: 0
   character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+  tooltipInfo: Deal <color=red>4</color> damage.

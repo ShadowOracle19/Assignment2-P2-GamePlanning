@@ -158,6 +158,10 @@ public class TurnBasedManager : MonoBehaviour
         tokenUsage.shield = 0;
         tokenUsage.smg = 0;
 
+
+        SoundEffectManager.Instance.mapSFX.Play();
+        SoundEffectManager.Instance.combatSFX.Pause();
+
         conveyorManager.DestroyTokens();
         currentNode.encounter.GiveReward();
         currentNode.finishedEncounter = true;

@@ -7,6 +7,7 @@ public class ActionTokens : ScriptableObject
 {
     public Sprite icon;
     public string tokenName;
+    public AudioClip sfx;
 
     public bool isAoe = false;
 

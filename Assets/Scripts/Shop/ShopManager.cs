@@ -159,5 +159,9 @@ public class ShopManager : MonoBehaviour
         currentNode.finishedEncounter = true;
         GameManager.Instance.map.SetActive(true);
         GameManager.Instance.shopMenuUI.SetActive(false);
+
+
+        SoundEffectManager.Instance.mapSFX.Play();
+        SoundEffectManager.Instance.shopSFX.Pause();
     }
 }

@@ -18,7 +18,8 @@ public class BaseEncounter : ScriptableObject
 
     public virtual void GiveReward()
     {
-       
+
+        SoundEffectManager.Instance.rewardSFX.Play();
         if (reward.numberOfAddedMedkits > 0)
         {
             GameManager.Instance.amountOfMedkits += reward.numberOfAddedMedkits;

@@ -54,9 +54,18 @@ public class Dropper : MonoBehaviour
             TurnBasedManager.Instance.player.Heal(TurnBasedManager.Instance.player, currentToken.currentToken.healingAmount);
             if(currentToken.currentToken.isChangeStance)
             {
-
                 conveyorManager.DestroyTokens();
                 conveyorManager.isPiercing = !conveyorManager.isPiercing;
+
+                //when the stance changes play the correct stance change sfx
+                if(conveyorManager.isPiercing)
+                {
+                    SoundEffectManager.Instance.stanceChangeRangedSFX.Play();
+                }
+                else
+                {
+                    SoundEffectManager.Instance.stanceChangeMeleeSFX.Play();
+                }
             }
             UseToken();
         }
@@ -65,6 +74,13 @@ public class Dropper : MonoBehaviour
 
     public void UseToken()
     {
+        if(currentToken.currentToken.sfx != null)
+        {
+            SoundEffectManager.Instance.weaponSFX.clip = currentToken.currentToken.sfx;
+            SoundEffectManager.Instance.weaponSFX.Play();
+        }
+
+        //Telemetry stuff
         switch (currentToken.currentToken.tokenName)
         {
             case "bandage":

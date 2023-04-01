@@ -106,6 +106,9 @@ public class GameManager : MonoBehaviour
         combatUI.SetActive(true);
         map.SetActive(false);
 
+        SoundEffectManager.Instance.mapSFX.Pause();
+        SoundEffectManager.Instance.combatSFX.Play();
+
         combatManager.StartEncounter(encounter.encounteredEnemies, node);
     }
     public void StartDialogueEncounter(DialogueEncounter encounter)
@@ -122,6 +125,10 @@ public class GameManager : MonoBehaviour
     {
         shopMenuUI.SetActive(true);
         map.SetActive(false);
+
+
+        SoundEffectManager.Instance.mapSFX.Pause();
+        SoundEffectManager.Instance.shopSFX.Play();
 
         shop.currentNode = node;
     }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c84a380b4f65046b85e3ac15f58dbb, type: 3}
   m_Name: Change Stance
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: f7d4e21798785114eb0115a8d3b8120c, type: 3}
+  icon: {fileID: 21300000, guid: a75940a6a787d3e46a268067b76788b8, type: 3}
   tokenName: changeStance
   isAoe: 0
   isPiercing: 0

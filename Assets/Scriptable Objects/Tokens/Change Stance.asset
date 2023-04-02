@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Change Stance
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: a75940a6a787d3e46a268067b76788b8, type: 3}
-  tokenName: changeStance
+  tokenName: Change Stance
+  sfx: {fileID: 0}
   isAoe: 0
   isPiercing: 0
   isChangeStance: 1

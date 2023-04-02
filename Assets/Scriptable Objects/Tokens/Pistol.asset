@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Pistol
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 95bd21c25b4409744a7a00b2c7639749, type: 3}
-  tokenName: pistol
-  sfx: {fileID: 8300000, guid: 2f3d01a1a73a8a14592b14aa347ca7e4, type: 3}
+  tokenName: Pistol
+  sfx: {fileID: 8300000, guid: 512ad7f07ac97a840a4121616d4d140f, type: 3}
   isAoe: 1
   isPiercing: 1
   isChangeStance: 0

@@ -15,6 +15,7 @@ MonoBehaviour:
   enemySprite: {fileID: 21300000, guid: d55e0c7bdbdd0374a9c85434534259bb, type: 3}
   targetedEnemySprite: {fileID: 21300000, guid: f47e584c2145a6f4cbbdee3aefcf64bc, type: 3}
   enemyName: 
+  attackSound: {fileID: 8300000, guid: 2207fa56b8a0b36439f98e0754812617, type: 3}
   maxHealth: 10
   attack: 2
   defend: 2

@@ -15,6 +15,7 @@ public class EnemyScriptable : ScriptableObject
     public Sprite enemySprite;
     public Sprite targetedEnemySprite;
     public string enemyName;
+    public AudioClip attackSound;
 
     [Header("Stats")]
     public int maxHealth = 10;

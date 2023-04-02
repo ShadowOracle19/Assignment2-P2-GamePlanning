@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63c84a380b4f65046b85e3ac15f58dbb, type: 3}
   m_Name: SMG
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: 4d03b596f519a774285f26edbd551ee4, type: 3}
-  tokenName: Shotgun
-  sfx: {fileID: 8300000, guid: 3a16b9dab0b8a2149aae65bbc5adac87, type: 3}
+  icon: {fileID: 21300000, guid: 761b3b962f1f53b4f8f2d826cf06a2ca, type: 3}
+  tokenName: SMG
+  sfx: {fileID: 8300000, guid: 512ad7f07ac97a840a4121616d4d140f, type: 3}
   isAoe: 1
   isPiercing: 1
   isChangeStance: 0
   healingAmount: 0
-  damageAmount: 5
+  damageAmount: 4
   defendAmount: 0
   character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
-  tooltipInfo: Deal <color=red>5</color> damage to all enemies.
+  tooltipInfo: Deal <color=red>4</color> damage to all enemies.

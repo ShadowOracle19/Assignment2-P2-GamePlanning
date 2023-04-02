@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c84a380b4f65046b85e3ac15f58dbb, type: 3}
+  m_Name: Sledgehammer
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: 89f9d996d59d3384e923b9c80eb93178, type: 3}
+  tokenName: Sledgehammer
+  sfx: {fileID: 8300000, guid: 4130f788f27196c4ca07d6d7d16e293a, type: 3}
+  isAoe: 0
+  isPiercing: 0
+  isChangeStance: 0
+  healingAmount: 0
+  damageAmount: 7
+  defendAmount: 0
+  character: {fileID: 11400000, guid: e820afaca5571b747b0afaa83bc36078, type: 2}
+  tooltipInfo: Deal <color=red>7</color> damage.

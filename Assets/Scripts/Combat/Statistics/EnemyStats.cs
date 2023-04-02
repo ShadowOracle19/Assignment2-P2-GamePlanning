@@ -26,6 +26,8 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
     public EnemyScriptable currentEnemy;
 
     public int ATBSpeed = 1;
+
+
     
     [Header("Enemy states")]
     public EnemyActions currentAction;
@@ -60,10 +62,17 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
     // Update is called once per frame
     void Update()
     {
+        CombatFunction();
         
+    }
+
+    private void CombatFunction()
+    {
         //When the action time bar fills to max it will use the desired action being either attack or defend        
-        if(ATBSlider.value == ATBSlider.maxValue)
+        if (ATBSlider.value == ATBSlider.maxValue)
         {
+            GetComponent<AudioSource>().clip = currentEnemy.attackSound;
+            GetComponent<AudioSource>().Play();
             switch (currentAction)
             {
                 case EnemyActions.Attack:
@@ -78,7 +87,7 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
                 default:
                     break;
             }
-            
+
         }
 
         //Display the health left of the enemy
@@ -86,14 +95,14 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
         healthSlider.value = currentHealth;
 
         //If the enemy is targeted set all the target stuff to true
-        if(enemyIsTargeted)
+        if (enemyIsTargeted)
         {
             enemyImage.gameObject.SetActive(false);
             targetIcon.gameObject.SetActive(true);
             targettedSprite.gameObject.SetActive(true);
             targetIcon.color = Color.red;
         }
-        else if(!enemyIsTargeted && !enemyIsHovered)
+        else if (!enemyIsTargeted && !enemyIsHovered)
         {
             enemyImage.gameObject.SetActive(true);
             targetIcon.gameObject.SetActive(false);
@@ -101,15 +110,15 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
             targetIcon.color = Color.white;
         }
 
-        if(currentHealth/maxHealth >= 0.7f)//enemy at max/high health
+        if (currentHealth / maxHealth >= 0.7f)//enemy at max/high health
         {
             currentState = highHealth;
         }
-        else if(currentHealth / maxHealth >= 0.4f)//enemy at mid health
+        else if (currentHealth / maxHealth >= 0.4f)//enemy at mid health
         {
             currentState = midHealth;
         }
-        else if(currentHealth / maxHealth <= 0.3f)//enemy at low health
+        else if (currentHealth / maxHealth <= 0.3f)//enemy at low health
         {
             currentState = lowHealth;
         }

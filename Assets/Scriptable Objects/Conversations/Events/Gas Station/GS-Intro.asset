@@ -26,7 +26,7 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
     speakerSide: 2
     currentEmotion: 4
-    text: " The group looks up at a man behind the counter staring in shock at Jerry\u2019s
+    text: "The group looks up at a man behind the counter staring in shock at Jerry\u2019s
       pointed gun."
   - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
     speakerSide: 3
@@ -37,4 +37,4 @@ MonoBehaviour:
     speakerSide: 1
     currentEmotion: 4
     text: The crew give each other pointed looks.
-  choice: {fileID: 11400000, guid: 8a8ea3bc2009bfa4cb12cc11d0c07fae, type: 2}
+  choice: {fileID: 0}

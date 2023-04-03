@@ -21,7 +21,7 @@ MonoBehaviour:
     currentEmotion: 3
     text: 'Shaw looks in disgust as Jerry opens the lid to let Fiona lift Candace
       in. '
-  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+  - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
     speakerSide: 2
     currentEmotion: 1
     text: "After 30 minutes of rattling, Candace\u2019s muffled voice breaks the
@@ -29,10 +29,17 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
     speakerSide: 2
     currentEmotion: 1
-    text: "\u201CAha!\u201D Her little head pops back up and lifts a bunch of bottles
-      in her hands, \u201CFree caps, like stealing lollipops from babies.\u201D"
-  - character: {fileID: 11400000, guid: 3c3c9cbc2014a674881005133d48e72d, type: 2}
-    speakerSide: 0
-    currentEmotion: 2
+    text: "\u201CAha!\""
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 2
+    currentEmotion: 1
+    text: Her little head pops back up and lifts a bunch of bottles in her hands.
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 2
+    currentEmotion: 1
+    text: "\u201CFree caps, like stealing lollipops from babies.\u201D"
+  - character: {fileID: 0}
+    speakerSide: 3
+    currentEmotion: 0
     text: "Shaw complains about Candace\u2019s smell for the whole week."
   choice: {fileID: 0}

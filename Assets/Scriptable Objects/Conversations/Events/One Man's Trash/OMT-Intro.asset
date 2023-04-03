@@ -19,16 +19,21 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
     speakerSide: 2
     currentEmotion: 1
-    text: "\u201CGuys, look over there!\u201D Candace points towards an alley with
-      two giant dumpsters."
+    text: "\u201CGuys, look over there!\u201D "
+  - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
+    speakerSide: 3
+    currentEmotion: 0
+    text: Candace points towards an alley with two giant dumpsters.
   - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
     speakerSide: 1
     currentEmotion: 0
-    text: "\u201CIncredible, garbage,\u201D Jerry says in an unamused manner as Candace
-      runs toward it."
+    text: "\u201CIncredible, garbage.\u201D"
+  - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
+    speakerSide: 3
+    currentEmotion: 0
+    text: Candace ignores her.
   - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
     speakerSide: 2
-    currentEmotion: 2
-    text: "Candace ignores her, \u201CBoost me up, I wanna see what\u2019s inside.
-      Please?\u201D"
-  choice: {fileID: 11400000, guid: f54917aeaa1d8a54bbde6a7b8560c7f2, type: 2}
+    currentEmotion: 4
+    text: " \u201CBoost me up, I wanna see what\u2019s inside. Please?\u201D"
+  choice: {fileID: 0}

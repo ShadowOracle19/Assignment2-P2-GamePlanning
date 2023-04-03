@@ -21,7 +21,3 @@ MonoBehaviour:
     rewardSystem: {fileID: 0}
     combatEncounter: {fileID: 0}
     text: No.
-  - conversationBranch: {fileID: 0}
-    rewardSystem: {fileID: 0}
-    combatEncounter: {fileID: 0}
-    text: No.

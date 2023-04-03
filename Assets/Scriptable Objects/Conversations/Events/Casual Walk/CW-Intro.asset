@@ -12,20 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358bbf9753e925845b6baca7f6c14818, type: 3}
   m_Name: CW-Intro
   m_EditorClassIdentifier: 
-  speakerleft: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+  speakerleft: {fileID: 0}
   speakerRight: {fileID: 0}
-  speakerMiddle: {fileID: 0}
+  speakerMiddle: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
   lines:
+  - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
+    speakerSide: 2
+    currentEmotion: 0
+    text: 'On one breezy afternoon, Candace decided to take a walk around the block. '
   - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
-    speakerSide: 3
-    finalLine: 0
-    text: "On one breezy afternoon, Candace decided to take a walk around the block.
-      Not without anyone\u2019s permission of course. Jerry would have nagged her
-      ear off and Shaw would have insisted on coming along when she needed time to
-      herself!"
+    speakerSide: 2
+    currentEmotion: 4
+    text: "Not without anyone\u2019s permission of course. Jerry would have nagged
+      her ear off and Shaw would have insisted on coming along when she needed time
+      to herself!"
   - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
-    speakerSide: 3
-    finalLine: 0
-    text: She was walking past an abandoned vehicle when she spot something pale
-      on the black passenger seat. What did she do?
+    speakerSide: 2
+    currentEmotion: 0
+    text: Eventually, she passes an abandoned vehicle with something pale on the
+      black passenger seat. What did she do?
   choice: {fileID: 11400000, guid: eee960641f3e65c4b8f583f896b3dbeb, type: 2}

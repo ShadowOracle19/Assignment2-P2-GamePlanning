@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: CW-Event
   m_EditorClassIdentifier: 
   reward: {fileID: 0}
-  isTutorial: 1
   desiredConversation: {fileID: 11400000, guid: e61aceeded38fb94db4d9909c99c9ff0, type: 2}

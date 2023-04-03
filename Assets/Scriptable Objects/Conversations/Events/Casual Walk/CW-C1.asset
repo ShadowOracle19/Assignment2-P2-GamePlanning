@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358bbf9753e925845b6baca7f6c14818, type: 3}
   m_Name: CW-C1
   m_EditorClassIdentifier: 
-  speakerleft: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+  speakerleft: {fileID: 0}
   speakerRight: {fileID: 0}
-  speakerMiddle: {fileID: 0}
+  speakerMiddle: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
   lines:
   - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
-    speakerSide: 0
+    speakerSide: 2
     currentEmotion: 1
     text: Candace skips on over and plants her face with her hands right onto the
       window. A glistening white medkit stares back, awesome! It might not be full

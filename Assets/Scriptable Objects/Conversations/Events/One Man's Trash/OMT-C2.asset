@@ -16,11 +16,15 @@ MonoBehaviour:
   speakerRight: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
   speakerMiddle: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
   lines:
+  - character: {fileID: 0}
+    speakerSide: 3
+    currentEmotion: 0
+    text: Jerry quickly pitches in.
   - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
     speakerSide: 1
     currentEmotion: 1
-    text: "Jerry quickly pitches in, \u201CYou are going to smell rancid for days,
-      and we don\u2019t know when we\u2019ll have access to our next bath.\u201D"
+    text: "\u201CYou are going to smell rancid for days, and we don\u2019t know when
+      we\u2019ll have access to our next bath.\u201D"
   - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
     speakerSide: 2
     currentEmotion: 2
@@ -30,11 +34,14 @@ MonoBehaviour:
     currentEmotion: 0
     text: "Shaw smiles at her, \u201COh cheer up buttercup, I\u2019m sure we\u2019ll
       find another dumpster that\u2019s less smelly eventually.\u201D "
+  - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
+    speakerSide: 3
+    currentEmotion: 0
+    text: 'They lean in conspiratorially. '
   - character: {fileID: 11400000, guid: 3c3c9cbc2014a674881005133d48e72d, type: 2}
     speakerSide: 0
     currentEmotion: 1
-    text: "They lean in conspiratorially. \u201C...And we won\u2019t have to share
-      the loot with the others.\u201D"
+    text: "\u201C...And we won\u2019t have to share the loot with the others.\u201D"
   - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
     speakerSide: 2
     currentEmotion: 1

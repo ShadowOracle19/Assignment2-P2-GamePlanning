@@ -16,7 +16,7 @@ MonoBehaviour:
   speakerRight: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
   speakerMiddle: {fileID: 11400000, guid: e820afaca5571b747b0afaa83bc36078, type: 2}
   lines:
-  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+  - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
     speakerSide: 2
     currentEmotion: 3
     text: 'The group is hurriedly running through narrow streets in an attempt to
@@ -34,8 +34,11 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: e820afaca5571b747b0afaa83bc36078, type: 2}
     speakerSide: 1
     currentEmotion: 4
-    text: "\u201CYou can apologize later when we\u2019re safe, look!\u201D Fiona
-      points at an upcoming fence. "
+    text: "\u201CYou can apologize later when we\u2019re safe, look!\u201D "
+  - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
+    speakerSide: 3
+    currentEmotion: 0
+    text: 'Fiona points at an upcoming fence. '
   - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
     speakerSide: 2
     currentEmotion: 2
@@ -44,7 +47,11 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: e820afaca5571b747b0afaa83bc36078, type: 2}
     speakerSide: 1
     currentEmotion: 2
-    text: " When it\u2019s clear it\u2019s not going to budge, Fiona grabs a rusty
-      ladder on the side and places it down.  \u201CThis ladder is too unstable,
-      we gotta choose someone to do it for us.\u201D\r\n"
-  choice: {fileID: 11400000, guid: 2bbdc6d73a1488a4fbbf2b19db5c7037, type: 2}
+    text: "When it\u2019s clear it\u2019s not going to budge, Fiona grabs a rusty
+      ladder on the side and places it down. "
+  - character: {fileID: 11400000, guid: e820afaca5571b747b0afaa83bc36078, type: 2}
+    speakerSide: 1
+    currentEmotion: 2
+    text: " \u201CThis ladder is too unstable, we gotta choose someone to do it for
+      us.\u201D\r"
+  choice: {fileID: 0}

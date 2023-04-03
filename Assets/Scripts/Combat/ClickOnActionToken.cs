@@ -60,7 +60,8 @@ public class ClickOnActionToken : MonoBehaviour
 
     private void Update()
     {
-        toolTip.GetComponent<ToolTipPopup>().tokenName.text = GetComponent<ReadTokenValue>().currentToken.tokenName;
+        toolTip.GetComponent<ToolTipPopup>().tokenText.sprite = GetComponent<ReadTokenValue>().currentToken.tokentext;
+        toolTip.GetComponent<ToolTipPopup>().tokenStroke.sprite = GetComponent<ReadTokenValue>().currentToken.tokenStroke;
         toolTip.GetComponent<ToolTipPopup>().tokenDescription.text = GetComponent<ReadTokenValue>().currentToken.tooltipInfo;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -70,6 +71,13 @@ public class GameManager : MonoBehaviour
     public int seconds;
     bool gameFinished = false;
 
+    [Header("Volume Setting")]
+    public Scrollbar music;
+    public TextMeshProUGUI musicTextNum;
+
+    public Scrollbar soundFX;
+    public TextMeshProUGUI soundFXTextNum;
+
     [Header("Game finished")]
     public GameObject sceneRoot;
     public GameObject endGameScreen;
@@ -89,6 +97,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        AdjustVolume();
         playerHealthText.text = "Health: " + player.currentHealth.ToString() + "/" + player.maxHealth.ToString();
         rationsAmountText.text = "Rations Available: " + amountOfRations.ToString();
         capsAmountText.text = "Caps: " + caps.ToString();
@@ -99,6 +108,20 @@ public class GameManager : MonoBehaviour
             timer += Time.deltaTime;
             seconds = (int)(timer % 60);
         }
+    }
+
+    public void AdjustVolume()
+    {
+        musicTextNum.text = ((int)(music.value * 100)).ToString();
+        soundFXTextNum.text = ((int)(soundFX.value * 100)).ToString();
+        SoundEffectManager.Instance.mapSFX.volume = music.value / 10;
+        SoundEffectManager.Instance.combatSFX.volume = music.value / 10;
+        SoundEffectManager.Instance.shopSFX.volume = music.value / 10;
+
+        SoundEffectManager.Instance.weaponSFX.volume = music.value;
+        SoundEffectManager.Instance.rewardSFX.volume = music.value / 10;
+        SoundEffectManager.Instance.stanceChangeMeleeSFX.volume = music.value;
+        SoundEffectManager.Instance.stanceChangeRangedSFX.volume = music.value;
     }
 
     public void StartCombatEncounter(CombatEncounter encounter)

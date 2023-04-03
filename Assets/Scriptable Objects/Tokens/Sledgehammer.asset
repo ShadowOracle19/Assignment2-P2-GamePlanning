@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 89f9d996d59d3384e923b9c80eb93178, type: 3}
   tokenName: Sledgehammer
+  tokentext: {fileID: 21300000, guid: aea6657f2c0bb224dabb2058ef675578, type: 3}
+  tokenStroke: {fileID: 21300000, guid: 82de7ca565882dc40ad54da8eaf24a1a, type: 3}
   sfx: {fileID: 8300000, guid: 4130f788f27196c4ca07d6d7d16e293a, type: 3}
   isAoe: 0
   isPiercing: 0

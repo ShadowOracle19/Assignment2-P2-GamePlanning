@@ -14,6 +14,8 @@ public struct CurrentTokenUsage
     public int pistol;
     public int shield;
     public int smg;
+    public int shotgun;
+    public int sledgehamer;
 }
 
 public class TurnBasedManager : MonoBehaviour
@@ -157,6 +159,8 @@ public class TurnBasedManager : MonoBehaviour
         tokenUsage.pistol = 0;
         tokenUsage.shield = 0;
         tokenUsage.smg = 0;
+        tokenUsage.shotgun = 0;
+        tokenUsage.sledgehamer = 0;
 
 
         SoundEffectManager.Instance.mapSFX.Play();

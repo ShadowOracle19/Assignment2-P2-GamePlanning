@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 31dc8be6d1c98d64f92211b090e5fba1, type: 3}
   tokenName: Bandage
+  tokentext: {fileID: 21300000, guid: df0581553a07eb94ab4a891109ec67f1, type: 3}
+  tokenStroke: {fileID: 21300000, guid: 8c61070870d4ae141bb273224ec85fc5, type: 3}
   sfx: {fileID: 8300000, guid: 438c80abdc63d3341b724ca08285e4b9, type: 3}
   isAoe: 0
   isPiercing: 0

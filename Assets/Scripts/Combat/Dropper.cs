@@ -83,31 +83,31 @@ public class Dropper : MonoBehaviour
         //Telemetry stuff
         switch (currentToken.currentToken.tokenName)
         {
-            case "bandage":
+            case "Bandage":
                 TurnBasedManager.Instance.tokenUsage.bandage += 1;
                 break;
 
-            case "chainsaw":
+            case "Chainsaw":
                 TurnBasedManager.Instance.tokenUsage.chainsaw += 1;
                 break;
 
-            case "changeStance":
+            case "ChangeStance":
                 TurnBasedManager.Instance.tokenUsage.changeStance += 1;
                 break;
 
-            case "knife":
+            case "Knife":
                 TurnBasedManager.Instance.tokenUsage.knife += 1;
                 break;
 
-            case "pistol":
+            case "Pistol":
                 TurnBasedManager.Instance.tokenUsage.pistol += 1;
                 break;
 
-            case "shield":
+            case "Shield":
                 TurnBasedManager.Instance.tokenUsage.shield += 1;
                 break;
 
-            case "smg":
+            case "SMG":
                 TurnBasedManager.Instance.tokenUsage.smg += 1;
                 break;
 

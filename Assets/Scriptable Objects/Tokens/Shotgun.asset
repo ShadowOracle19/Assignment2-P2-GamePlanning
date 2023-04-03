@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 21300000, guid: 84648e11374fe164095a8e19d0ccfa10, type: 3}
   tokenName: Shotgun
+  tokentext: {fileID: 21300000, guid: 170c1cb18bb76bb46b61b4f0b61969b5, type: 3}
+  tokenStroke: {fileID: 21300000, guid: 8931ce4b799e159439bc46d32353613b, type: 3}
   sfx: {fileID: 8300000, guid: d78e5bc4038051346b21ae7549454cbc, type: 3}
   isAoe: 1
   isPiercing: 1

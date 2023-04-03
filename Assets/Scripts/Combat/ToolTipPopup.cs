@@ -5,7 +5,8 @@ using TMPro;
 
 public class ToolTipPopup : MonoBehaviour
 {
-    public TextMeshPro tokenName;
+    public SpriteRenderer tokenText;
+    public SpriteRenderer tokenStroke;
     public TextMeshPro tokenDescription;
 
     // Start is called before the first frame update

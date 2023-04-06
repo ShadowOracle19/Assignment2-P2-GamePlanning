@@ -118,10 +118,10 @@ public class GameManager : MonoBehaviour
         SoundEffectManager.Instance.combatSFX.volume = music.value / 10;
         SoundEffectManager.Instance.shopSFX.volume = music.value / 10;
 
-        SoundEffectManager.Instance.weaponSFX.volume = music.value;
-        SoundEffectManager.Instance.rewardSFX.volume = music.value / 10;
-        SoundEffectManager.Instance.stanceChangeMeleeSFX.volume = music.value;
-        SoundEffectManager.Instance.stanceChangeRangedSFX.volume = music.value;
+        SoundEffectManager.Instance.weaponSFX.volume = soundFX.value;
+        SoundEffectManager.Instance.rewardSFX.volume = soundFX.value / 10;
+        SoundEffectManager.Instance.stanceChangeMeleeSFX.volume = soundFX.value;
+        SoundEffectManager.Instance.stanceChangeRangedSFX.volume = soundFX.value;
     }
 
     public void StartCombatEncounter(CombatEncounter encounter)

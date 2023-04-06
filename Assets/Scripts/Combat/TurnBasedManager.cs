@@ -13,7 +13,6 @@ public struct CurrentTokenUsage
     public int knife;
     public int pistol;
     public int shield;
-    public int smg;
     public int shotgun;
     public int sledgehamer;
 }
@@ -158,7 +157,6 @@ public class TurnBasedManager : MonoBehaviour
         tokenUsage.knife = 0;
         tokenUsage.pistol = 0;
         tokenUsage.shield = 0;
-        tokenUsage.smg = 0;
         tokenUsage.shotgun = 0;
         tokenUsage.sledgehamer = 0;
 

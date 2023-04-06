@@ -24,6 +24,11 @@ public class SoundEffectManager : MonoBehaviour
         _instance = this;
     }
 
+    private void Update()
+    {
+
+    }
+
     public AudioSource weaponSFX;
     public AudioSource stanceChangeMeleeSFX;
     public AudioSource stanceChangeRangedSFX;

@@ -36,6 +36,9 @@ public class MapNode : MonoBehaviour
 
     private void OnMouseDown()
     {
+
+        if (GameManager.Instance.isGamePaused) return;
+
         GameManager.Instance.amountOfRations -= 1;
         GameManager.Instance.amountOfRations = Mathf.Clamp(GameManager.Instance.amountOfRations, 0 , 999);
         if (GameManager.Instance.amountOfRations <= 0)
@@ -51,7 +54,7 @@ public class MapNode : MonoBehaviour
             }
         }
 
-        TelemetryLogger.Log(this, $"Selected Node Encounter {encounter.name}");
+        TelemetryLogger.Log(this, $"Selected Node Encounter", encounter.name);
 
         StartCoroutine(SmoothLerp(3));
     }

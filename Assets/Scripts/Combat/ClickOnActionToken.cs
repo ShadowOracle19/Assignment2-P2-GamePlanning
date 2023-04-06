@@ -22,6 +22,7 @@ public class ClickOnActionToken : MonoBehaviour
 
     public void OnMouseOver()
     {
+        if (GameManager.Instance.isGamePaused) return;
         toolTip.gameObject.SetActive(true);
 
         if(Input.GetMouseButtonDown(1))

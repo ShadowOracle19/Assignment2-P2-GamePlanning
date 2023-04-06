@@ -107,8 +107,12 @@ public class Dropper : MonoBehaviour
                 TurnBasedManager.Instance.tokenUsage.shield += 1;
                 break;
 
-            case "SMG":
-                TurnBasedManager.Instance.tokenUsage.smg += 1;
+            case "Sledgehammer":
+                TurnBasedManager.Instance.tokenUsage.sledgehamer += 1;
+                break;
+            
+            case "Shotgun":
+                TurnBasedManager.Instance.tokenUsage.shotgun += 1;
                 break;
 
             default:

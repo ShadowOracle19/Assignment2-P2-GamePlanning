@@ -135,9 +135,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 198bf33ee9a42f84eb0f74658eaff289, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choiceText: 
+  option:
+    conversationBranch: {fileID: 0}
+    rewardSystem: {fileID: 0}
+    combatEncounter: {fileID: 0}
+    text: 
   choiceTextBox: {fileID: 517220733067898482}
-  conversationToLoad: {fileID: 0}
   dialogueManager: {fileID: 0}
 --- !u!1 &7159099589362433346
 GameObject:
@@ -207,8 +210,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: e27dcbc9b9e541d449f2861f624d6000, type: 2}
+  m_sharedMaterial: {fileID: 2981058211377430689, guid: e27dcbc9b9e541d449f2861f624d6000, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

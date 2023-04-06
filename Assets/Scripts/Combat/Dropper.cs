@@ -13,10 +13,20 @@ public class Dropper : MonoBehaviour
     public Sprite noToken;
     public Sprite hasToken;
 
+    public bool tokenAnimation = false;
+
+
+    public Transform target1;
+    public Transform target2;
+    public Transform target3;
+    public Transform spawnPoint;
+
+    private Transform currentTarget;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -25,12 +35,12 @@ public class Dropper : MonoBehaviour
         if (currentToken != null)
         {
             square.GetComponent<SpriteRenderer>().sprite = hasToken;
-            if((TurnBasedManager.Instance.currentOnScreenCharacter != currentToken.currentToken.character))
+            if ((TurnBasedManager.Instance.currentOnScreenCharacter != currentToken.currentToken.character))
             {
                 TurnBasedManager.Instance.nextPlayerSprite.sprite = currentToken.currentToken.character.neutral;
                 TurnBasedManager.Instance.nextPlayerNameplate.sprite = currentToken.currentToken.character.namePlate;
                 TurnBasedManager.Instance.nextScreenCharacter = currentToken.currentToken.character;
-                TurnBasedManager.Instance.combatAnim.SetBool("SwapSprite", true);//SwapSprite
+                TurnBasedManager.Instance.combatAnim.SetTrigger("SwapSprite");//SwapSprite
             }
 
             TurnBasedManager.Instance.player.ATBSlider.value += Time.deltaTime * TurnBasedManager.Instance.player.ATBSpeed;
@@ -42,23 +52,25 @@ public class Dropper : MonoBehaviour
         }
 
 
-        if(TurnBasedManager.Instance.player.ATBSlider.value == TurnBasedManager.Instance.player.ATBSlider.maxValue)
+        if (TurnBasedManager.Instance.player.ATBSlider.value == TurnBasedManager.Instance.player.ATBSlider.maxValue)
         {
-            if ((TurnBasedManager.Instance.targetedEnemy != null || currentToken.currentToken.isAoe) && currentToken.currentToken.damageAmount > 0)
+            if (currentToken.currentToken.sfx != null)
             {
-                TurnBasedManager.Instance.combatAnim.SetBool("Attacking", true);
-                TurnBasedManager.Instance.player.Attack(currentToken.currentToken.damageAmount, TurnBasedManager.Instance.targetedEnemy, currentToken.currentToken.isAoe);
-                //TurnBasedManager.Instance.combatAnim.SetBool("Attacking", false);
+                SoundEffectManager.Instance.weaponSFX.clip = currentToken.currentToken.sfx;
+                SoundEffectManager.Instance.weaponSFX.Play();
             }
+            //if a utility token this will play
             TurnBasedManager.Instance.player.Defend(currentToken.currentToken.defendAmount, TurnBasedManager.Instance.player);
             TurnBasedManager.Instance.player.Heal(TurnBasedManager.Instance.player, currentToken.currentToken.healingAmount);
-            if(currentToken.currentToken.isChangeStance)
+
+            //if the token is stance change this will play
+            if (currentToken.currentToken.isChangeStance)
             {
                 conveyorManager.DestroyTokens();
                 conveyorManager.isPiercing = !conveyorManager.isPiercing;
 
                 //when the stance changes play the correct stance change sfx
-                if(conveyorManager.isPiercing)
+                if (conveyorManager.isPiercing)
                 {
                     SoundEffectManager.Instance.stanceChangeRangedSFX.Play();
                 }
@@ -67,19 +79,67 @@ public class Dropper : MonoBehaviour
                     SoundEffectManager.Instance.stanceChangeMeleeSFX.Play();
                 }
             }
-            UseToken();
+
+            //When a token with attack is used this will play
+            if ((TurnBasedManager.Instance.targetedEnemy != null) && currentToken.currentToken.damageAmount > 0)
+            {
+                TurnBasedManager.Instance.combatAnim.SetTrigger("Attacking");
+                tokenAnimation = true;
+
+            }
+
+            TurnBasedManager.Instance.player.ATBSlider.value = TurnBasedManager.Instance.player.ATBSlider.minValue;
+
+            if (!tokenAnimation) UseToken();
         }
-        
+        MoveToken();
+    }
+
+    void MoveToken()
+    {
+        switch (TurnBasedManager.Instance.targetedEnemy.name)
+        {
+            case "Enemy 1":
+                currentTarget = target1;
+                break;
+            case "Enemy 2":
+                currentTarget = target2;
+                break;
+            case "Enemy 3":
+                currentTarget = target3;
+                break;
+            default:
+                break;
+        }
+
+        if (tokenAnimation)
+        {
+            currentToken.gameObject.transform.position = Vector2.Lerp(currentToken.gameObject.transform.position, currentTarget.position, Time.deltaTime * 5.0f);
+
+            if (Vector2.Distance(currentToken.gameObject.transform.position, currentTarget.position) < 1)
+            {
+                TurnBasedManager.Instance.player.Attack(currentToken.currentToken.damageAmount, TurnBasedManager.Instance.targetedEnemy, currentToken.currentToken.isAoe);
+
+                if (currentToken.currentToken.isAoe)
+                {
+                    TurnBasedManager.Instance.enemies[0].GetComponent<Animator>().SetTrigger("Attacked");
+                    TurnBasedManager.Instance.enemies[1].GetComponent<Animator>().SetTrigger("Attacked");
+                    TurnBasedManager.Instance.enemies[2].GetComponent<Animator>().SetTrigger("Attacked");
+
+                }
+                else
+                {
+                    TurnBasedManager.Instance.targetedEnemy.GetComponent<Animator>().SetTrigger("Attacked");
+
+                }
+                UseToken();
+            }
+        }
     }
 
     public void UseToken()
     {
-        if(currentToken.currentToken.sfx != null)
-        {
-            SoundEffectManager.Instance.weaponSFX.clip = currentToken.currentToken.sfx;
-            SoundEffectManager.Instance.weaponSFX.Play();
-        }
-
+        tokenAnimation = false;
         //Telemetry stuff
         switch (currentToken.currentToken.tokenName)
         {
@@ -110,7 +170,7 @@ public class Dropper : MonoBehaviour
             case "Sledgehammer":
                 TurnBasedManager.Instance.tokenUsage.sledgehamer += 1;
                 break;
-            
+
             case "Shotgun":
                 TurnBasedManager.Instance.tokenUsage.shotgun += 1;
                 break;
@@ -123,6 +183,7 @@ public class Dropper : MonoBehaviour
         DestroyToken();
     }
 
+
     public void DestroyToken()
     {
         Destroy(currentToken.gameObject);
@@ -134,7 +195,7 @@ public class Dropper : MonoBehaviour
 
     public void DropToken(ReadTokenValue token)
     {
-        if(currentToken != null)
+        if (currentToken != null)
         {
             currentToken.gameObject.GetComponent<ClickOnActionToken>().enabled = false;
             currentToken.gameObject.GetComponent<ReadTokenValue>().icon.color = Color.gray;
@@ -143,6 +204,6 @@ public class Dropper : MonoBehaviour
         }
         currentToken = token;
         TurnBasedManager.Instance.player.ATBSlider.value = TurnBasedManager.Instance.player.ATBSlider.minValue;
-        TurnBasedManager.Instance.combatAnim.SetBool("SwapSprite", false);//SwapSprite
+        //TurnBasedManager.Instance.combatAnim.SetBool("SwapSprite", false);//SwapSprite
     }
 }

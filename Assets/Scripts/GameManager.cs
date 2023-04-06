@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
 
         SoundEffectManager.Instance.mapSFX.Pause();
         SoundEffectManager.Instance.combatSFX.Play();
-
+        combatManager.encounterRunning = true;
         combatManager.StartEncounter(encounter.encounteredEnemies, node);
     }
     public void StartDialogueEncounter(DialogueEncounter encounter)
@@ -158,12 +158,22 @@ public class GameManager : MonoBehaviour
 
     public void EndEncounter()
     {
-        node.encounter.GiveReward();
+        node.finishedEncounter = true;
+        map.SetActive(true);
+        combatUI.SetActive(false);
+        shopMenuUI.SetActive(false);
+        dialogueUI.SetActive(false);
+
+        SoundEffectManager.Instance.mapSFX.Play();
+        SoundEffectManager.Instance.shopSFX.Pause();
+        SoundEffectManager.Instance.combatSFX.Pause();
+
     }
 
     public void RewardPopup()
     {
-
+        if (node.encounter.reward == null) EndEncounter();
+        node.encounter.GiveReward();
     }
 
     public void UseMedkit()

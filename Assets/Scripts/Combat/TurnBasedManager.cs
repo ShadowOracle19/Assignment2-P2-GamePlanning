@@ -34,6 +34,8 @@ public class TurnBasedManager : MonoBehaviour
     }
     #endregion
 
+    public bool encounterRunning = false;
+
     //ai
     public float attackPercent = 50; //increase this number to defend more often. decrease to attack more often
     public float attackChance; //this number will be random and will determine if the enemy attacks or defends
@@ -74,6 +76,7 @@ public class TurnBasedManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!encounterRunning) return;
         player.healthSlider.value = player.currentHealth;
         player.currentHealth = Mathf.Clamp(player.currentHealth, 0, player.maxHealth);
 
@@ -149,6 +152,7 @@ public class TurnBasedManager : MonoBehaviour
 
     public void FinishEncounter()
     {
+        encounterRunning = false;
         TelemetryLogger.Log(this, $"Token's used through combat {currentNode.encounter.name}", tokenUsage);
 
         tokenUsage.bandage = 0;
@@ -161,14 +165,9 @@ public class TurnBasedManager : MonoBehaviour
         tokenUsage.sledgehamer = 0;
 
 
-        SoundEffectManager.Instance.mapSFX.Play();
-        SoundEffectManager.Instance.combatSFX.Pause();
-
         conveyorManager.DestroyTokens();
-        currentNode.encounter.GiveReward();
-        currentNode.finishedEncounter = true;
-        GameManager.Instance.map.SetActive(true);
-        GameManager.Instance.combatUI.SetActive(false);
+        StopAllCoroutines();
+        GameManager.Instance.RewardPopup();
 
     }
 
@@ -182,13 +181,15 @@ public class TurnBasedManager : MonoBehaviour
 
     public void SwapSprites()
     {
-        combatAnim.SetBool("SwapSprite", false);
-        combatAnim.SetBool("Attacking", false);
-        combatAnim.SetBool("Attacked", false);
+        combatAnim.ResetTrigger("SwapSprite");
+        combatAnim.ResetTrigger("Attacking");
+        combatAnim.ResetTrigger("Attacked");
         currentPlayerSprite.sprite = nextPlayerSprite.sprite;
 
         currentPlayerNameplate.sprite = nextPlayerNameplate.sprite;
         currentOnScreenCharacter = nextScreenCharacter;
+        currentPlayerSprite.sprite = currentOnScreenCharacter.neutral;
+        currentPlayerSprite.color = Color.white;
     }
 
     public void AngrySpriteSwap()

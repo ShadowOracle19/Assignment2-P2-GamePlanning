@@ -18,7 +18,7 @@ public class BaseEncounter : ScriptableObject
 
     public virtual void GiveReward()
     {
-
+        GameManager.Instance.popupParent.gameObject.GetComponent<DeleteRewardPopup>().rewardDisplayed = true;
         SoundEffectManager.Instance.rewardSFX.Play();
         if (reward.numberOfAddedMedkits > 0)
         {

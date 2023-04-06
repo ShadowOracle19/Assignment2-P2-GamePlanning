@@ -30,6 +30,7 @@ public class Dialogue : MonoBehaviour
     [Header("Choices")]
     public Choice choices;
     public GameObject choiceButtons;
+    public Transform choiceParent;
     public List<GameObject> choiceButtonsList;
     public CombatEncounter dialogueCombat;
 
@@ -188,11 +189,10 @@ public class Dialogue : MonoBehaviour
                     GameManager.Instance.dialogueUI.SetActive(false);
                     return;
                 }
-                if(currentNode.encounter.reward != null) currentNode.encounter.GiveReward();
+                
 
-                currentNode.finishedEncounter = true;
-                GameManager.Instance.map.SetActive(true);
-                GameManager.Instance.dialogueUI.SetActive(false);
+                GameManager.Instance.RewardPopup();
+
             }
         }
     }

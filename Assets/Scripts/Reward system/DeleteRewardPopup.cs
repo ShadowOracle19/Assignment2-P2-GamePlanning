@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class DeleteRewardPopup : MonoBehaviour
 {
+    public Transform rewardParent;
+    public bool rewardDisplayed = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -13,9 +15,14 @@ public class DeleteRewardPopup : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.anyKeyDown)
+        if(rewardDisplayed && Input.anyKeyDown)
         {
-            Destroy(gameObject);
+            foreach(Transform child in rewardParent)
+            {
+                Destroy(child.gameObject);
+            }
+            GameManager.Instance.EndEncounter();
+            rewardDisplayed = false;
         }
     }
 }

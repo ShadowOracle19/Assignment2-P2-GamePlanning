@@ -77,7 +77,7 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
             {
                 case EnemyActions.Attack:
                     Attack(currentEnemy.attack, TurnBasedManager.Instance.player, false);
-                    TurnBasedManager.Instance.combatAnim.SetBool("Attacked", true);
+                    TurnBasedManager.Instance.combatAnim.SetTrigger("Attacked");
                     ATBSlider.value = 0;
                     break;
                 case EnemyActions.Defend:
@@ -155,7 +155,7 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
         healthSlider.maxValue = maxHealth;
 
         ATBSpeed = currentEnemy.ATBSpeed;
-        ATBSlider.value = 0;
+        ATBSlider.value = Random.Range(0, currentEnemy.ATBSpeed);
 
         highHealth = currentEnemy.highHealth;
         midHealth = currentEnemy.midHealth;

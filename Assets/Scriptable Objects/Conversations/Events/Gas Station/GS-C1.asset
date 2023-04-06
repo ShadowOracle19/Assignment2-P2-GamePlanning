@@ -16,7 +16,7 @@ MonoBehaviour:
   speakerRight: {fileID: 0}
   speakerMiddle: {fileID: 11400000, guid: e820afaca5571b747b0afaa83bc36078, type: 2}
   lines:
-  - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 2
     currentEmotion: 0
     text: "\u201CThanks, enjoy the meal!\u201D\r"
@@ -24,7 +24,7 @@ MonoBehaviour:
     speakerSide: 2
     currentEmotion: 1
     text: "\u201CThank you, you too\u2026\u201D \n"
-  - character: {fileID: 11400000, guid: e820afaca5571b747b0afaa83bc36078, type: 2}
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 2
     currentEmotion: 0
     text: 'The group cringes hearing this.

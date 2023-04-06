@@ -18,15 +18,13 @@ MonoBehaviour:
     combatEncounter: {fileID: 0}
     text: 'Buy Rations.
 
-      -5 Caps
-
-'
+      <color=red>-5 Caps</color>'
   - conversationBranch: {fileID: 11400000, guid: 0e6b8a19823de4340ada1d3e579717ea, type: 2}
     rewardSystem: {fileID: 11400000, guid: a4fc6ebed391cd44db4baf16b2f993fe, type: 2}
     combatEncounter: {fileID: 0}
     text: 'Trade Rations.
 
-      -1 Medkit
+      <color=red>-1 Medkit</color>
 
 '
   - conversationBranch: {fileID: 11400000, guid: 1ffdee6e6701e2245b7bd34093c2d2a3, type: 2}

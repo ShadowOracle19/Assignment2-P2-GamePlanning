@@ -16,25 +16,25 @@ MonoBehaviour:
   speakerRight: {fileID: 11400000, guid: 3c3c9cbc2014a674881005133d48e72d, type: 2}
   speakerMiddle: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
   lines:
-  - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
-    speakerSide: 2
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
+    speakerSide: 3
     currentEmotion: 0
     text: Jerry insisted to visit one of the gas stations she spotted the other day.
       They snuck in through the back of the convenience store as the front had too
       much debris in the way, and upon breaking down the staff door, a loud clatter
       drops to the floor.
-  - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 2
     currentEmotion: 4
     text: "The group looks up at a man behind the counter staring in shock at Jerry\u2019s
       pointed gun."
-  - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 3
     currentEmotion: 0
     text: "\u201CWhoa, there\u2019s no need for any of that here! How about you put
       that gun down missus, and check out what I have in store instead.\u201D "
-  - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 1
     currentEmotion: 4
     text: The crew give each other pointed looks.
-  choice: {fileID: 0}
+  choice: {fileID: 11400000, guid: 8a8ea3bc2009bfa4cb12cc11d0c07fae, type: 2}

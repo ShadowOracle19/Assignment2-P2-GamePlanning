@@ -16,7 +16,7 @@ MonoBehaviour:
   speakerRight: {fileID: 0}
   speakerMiddle: {fileID: 11400000, guid: 3c3c9cbc2014a674881005133d48e72d, type: 2}
   lines:
-  - character: {fileID: 11400000, guid: 3c3c9cbc2014a674881005133d48e72d, type: 2}
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 2
     currentEmotion: 4
     text: "The ladder breaks beneath her with a final push to hop the fence. Shaw

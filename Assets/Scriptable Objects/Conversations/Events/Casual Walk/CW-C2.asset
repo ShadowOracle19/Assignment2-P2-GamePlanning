@@ -16,7 +16,7 @@ MonoBehaviour:
   speakerRight: {fileID: 0}
   speakerMiddle: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
   lines:
-  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 2
     currentEmotion: 0
     text: "What if it was another zombie? She\u2019s too early in the day to deal

@@ -16,17 +16,17 @@ MonoBehaviour:
   speakerRight: {fileID: 0}
   speakerMiddle: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
   lines:
-  - character: {fileID: 11400000, guid: df057de78edc91345939841ce8caf9ed, type: 2}
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 2
     currentEmotion: 0
     text: 'On one breezy afternoon, Candace decided to take a walk around the block. '
-  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 2
     currentEmotion: 4
     text: "Not without anyone\u2019s permission of course. Jerry would have nagged
       her ear off and Shaw would have insisted on coming along when she needed time
       to herself!"
-  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 2
     currentEmotion: 0
     text: Eventually, she passes an abandoned vehicle with something pale on the

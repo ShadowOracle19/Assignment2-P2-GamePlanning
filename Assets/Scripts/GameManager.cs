@@ -63,6 +63,9 @@ public class GameManager : MonoBehaviour
     public int amountOfMedkits = 2;
     public int caps = 99;
     public int amountOfTimeWithoutRations = 0;
+    public Sprite rationsSprite;
+    public Sprite capSprite;
+    public Sprite medkitSprite;
 
     public bool isGamePaused = false;
 
@@ -74,9 +77,11 @@ public class GameManager : MonoBehaviour
     [Header("Volume Setting")]
     public Scrollbar music;
     public TextMeshProUGUI musicTextNum;
+    public TextMeshProUGUI musicTextNumTitle;
 
     public Scrollbar soundFX;
     public TextMeshProUGUI soundFXTextNum;
+    public TextMeshProUGUI soundFXTextNumTitle;
 
     [Header("Game finished")]
     public GameObject sceneRoot;
@@ -98,10 +103,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         AdjustVolume();
-        playerHealthText.text = "Health: " + player.currentHealth.ToString() + "/" + player.maxHealth.ToString();
-        rationsAmountText.text = "Rations Available: " + amountOfRations.ToString();
-        capsAmountText.text = "Caps: " + caps.ToString();
-        medkitAmountText.text = "X " + amountOfMedkits.ToString();
+        playerHealthText.text = $"{player.currentHealth}/{player.maxHealth}";
+        rationsAmountText.text = amountOfRations.ToString();
+        capsAmountText.text = caps.ToString();
+        medkitAmountText.text = amountOfMedkits.ToString();
 
         if(!gameFinished)
         {
@@ -113,10 +118,13 @@ public class GameManager : MonoBehaviour
     public void AdjustVolume()
     {
         musicTextNum.text = ((int)(music.value * 100)).ToString();
+        musicTextNumTitle.text = ((int)(music.value * 100)).ToString();
         soundFXTextNum.text = ((int)(soundFX.value * 100)).ToString();
+        soundFXTextNumTitle.text = ((int)(soundFX.value * 100)).ToString();
         SoundEffectManager.Instance.mapSFX.volume = music.value / 10;
         SoundEffectManager.Instance.combatSFX.volume = music.value / 10;
         SoundEffectManager.Instance.shopSFX.volume = music.value / 10;
+        SoundEffectManager.Instance.TitleSFX.volume = music.value / 10;
 
         SoundEffectManager.Instance.weaponSFX.volume = soundFX.value;
         SoundEffectManager.Instance.rewardSFX.volume = soundFX.value / 10;
@@ -195,6 +203,15 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         isGamePaused = false;
+    }
+
+    public void EndGameDeath()
+    {
+        gameFinished = true;
+        TelemetryLogger.Log(this, "Death state achieved", seconds);
+        endGameScreen.SetActive(true);
+        sceneRoot.SetActive(false);
+        combatUI.SetActive(false);
     }
 
     public void EndGame()

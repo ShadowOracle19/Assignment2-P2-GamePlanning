@@ -31,17 +31,21 @@ MonoBehaviour:
     currentEmotion: 4
     text: " \u201CGuys, I don\u2019t think there\u2019s anyone else here. We could
       kill him and take everything he has!\u201D\r"
-  - character: {fileID: 11400000, guid: 3c3c9cbc2014a674881005133d48e72d, type: 2}
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 2
     currentEmotion: 4
     text: Not worrying about her voice, the man obviously hears this and squeaks.
-  - character: {fileID: 0}
+  - character: {fileID: 11400000, guid: 065687a327d13d14a94af3e6cc4def44, type: 2}
     speakerSide: 3
     currentEmotion: 0
     text: "\u201CWhat? No!\u201D"
-  - character: {fileID: 0}
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 3
     currentEmotion: 0
-    text: "He pulls a shotgun from the back of the counter and points it towards
-      you all screaming, \u201COUT! OUT! NOW!\u201D"
+    text: He pulls a shotgun from the back of the counter and points it towards you
+      all screaming.
+  - character: {fileID: 11400000, guid: 065687a327d13d14a94af3e6cc4def44, type: 2}
+    speakerSide: 3
+    currentEmotion: 0
+    text: "\u201COUT! OUT! NOW!\u201D"
   choice: {fileID: 0}

@@ -20,6 +20,7 @@ public class Dropper : MonoBehaviour
     public Transform target2;
     public Transform target3;
     public Transform spawnPoint;
+    public Transform player;
 
     private Transform currentTarget;
 
@@ -59,9 +60,13 @@ public class Dropper : MonoBehaviour
                 SoundEffectManager.Instance.weaponSFX.clip = currentToken.currentToken.sfx;
                 SoundEffectManager.Instance.weaponSFX.Play();
             }
-            //if a utility token this will play
-            TurnBasedManager.Instance.player.Defend(currentToken.currentToken.defendAmount, TurnBasedManager.Instance.player);
-            TurnBasedManager.Instance.player.Heal(TurnBasedManager.Instance.player, currentToken.currentToken.healingAmount);
+
+            if(currentToken.currentToken.defendAmount > 0 || currentToken.currentToken.healingAmount > 0)
+            {
+                currentTarget = player;
+                tokenAnimation = true;
+            }
+            
 
             //if the token is stance change this will play
             if (currentToken.currentToken.isChangeStance)
@@ -73,16 +78,33 @@ public class Dropper : MonoBehaviour
                 if (conveyorManager.isPiercing)
                 {
                     SoundEffectManager.Instance.stanceChangeRangedSFX.Play();
+                    conveyorManager.stanceChangerAnim.SetTrigger("Stance Change Ranged");
                 }
                 else
                 {
                     SoundEffectManager.Instance.stanceChangeMeleeSFX.Play();
+                    conveyorManager.stanceChangerAnim.SetTrigger("Stance Change Melee");
                 }
             }
 
             //When a token with attack is used this will play
             if ((TurnBasedManager.Instance.targetedEnemy != null) && currentToken.currentToken.damageAmount > 0)
             {
+                switch (TurnBasedManager.Instance.targetedEnemy.name)
+                {
+                    case "Enemy 1":
+                        currentTarget = target1;
+                        break;
+                    case "Enemy 2":
+                        currentTarget = target2;
+                        break;
+                    case "Enemy 3":
+                        currentTarget = target3;
+                        break;
+                    default:
+                        break;
+                }
+
                 TurnBasedManager.Instance.combatAnim.SetTrigger("Attacking");
                 tokenAnimation = true;
 
@@ -92,46 +114,43 @@ public class Dropper : MonoBehaviour
 
             if (!tokenAnimation) UseToken();
         }
-        MoveToken();
+        
+
+        MoveToken(currentTarget);
     }
 
-    void MoveToken()
+    void MoveToken(Transform target)
     {
-        switch (TurnBasedManager.Instance.targetedEnemy.name)
-        {
-            case "Enemy 1":
-                currentTarget = target1;
-                break;
-            case "Enemy 2":
-                currentTarget = target2;
-                break;
-            case "Enemy 3":
-                currentTarget = target3;
-                break;
-            default:
-                break;
-        }
-
         if (tokenAnimation)
         {
-            currentToken.gameObject.transform.position = Vector2.Lerp(currentToken.gameObject.transform.position, currentTarget.position, Time.deltaTime * 5.0f);
+            currentToken.gameObject.transform.position = Vector2.Lerp(currentToken.gameObject.transform.position, target.position, Time.deltaTime * 5.0f);
 
-            if (Vector2.Distance(currentToken.gameObject.transform.position, currentTarget.position) < 1)
+            if (Vector2.Distance(currentToken.gameObject.transform.position, target.position) < 1)
             {
-                TurnBasedManager.Instance.player.Attack(currentToken.currentToken.damageAmount, TurnBasedManager.Instance.targetedEnemy, currentToken.currentToken.isAoe);
-
-                if (currentToken.currentToken.isAoe)
+                if (currentToken.currentToken.defendAmount > 0 || currentToken.currentToken.healingAmount > 0)
                 {
-                    TurnBasedManager.Instance.enemies[0].GetComponent<Animator>().SetTrigger("Attacked");
-                    TurnBasedManager.Instance.enemies[1].GetComponent<Animator>().SetTrigger("Attacked");
-                    TurnBasedManager.Instance.enemies[2].GetComponent<Animator>().SetTrigger("Attacked");
-
+                    //if a utility token this will play
+                    TurnBasedManager.Instance.player.Defend(currentToken.currentToken.defendAmount, TurnBasedManager.Instance.player);
+                    TurnBasedManager.Instance.player.Heal(TurnBasedManager.Instance.player, currentToken.currentToken.healingAmount);
                 }
-                else
+                else if(currentToken.currentToken.damageAmount > 0)
                 {
-                    TurnBasedManager.Instance.targetedEnemy.GetComponent<Animator>().SetTrigger("Attacked");
+                    TurnBasedManager.Instance.player.Attack(currentToken.currentToken.damageAmount, TurnBasedManager.Instance.targetedEnemy, currentToken.currentToken.isAoe);
 
+                    if (currentToken.currentToken.isAoe)
+                    {
+                        TurnBasedManager.Instance.enemies[0].GetComponent<Animator>().SetTrigger("Attacked");
+                        TurnBasedManager.Instance.enemies[1].GetComponent<Animator>().SetTrigger("Attacked");
+                        TurnBasedManager.Instance.enemies[2].GetComponent<Animator>().SetTrigger("Attacked");
+
+                    }
+                    else
+                    {
+                        TurnBasedManager.Instance.targetedEnemy.GetComponent<Animator>().SetTrigger("Attacked");
+
+                    }
                 }
+
                 UseToken();
             }
         }

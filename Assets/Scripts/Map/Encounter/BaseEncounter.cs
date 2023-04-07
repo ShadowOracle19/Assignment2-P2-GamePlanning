@@ -18,6 +18,7 @@ public class BaseEncounter : ScriptableObject
 
     public virtual void GiveReward()
     {
+        if (GameManager.Instance.node.encounter.reward == null) return;
         GameManager.Instance.popupParent.gameObject.GetComponent<DeleteRewardPopup>().rewardDisplayed = true;
         SoundEffectManager.Instance.rewardSFX.Play();
         if (reward.numberOfAddedMedkits > 0)
@@ -25,21 +26,21 @@ public class BaseEncounter : ScriptableObject
             GameManager.Instance.amountOfMedkits += reward.numberOfAddedMedkits;
             var popup = Instantiate(GameManager.Instance.rewardBasePopup, GameManager.Instance.popupParent);
             popup.GetComponent<RewardPopup>().whatRewardTextSays = reward.numberOfAddedMedkits + " Medkits";
-            popup.GetComponent<RewardPopup>().rewardIcon.sprite = reward.medkitSprite;
+            popup.GetComponent<RewardPopup>().rewardIcon.sprite = GameManager.Instance.medkitSprite;
         }
         if (reward.numberOfAddedCaps > 0)
         {
             GameManager.Instance.caps += reward.numberOfAddedCaps;
             var popup = Instantiate(GameManager.Instance.rewardBasePopup, GameManager.Instance.popupParent);
             popup.GetComponent<RewardPopup>().whatRewardTextSays = reward.numberOfAddedCaps + " Caps";
-            popup.GetComponent<RewardPopup>().rewardIcon.sprite = reward.capSprite;
+            popup.GetComponent<RewardPopup>().rewardIcon.sprite = GameManager.Instance.capSprite;
         }
         if (reward.numberOfAddedRations > 0)
         {
             GameManager.Instance.amountOfRations += reward.numberOfAddedRations;
             var popup = Instantiate(GameManager.Instance.rewardBasePopup, GameManager.Instance.popupParent);
             popup.GetComponent<RewardPopup>().whatRewardTextSays = reward.numberOfAddedRations + " Rations";
-            popup.GetComponent<RewardPopup>().rewardIcon.sprite = reward.rationSprite;
+            popup.GetComponent<RewardPopup>().rewardIcon.sprite = GameManager.Instance.rationsSprite;
         }
         if(reward.tokensToModify.Length > 0)
         {

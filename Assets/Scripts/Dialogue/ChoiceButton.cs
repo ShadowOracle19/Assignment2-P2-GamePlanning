@@ -20,8 +20,9 @@ public class ChoiceButton : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     public void OnChoiceSelect()
     {
-        TelemetryLogger.Log(this, $"Choice Selected from {dialogueManager.currentConversation.name}: {option.text}");
+        TelemetryLogger.Log(this, $"Choice Selected from {dialogueManager.currentConversation.name}", option.text);
         dialogueManager.LoadDialogueOption(option);
+        choiceTextBox.color = Color.white;
     }
 
 

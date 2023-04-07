@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 63c84a380b4f65046b85e3ac15f58dbb, type: 3}
-  m_Name: Change Stance
+  m_Name: Change Stance To Ranged
   m_EditorClassIdentifier: 
-  icon: {fileID: 21300000, guid: a75940a6a787d3e46a268067b76788b8, type: 3}
+  icon: {fileID: 21300000, guid: cfa63f49f87927548a18e673fcc1a4b4, type: 3}
   tokenName: Change Stance
   tokentext: {fileID: 21300000, guid: 9d23ba1febd9c7a47a6b557e43cac4eb, type: 3}
   tokenStroke: {fileID: 21300000, guid: 08a8582815dc2c34ba7a64a4db4ff6b0, type: 3}

@@ -36,6 +36,7 @@ public class SoundEffectManager : MonoBehaviour
     public AudioSource combatSFX;
     public AudioSource mapSFX;
     public AudioSource shopSFX;
+    public AudioSource TitleSFX;
     
 
 }

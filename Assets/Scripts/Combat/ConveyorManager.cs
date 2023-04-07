@@ -33,6 +33,8 @@ public class ConveyorManager : MonoBehaviour
     public Dropper drop;
     public Reserve reserve;
 
+    public Animator stanceChangerAnim;
+
 
     private void Update()
     {

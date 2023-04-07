@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63c84a380b4f65046b85e3ac15f58dbb, type: 3}
+  m_Name: Change Stance To Melee
+  m_EditorClassIdentifier: 
+  icon: {fileID: 21300000, guid: a75940a6a787d3e46a268067b76788b8, type: 3}
+  tokenName: Change Stance
+  tokentext: {fileID: 21300000, guid: 9d23ba1febd9c7a47a6b557e43cac4eb, type: 3}
+  tokenStroke: {fileID: 21300000, guid: 08a8582815dc2c34ba7a64a4db4ff6b0, type: 3}
+  sfx: {fileID: 0}
+  isAoe: 0
+  isPiercing: 0
+  isChangeStance: 1
+  healingAmount: 0
+  damageAmount: 0
+  defendAmount: 0
+  character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+  tooltipInfo: Switch to melee or range stance

@@ -113,7 +113,7 @@ public class TurnBasedManager : MonoBehaviour
         else if(player.currentHealth == 0)
         {
             //activate player death state here
-            GameManager.Instance.EndGame();
+            GameManager.Instance.EndGameDeath();
         }
     }
 

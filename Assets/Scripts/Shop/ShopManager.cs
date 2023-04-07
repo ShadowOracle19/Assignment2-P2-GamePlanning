@@ -40,6 +40,8 @@ public class ShopManager : MonoBehaviour
 
     public CurrentShoppingSession currentShoppingSession;
 
+    public GameObject shop;
+
     [Header("UI Elements")]
     public Image buyingImage;
     public Image sellingImage;
@@ -54,6 +56,7 @@ public class ShopManager : MonoBehaviour
 
     private void OnEnable()
     {
+        shop.SetActive(true);
         StartCoroutine(TypeText(dialogue.entry[UnityEngine.Random.Range(0, dialogue.entry.Count)]));
     }
 
@@ -83,20 +86,24 @@ public class ShopManager : MonoBehaviour
 
     public void Buy()
     {
+        StopAllCoroutines();
         isSelling = false;
         StartCoroutine(TypeText(dialogue.switchToBuy[UnityEngine.Random.Range(0, dialogue.switchToBuy.Count)]));
     }
 
     public void Sell()
     {
+        StopAllCoroutines();
         isSelling = true;
         StartCoroutine(TypeText(dialogue.switchToSell[UnityEngine.Random.Range(0, dialogue.switchToSell.Count)]));
     }
 
     public void BuySellRations()
     {
-        if(isSelling)
+        StopAllCoroutines();
+        if (isSelling)
         {
+            if (GameManager.Instance.amountOfMedkits == 0) return;
             StartCoroutine(TypeText(dialogue.sellItem[UnityEngine.Random.Range(0, dialogue.sellItem.Count)]));
             GameManager.Instance.amountOfRations -= 1;
             GameManager.Instance.caps += rationsPrice/2;
@@ -115,8 +122,11 @@ public class ShopManager : MonoBehaviour
 
     public void BuySellMedkits()
     {
+        StopAllCoroutines();
         if (isSelling)
         {
+            if (GameManager.Instance.amountOfMedkits == 0) return;
+
             StartCoroutine(TypeText(dialogue.sellItem[UnityEngine.Random.Range(0, dialogue.sellItem.Count)]));
             GameManager.Instance.amountOfMedkits -= 1;
             GameManager.Instance.caps += medkitPrice / 2;
@@ -152,13 +162,38 @@ public class ShopManager : MonoBehaviour
         yield return null;
     }
 
-    public void EndEncounter()
+    IEnumerator LeavingText(string text)
     {
-        TelemetryLogger.Log(this, "Items bought", currentShoppingSession);
-        StartCoroutine(TypeText(dialogue.leave[UnityEngine.Random.Range(0, dialogue.leave.Count)]));
+        shopkeeperDialogueText.text = string.Empty;
+        shopkeeperDialogueTextCheckSize.text = string.Empty;
+
+        shopkeeperDialogueTextCheckSize.text = text;
+        yield return new WaitForSeconds(0.1f);
+
+        //type each character 1 by 1 
+        foreach (char c in text)
+        {
+            shopkeeperDialogueText.fontSize = shopkeeperDialogueTextCheckSize.fontSize;
+            shopkeeperDialogueText.text += c;
+            yield return new WaitForSeconds(0.005f);
+        }
+
+        yield return new WaitForSeconds(2.0f);
+
         currentNode.finishedEncounter = true;
         GameManager.Instance.map.SetActive(true);
         GameManager.Instance.shopMenuUI.SetActive(false);
+        yield return null;
+    }
+
+    public void EndEncounter()
+    {
+        shop.SetActive(false);
+        TelemetryLogger.Log(this, "Items bought", currentShoppingSession);
+
+        StopAllCoroutines();
+        StartCoroutine(LeavingText(dialogue.leave[UnityEngine.Random.Range(0, dialogue.leave.Count)]));
+        
 
 
         SoundEffectManager.Instance.mapSFX.Play();

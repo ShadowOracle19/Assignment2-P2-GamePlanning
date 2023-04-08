@@ -177,8 +177,8 @@ public class ShopManager : MonoBehaviour
             shopkeeperDialogueText.text += c;
             yield return new WaitForSeconds(0.005f);
         }
-
-        yield return new WaitForSeconds(2.0f);
+        GetComponent<AudioSource>().Play();
+        yield return new WaitForSeconds(0.4f);
 
         currentNode.finishedEncounter = true;
         GameManager.Instance.map.SetActive(true);

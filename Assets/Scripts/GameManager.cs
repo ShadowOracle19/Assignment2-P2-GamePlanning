@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour
     public GameObject playerMoveSprite;//this sprite is only shown on the map to move to each node
     public GameObject map;
     public MapNode node;
+    public float mapMoveSpeed = 1;
 
     [Header("Dialogue")]
     public Dialogue dialogueManager;

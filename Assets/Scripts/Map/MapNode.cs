@@ -13,10 +13,10 @@ public class MapNode : MonoBehaviour
 
     public bool finishedEncounter = false;
 
+    private bool endOfEncounterSetup = false;
+
     public Camera myCamera;
 
-    public GameObject selectable;
-    public GameObject selected;
 
     public BaseEncounter encounter;
 
@@ -29,9 +29,18 @@ public class MapNode : MonoBehaviour
     public MapGenerator mapGenerator;
     public GameObject nextMap;
 
+    public Sprite notInteractable;
+    public Sprite interactable;
+    public Sprite interactableHover;
+    public Sprite used;
+
     public void Start()
     {
         myCamera = Camera.main;
+        if(canInteract)
+        {
+            GetComponent<SpriteRenderer>().sprite = interactable;
+        }
     }
 
     private void OnMouseDown()
@@ -59,11 +68,30 @@ public class MapNode : MonoBehaviour
         StartCoroutine(SmoothLerp(3));
     }
 
+    private void OnMouseOver()
+    {
+        if(canInteract)
+        {
+            GetComponent<SpriteRenderer>().sprite = interactableHover;
+        }
+    }
+
+    private void OnMouseExit()
+    {
+        if (canInteract)
+        {
+            GetComponent<SpriteRenderer>().sprite = interactable;
+        }
+    }
+
     private void Update()
     {
+        if(finishedEncounter)
+            GetComponent<SpriteRenderer>().sprite = used;
+
         GetComponent<BoxCollider2D>().enabled = canInteract;
 
-        if (finishedEncounter)
+        if (finishedEncounter && !endOfEncounterSetup)
         {
             //check if there are no connecting nodes
             if (isEndOfMap)
@@ -80,24 +108,21 @@ public class MapNode : MonoBehaviour
             foreach (var node in connectingNodes)
             {
                 node.GetComponent<MapNode>().canInteract = true;
+                node.GetComponent<MapNode>().GetComponent<SpriteRenderer>().sprite = node.GetComponent<MapNode>().interactable;
             }
             canInteract = false;
-
+            endOfEncounterSetup = true;
         }
 
-        if(canInteract)
+        if(!canInteract && !finishedEncounter)
         {
-            selectable.SetActive(true);
-        }
-        else
-        {
-            selectable.SetActive(false);
+            GetComponent<SpriteRenderer>().sprite = notInteractable;
         }
     }
 
     private IEnumerator SmoothLerp(float time)
     {
-        selected.SetActive(true);
+        canInteract = false;
         Vector3 startingPos = GameManager.Instance.playerMoveSprite.transform.position;
         Vector3 finalPos = this.transform.position;
         float elapsedTime = 0;
@@ -107,23 +132,17 @@ public class MapNode : MonoBehaviour
             if (new Vector3(GameManager.Instance.playerMoveSprite.transform.position.x, GameManager.Instance.playerMoveSprite.transform.position.y) 
                 == new Vector3(finalPos.x, finalPos.y))//once the camera reaches desired position break while loop
                 break;
-            //myCamera.transform.position = Vector3.Lerp(startingPos, new Vector3(finalPos.x, finalPos.y, -10), (elapsedTime / time));
 
-            //the player icon moving to the next map node
-            //GameManager.Instance.playerMoveSprite.transform.position = 
-            //    Vector3.Lerp(new Vector3(GameManager.Instance.playerMoveSprite.transform.position.x, 0.5f, GameManager.Instance.playerMoveSprite.transform.position.z), 
-            //    new Vector3(finalPos.x, 0.5f,finalPos.z), (elapsedTime / time));
             GameManager.Instance.playerMoveSprite.transform.position = Vector3.Lerp(new Vector3(startingPos.x, startingPos.y), new Vector3(finalPos.x, finalPos.y), (elapsedTime / time));
-            elapsedTime += Time.deltaTime;
+            elapsedTime += Time.deltaTime * GameManager.Instance.mapMoveSpeed;
 
             //Disable all other interactable nodes
             for (int i = 0; i < previousNode.Count; i++)
             {
-                previousNode[i].finishedEncounter = false;
+                //previousNode[i].finishedEncounter = false;
                 foreach (var node in previousNode[i].connectingNodes)
                 {
                     node.GetComponent<MapNode>().canInteract = false;
-                    node.GetComponent<MapNode>().selectable.SetActive(false);
                 }
             }
 

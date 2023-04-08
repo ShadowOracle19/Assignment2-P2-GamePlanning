@@ -24,4 +24,4 @@ MonoBehaviour:
   damageAmount: 0
   defendAmount: 0
   character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
-  tooltipInfo: Heal <color=green>3</color> hp.
+  tooltipInfo: Heal <color=red>3</color> hp.

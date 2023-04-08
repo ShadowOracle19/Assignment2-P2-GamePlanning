@@ -28,7 +28,7 @@ MonoBehaviour:
     currentEmotion: 4
     text: "The group looks up at a man behind the counter staring in shock at Jerry\u2019s
       pointed gun."
-  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
+  - character: {fileID: 11400000, guid: 065687a327d13d14a94af3e6cc4def44, type: 2}
     speakerSide: 3
     currentEmotion: 0
     text: "\u201CWhoa, there\u2019s no need for any of that here! How about you put

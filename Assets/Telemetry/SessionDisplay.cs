@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Drawing;
 
 public class SessionDisplay : MonoBehaviour
 {
@@ -10,11 +11,11 @@ public class SessionDisplay : MonoBehaviour
     {
         if(sessionIndex < 0)
         {
-            text.text = $"Offline Session: {sessionIndex}";
+            text.text = $"Offline Session: <color=red>{sessionIndex}</color>";
         }
         else
         {
-            text.text = $"Online Session: {sessionIndex}";
+            text.text = $"Online Session: <color=green>{sessionIndex}</color>  (Make note of this number)";
         }
     }
 

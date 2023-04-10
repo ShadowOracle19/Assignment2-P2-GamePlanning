@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GS-Event
   m_EditorClassIdentifier: 
   reward: {fileID: 0}
-  isTutorial: 0
+  isTutorial: 1
   desiredConversation: {fileID: 11400000, guid: ed7ad17b29668c3409d4381146e74d58, type: 2}

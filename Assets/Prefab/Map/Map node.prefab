@@ -104,7 +104,6 @@ MonoBehaviour:
   canInteract: 0
   finishedEncounter: 0
   myCamera: {fileID: 0}
-  speed: 1
   encounter: {fileID: 0}
   isCameraMoveToken: 0
   newCameraPoint: {fileID: 0}
@@ -206,8 +205,8 @@ LineRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 1, b: 1, a: 1}
-      key1: {r: 1, g: 1, b: 1, a: 1}
+      key0: {r: 0.7169812, g: 0.1318975, b: 0.1318975, a: 1}
+      key1: {r: 0.9339623, g: 0.5066305, b: 0.5066305, a: 1}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}

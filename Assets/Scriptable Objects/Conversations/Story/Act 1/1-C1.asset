@@ -57,7 +57,7 @@ MonoBehaviour:
       a little bored. '
   - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
     speakerSide: 0
-    currentEmotion: 3
+    currentEmotion: 0
     text: (Grumbles)
   - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 3

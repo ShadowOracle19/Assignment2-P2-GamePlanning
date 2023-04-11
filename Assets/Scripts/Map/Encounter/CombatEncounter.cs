@@ -11,11 +11,5 @@ public class CombatEncounter : BaseEncounter
     public override void StartEncounter()
     {
         GameManager.Instance.StartCombatEncounter(this);
-        if(isTutorial)
-        {
-            GameManager.Instance.tutorialCanvas.SetActive(true);
-            GameManager.Instance.combatTutorial.SetActive(true);
-            GameManager.Instance.PauseGame();
-        }
     }
 }

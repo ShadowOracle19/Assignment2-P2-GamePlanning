@@ -12,7 +12,6 @@ public class DialogueEncounter : BaseEncounter
         GameManager.Instance.StartDialogueEncounter(this);
         if (isTutorial)
         {
-            GameManager.Instance.tutorialCanvas.SetActive(true);
             GameManager.Instance.eventTutorial.SetActive(true);
             GameManager.Instance.PauseGame();
         }

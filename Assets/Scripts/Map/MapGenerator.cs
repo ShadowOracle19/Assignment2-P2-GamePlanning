@@ -19,7 +19,6 @@ public class MapGenerator : MonoBehaviour
     {
         GenerateMap(beginningMapPrefab);
 
-        GameManager.Instance.tutorialCanvas.SetActive(true);
         GameManager.Instance.mapTutorial.SetActive(true);
         GameManager.Instance.PauseGame();
     }

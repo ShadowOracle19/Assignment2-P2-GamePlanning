@@ -43,7 +43,6 @@ public class GameManager : MonoBehaviour
     public ShopManager shop;
 
     [Header("Tutorials")]
-    public GameObject tutorialCanvas;
     public GameObject combatTutorial;
     public GameObject mapTutorial;
     public GameObject eventTutorial;
@@ -135,13 +134,22 @@ public class GameManager : MonoBehaviour
 
     public void StartCombatEncounter(CombatEncounter encounter)
     {
+        
+
         combatUI.SetActive(true);
         map.SetActive(false);
 
         SoundEffectManager.Instance.mapSFX.Pause();
         SoundEffectManager.Instance.combatSFX.Play();
         combatManager.encounterRunning = true;
+        combatManager.currentCombat = encounter;
         combatManager.StartEncounter(encounter.encounteredEnemies, node);
+
+        if (encounter.isTutorial)
+        {
+            combatTutorial.SetActive(true);
+            PauseGame();
+        }
     }
     public void StartDialogueEncounter(DialogueEncounter encounter)
     {
@@ -153,6 +161,12 @@ public class GameManager : MonoBehaviour
 
         dialogueManager.currentNode = node;
         dialogueManager.StartDialogue();
+
+        if (encounter.isTutorial)
+        {
+            eventTutorial.SetActive(true);
+            PauseGame();
+        }
     }
 
     public void StartShopEncounter()

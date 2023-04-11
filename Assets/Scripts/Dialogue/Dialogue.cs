@@ -73,7 +73,7 @@ public class Dialogue : MonoBehaviour
         textComponent.text = string.Empty;
         speakerName.text = string.Empty;
 
-
+        if(currentConversation.combat != null) dialogueCombat = currentConversation.combat;
 
         //if there is no speaker set it to false
         if (currentConversation.speakerleft == null)

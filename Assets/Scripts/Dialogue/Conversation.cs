@@ -43,6 +43,7 @@ public class Conversation : ScriptableObject
     public Line[] lines;
 
     public Choice choice;
+    public CombatEncounter combat;
  
 }
 

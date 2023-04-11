@@ -6,6 +6,7 @@ using UnityEngine;
 public class CombatEncounter : BaseEncounter
 {
     public List<EnemyScriptable> encounteredEnemies;
+    public DialogueEncounter dialogueAfterCombat;
 
     public override void StartEncounter()
     {

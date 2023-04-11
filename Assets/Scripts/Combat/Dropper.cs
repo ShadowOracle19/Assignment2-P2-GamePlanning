@@ -115,8 +115,8 @@ public class Dropper : MonoBehaviour
             if (!tokenAnimation) UseToken();
         }
         
+        if(tokenAnimation) MoveToken(currentTarget);
 
-        MoveToken(currentTarget);
     }
 
     void MoveToken(Transform target)
@@ -135,17 +135,20 @@ public class Dropper : MonoBehaviour
                 }
                 else if(currentToken.currentToken.damageAmount > 0)
                 {
-                    TurnBasedManager.Instance.player.Attack(currentToken.currentToken.damageAmount, TurnBasedManager.Instance.targetedEnemy, currentToken.currentToken.isAoe);
-
+                    
+                    
+                    Debug.Log("Attack area");
                     if (currentToken.currentToken.isAoe)
                     {
-                        TurnBasedManager.Instance.enemies[0].GetComponent<Animator>().SetTrigger("Attacked");
-                        TurnBasedManager.Instance.enemies[1].GetComponent<Animator>().SetTrigger("Attacked");
-                        TurnBasedManager.Instance.enemies[2].GetComponent<Animator>().SetTrigger("Attacked");
-
+                        foreach(EnemyStats enemy in TurnBasedManager.Instance.enemies)
+                        {
+                            TurnBasedManager.Instance.player.Attack(currentToken.currentToken.damageAmount, enemy);
+                            enemy.GetComponent<Animator>().SetTrigger("Attacked");
+                        }
                     }
                     else
                     {
+                        TurnBasedManager.Instance.player.Attack(currentToken.currentToken.damageAmount, TurnBasedManager.Instance.targetedEnemy);
                         TurnBasedManager.Instance.targetedEnemy.GetComponent<Animator>().SetTrigger("Attacked");
 
                     }

@@ -76,7 +76,7 @@ public class EnemyStats : DataStats, IPointerClickHandler, IPointerEnterHandler,
             switch (currentAction)
             {
                 case EnemyActions.Attack:
-                    Attack(currentEnemy.attack, TurnBasedManager.Instance.player, false);
+                    Attack(currentEnemy.attack, TurnBasedManager.Instance.player);
                     TurnBasedManager.Instance.combatAnim.SetTrigger("Attacked");
                     ATBSlider.value = 0;
                     break;

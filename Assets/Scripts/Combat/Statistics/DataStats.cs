@@ -34,49 +34,51 @@ public class DataStats : MonoBehaviour
         
     }
 
-    public void Attack(float damage,  DataStats victim, bool isAoe)
+    public void Attack(float damage,  DataStats victim)
     {
         if(damage <= 0) return;
         
         float totalDamage = damage;
-        if(isAoe)//aoe only works for player attacking enemy
-        {
-            List<EnemyStats> targets = TurnBasedManager.Instance.enemies;
-            for (int i = 0; i < targets.Count; i++)
-            {
-                damage = totalDamage;
-                if (targets[i].defendHealth > 0)
-                {
-                    var tempDamage = damage;
-                    damage -= targets[i].defendHealth;
-                    targets[i].defendHealth -= tempDamage;
-                    targets[i].defendHealthText.text = targets[i].defendHealth.ToString();
+        //if(isAoe)//aoe only works for player attacking enemy
+        //{
+        //    Debug.Log("AOE SHOULD BE HERE");
+        //    List<EnemyStats> targets = TurnBasedManager.Instance.enemies;
+        //    for (int i = 0; i < targets.Count; i++)
+        //    {
+        //        damage = totalDamage;
+        //        if (targets[i].defendHealth > 0)
+        //        {
+        //            var tempDamage = damage;
+        //            damage -= targets[i].defendHealth;
+        //            targets[i].defendHealth -= tempDamage;
+        //            targets[i].defendHealthText.text = targets[i].defendHealth.ToString();
 
-                    if (!(damage <= 0))
-                    {
-                        targets[i].defendHealthParent.SetActive(false);
-                        targets[i].currentHealth -= damage;
-                        targets[i].healthSlider.value = targets[i].currentHealth;
-                        continue;
-                    }
-                    else if (targets[i].defendHealth <= 0)
-                    {
-                        defendHealth = 0;
-                        targets[i].defendHealthParent.SetActive(false);
-                    }
-                }
-                else
-                {
-                    targets[i].currentHealth -= damage;
-                    targets[i].healthSlider.value = targets[i].currentHealth;
-                    continue;
-                }
-            }
-            return;
-        }
+        //            if (!(damage <= 0))
+        //            {
+        //                targets[i].defendHealthParent.SetActive(false);
+        //                targets[i].currentHealth -= damage;
+        //                targets[i].healthSlider.value = targets[i].currentHealth;
+        //                continue;
+        //            }
+        //            else if (targets[i].defendHealth <= 0)
+        //            {
+        //                defendHealth = 0;
+        //                targets[i].defendHealthParent.SetActive(false);
+        //            }
+        //        }
+        //        else
+        //        {
+        //            targets[i].currentHealth -= damage;
+        //            targets[i].healthSlider.value = targets[i].currentHealth;
+        //            continue;
+        //        }
+        //    }
+        //    return;
+        //}
 
         if (victim.defendHealth > 0)
         {
+            Debug.Log("AOE SHOULD NOT BE HERE");
             var tempDamage = damage;
             damage -= victim.defendHealth;
             victim.defendHealth -= tempDamage;

@@ -49,6 +49,7 @@ public class TurnBasedManager : MonoBehaviour
     public EnemyStats targetedEnemy;
 
     public MapNode currentNode;
+    public CombatEncounter currentCombat;
 
     public ConveyorManager conveyorManager;
 
@@ -87,6 +88,11 @@ public class TurnBasedManager : MonoBehaviour
                 enemies.Remove(enemy);
             }
 
+            if(targetedEnemy == null)
+            {
+                TargetNewEnemy(enemy);
+            }
+
             enemy.currentHealth = Mathf.Clamp(enemy.currentHealth, 0, enemy.maxHealth);
             enemy.ATBSlider.value += Time.deltaTime * enemy.ATBSpeed;
 
@@ -99,6 +105,8 @@ public class TurnBasedManager : MonoBehaviour
                 }
                 else if(enemyBacklog.Count == 0)
                 {
+                    if (targetedEnemy == enemy) targetedEnemy = null;
+
                     enemy.gameObject.SetActive(false);
                     enemies.Remove(enemy);
                 }
@@ -108,6 +116,16 @@ public class TurnBasedManager : MonoBehaviour
         if(enemies.Count == 0) //win/lose state
         {
             //end encounter
+
+            if (currentCombat.dialogueAfterCombat != null)
+            {
+                GameManager.Instance.StartDialogueEncounter(currentCombat.dialogueAfterCombat);
+
+                GameManager.Instance.combatUI.SetActive(false);
+                return;
+            }
+
+
             FinishEncounter();
         }
         else if(player.currentHealth == 0)

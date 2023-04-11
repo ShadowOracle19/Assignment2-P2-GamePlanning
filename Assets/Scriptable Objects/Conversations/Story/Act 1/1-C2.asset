@@ -12,9 +12,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358bbf9753e925845b6baca7f6c14818, type: 3}
   m_Name: 1-C2
   m_EditorClassIdentifier: 
-  speakerleft: {fileID: 0}
-  speakerRight: {fileID: 0}
+  speakerleft: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+  speakerRight: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
   speakerMiddle: {fileID: 0}
-  lines: []
+  lines:
+  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+    speakerSide: 1
+    currentEmotion: 4
+    text: "Cadence, are you okay? Oh god oh god please tell me you didn't get bit!\r"
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 0
+    currentEmotion: 1
+    text: "I'm okay, don't worry. \r"
+  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+    speakerSide: 1
+    currentEmotion: 1
+    text: 'Thank god. This is why you have to be more careful when you rustle things
+      around! Well, at least we came out of that unharmed. '
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 0
+    currentEmotion: 0
+    text: Though I hate to admit that you're right, I suppose we shouldn't tarry
+      then?
+  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+    speakerSide: 1
+    currentEmotion: 1
+    text: Yeah, let's get going. I marked the grocery store that we're hitting on
+      our map, so let's get going, bucko
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 0
+    currentEmotion: 1
+    text: Hurray!
+  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+    speakerSide: 1
+    currentEmotion: 0
+    text: (Under her breath) Every time I think that you might be alright, I swear
+      to god...
+  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+    speakerSide: 1
+    currentEmotion: 0
+    text: What were we JUST talking about?
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 0
+    currentEmotion: 1
+    text: I cannnnn't heaaarrrrr yoooouuuuuuuuuu!!!
   choice: {fileID: 0}
   combat: {fileID: 0}

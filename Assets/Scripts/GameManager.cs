@@ -149,6 +149,8 @@ public class GameManager : MonoBehaviour
         map.SetActive(false);
 
         dialogueManager.currentConversation = encounter.desiredConversation;
+
+
         dialogueManager.currentNode = node;
         dialogueManager.StartDialogue();
     }

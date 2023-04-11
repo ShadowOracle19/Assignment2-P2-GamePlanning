@@ -4770,6 +4770,7 @@ MonoBehaviour:
   enemyParent: {fileID: 1317463574}
   targetedEnemy: {fileID: 0}
   currentNode: {fileID: 0}
+  currentCombat: {fileID: 0}
   conveyorManager: {fileID: 239859751}
   combatAnim: {fileID: 752860939}
   currentPlayerSprite: {fileID: 1061538800}

@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6190c5494682caf4eae3e55e53b768ab, type: 3}
   m_Name: Act1-C2
   m_EditorClassIdentifier: 
-  reward: {fileID: 0}
+  reward: {fileID: 11400000, guid: f762cc52f687dcd49b5970efed13f7d3, type: 2}
   isTutorial: 0
-  desiredConversation: {fileID: 0}
+  desiredConversation: {fileID: 11400000, guid: bfc273af36658ea4b9282b6d1c407f93, type: 2}

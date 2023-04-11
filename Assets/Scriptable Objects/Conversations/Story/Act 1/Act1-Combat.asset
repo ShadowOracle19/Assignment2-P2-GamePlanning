@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Act1-Combat
   m_EditorClassIdentifier: 
   reward: {fileID: 0}
-  isTutorial: 0
-  encounteredEnemies: []
-  dialogueAfterCombat: {fileID: 0}
+  isTutorial: 1
+  encounteredEnemies:
+  - {fileID: 11400000, guid: d765d601c6575f44d8c6bfc5be2688a9, type: 2}
+  dialogueAfterCombat: {fileID: 11400000, guid: afddce1d1567e7440b556068d8852ac9, type: 2}

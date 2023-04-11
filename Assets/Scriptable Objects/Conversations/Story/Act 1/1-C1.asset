@@ -12,8 +12,153 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 358bbf9753e925845b6baca7f6c14818, type: 3}
   m_Name: 1-C1
   m_EditorClassIdentifier: 
-  speakerleft: {fileID: 0}
-  speakerRight: {fileID: 0}
+  speakerleft: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+  speakerRight: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
   speakerMiddle: {fileID: 0}
-  lines: []
+  lines:
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
+    speakerSide: 3
+    currentEmotion: 0
+    text: Jerry and Cadence walk down the deserted streets of a city. The sun beats
+      down on them and the smell of rotting flesh fills the air.
+  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+    speakerSide: 1
+    currentEmotion: 0
+    text: Well, let's try and be quick, squirt. I don't want to be here any longer
+      than we need to be.
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
+    speakerSide: 0
+    currentEmotion: 0
+    text: Candace rolls her eyes
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 0
+    currentEmotion: 1
+    text: Oh Jerithy, you should learn to live a little.
+  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+    speakerSide: 1
+    currentEmotion: 3
+    text: 'How many times do I have to tell you to not call me- You know what? Whatever.
+      Whatever! '
+  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+    speakerSide: 1
+    currentEmotion: 0
+    text: I'm not sure if you remember grandma, but there's a zombie apocalypse.
+      With Zombies. We need to hit this next grocery store pronto, we only have so
+      much sunlight to burn.
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 0
+    currentEmotion: 2
+    text: But Jerry, it is ever so dreadfully boring at home! Perhaps if you let
+      us go to a toy store for once to get some dollies!
+  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+    speakerSide: 1
+    currentEmotion: 0
+    text: 'No dice, dweeb. I''m not going to risk our lives just because you''re
+      a little bored. '
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 0
+    currentEmotion: 3
+    text: (Grumbles)
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
+    speakerSide: 3
+    currentEmotion: 0
+    text: 'It''s been a bit of a rough ride for these two, what with the world ending
+      and all. While Jerry wasn''t exactly *happy* At university, those days of all-nighters
+      and arguing with profs over grades almost feel like a pleasant memory compared
+      to how life is like now. They have to live with Cadence, for one. '
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
+    speakerSide: 3
+    currentEmotion: 0
+    text: 'Actually... That might be it as far as hardships go. The apocalypse itself
+      hasn''t been that much worse than school, if Jerry had to be honest. They just
+      didn''t get bit, easy peasy. Cadence though... '
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
+    speakerSide: 3
+    currentEmotion: 0
+    text: Living with her has almost made her realize how much of an asshole *they*
+      were, with how annoyingly sarcastic and quippy that little munchkin managed
+      to be.
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
+    speakerSide: 3
+    currentEmotion: 0
+    text: 'There was also the matter of her weird and antiquated manner of speaking.
+      She''d mentioned how she grew up with her grandparents and seemingly the way
+      they talked rubbed off on her. Weird. '
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
+    speakerSide: 3
+    currentEmotion: 0
+    text: 'Still, better to have company than to be all alone. Probably. Maybe.  '
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
+    speakerSide: 3
+    currentEmotion: 0
+    text: ...
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 0
+    currentEmotion: 4
+    text: Hey look, a vending machine! Perhaps we could procure some nutrition from
+      it's stock!
+  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+    speakerSide: 1
+    currentEmotion: 0
+    text: Wow, Cadence. You're a genius. I never would have thought to look for food
+      in a vending machine during the zombie apocalypse.
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
+    speakerSide: 3
+    currentEmotion: 0
+    text: "Cadence walks up to the smashed vending machine. Looking inside, the young
+      girl excitedly reaches down and pulls out a bag of chips and a candy bar! \r\n(+2
+      to Rations)\r\n"
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 0
+    currentEmotion: 1
+    text: You're just jealous that I found some snacks!!!
+  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+    speakerSide: 1
+    currentEmotion: 4
+    text: 'Wow, you''re right. I guess we can just saunter out of here now that we
+      have alllll the supplies that we need. '
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 0
+    currentEmotion: 1
+    text: Yay! It's alright Jerry dear, I'm sure that you'll learn to carry your
+      weight eventually!
+  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+    speakerSide: 1
+    currentEmotion: 0
+    text: (Sighs) First, I do most of the work and I think you know that. But more
+      importantly, don't you think we'll need a little more than two small snacks
+      to keep us going for the next couple weeks?
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 0
+    currentEmotion: 2
+    text: 'Not if you''re planning on getting heaps of canned vegetables, yuck. '
+  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+    speakerSide: 1
+    currentEmotion: 0
+    text: Didn't your grandparents ever tell y-
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
+    speakerSide: 3
+    currentEmotion: 0
+    text: 'The two of them hear a noise from right around the corner. '
+  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+    speakerSide: 1
+    currentEmotion: 3
+    text: 'Shit! '
+  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
+    speakerSide: 3
+    currentEmotion: 3
+    text: A zombie suddenly stumbles out and heads straight for the two of them!
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 0
+    currentEmotion: 4
+    text: 'Eeeeiiiiiiieeeee!!!! '
+  - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
+    speakerSide: 1
+    currentEmotion: 3
+    text: 'Don''t panic! Remember what we''ve practiced! '
+  - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
+    speakerSide: 0
+    currentEmotion: 0
+    text: O-Okay! Let's get 'em!
   choice: {fileID: 0}
+  combat: {fileID: 11400000, guid: 237f11afc028e7944bbaced4a40da40b, type: 2}

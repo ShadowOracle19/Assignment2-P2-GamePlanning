@@ -10,10 +10,6 @@ public class DialogueEncounter : BaseEncounter
     public override void StartEncounter()
     {
         GameManager.Instance.StartDialogueEncounter(this);
-        if (isTutorial)
-        {
-            GameManager.Instance.eventTutorial.SetActive(true);
-            GameManager.Instance.PauseGame();
-        }
+        
     }
 }

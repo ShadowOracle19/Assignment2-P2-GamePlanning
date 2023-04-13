@@ -25,8 +25,8 @@ public class MapGenerator : MonoBehaviour
 
     public void GenerateMap(GameObject newMap)
     {
-        Debug.Log("Generate Map");
-        TelemetryLogger.ChangeSection(this, newMap.name);
+        
+        //TelemetryLogger.ChangeSection(this, newMap.name);
 
         var map = Instantiate(newMap, this.transform);
         mapParent = map.transform;

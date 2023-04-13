@@ -24,8 +24,8 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 3c3c9cbc2014a674881005133d48e72d, type: 2}
     speakerSide: 2
     currentEmotion: 4
-    text: " \u201CGuys, I don\u2019t think there\u2019s anyone else here. We could
-      kill him and take everything he has!\u201D\r"
+    text: "Guys, I don\u2019t think there\u2019s anyone else here. We could kill
+      him and take everything he has!"
   - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 2
     currentEmotion: 4
@@ -33,7 +33,7 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 065687a327d13d14a94af3e6cc4def44, type: 2}
     speakerSide: 3
     currentEmotion: 0
-    text: "\u201CWhat? No!\u201D"
+    text: What? No!
   - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 3
     currentEmotion: 0
@@ -42,5 +42,6 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 065687a327d13d14a94af3e6cc4def44, type: 2}
     speakerSide: 3
     currentEmotion: 0
-    text: "\u201COUT! OUT! NOW!\u201D"
+    text: OUT! OUT! NOW!
   choice: {fileID: 0}
+  combat: {fileID: 0}

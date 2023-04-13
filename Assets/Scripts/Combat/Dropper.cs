@@ -162,45 +162,45 @@ public class Dropper : MonoBehaviour
     public void UseToken()
     {
         tokenAnimation = false;
-        //Telemetry stuff
-        switch (currentToken.currentToken.tokenName)
-        {
-            case "Bandage":
-                TurnBasedManager.Instance.tokenUsage.bandage += 1;
-                break;
+        ////Telemetry stuff
+        //switch (currentToken.currentToken.tokenName)
+        //{
+        //    case "Bandage":
+        //        TurnBasedManager.Instance.tokenUsage.bandage += 1;
+        //        break;
 
-            case "Chainsaw":
-                TurnBasedManager.Instance.tokenUsage.chainsaw += 1;
-                break;
+        //    case "Chainsaw":
+        //        TurnBasedManager.Instance.tokenUsage.chainsaw += 1;
+        //        break;
 
-            case "ChangeStance":
-                TurnBasedManager.Instance.tokenUsage.changeStance += 1;
-                break;
+        //    case "ChangeStance":
+        //        TurnBasedManager.Instance.tokenUsage.changeStance += 1;
+        //        break;
 
-            case "Knife":
-                TurnBasedManager.Instance.tokenUsage.knife += 1;
-                break;
+        //    case "Knife":
+        //        TurnBasedManager.Instance.tokenUsage.knife += 1;
+        //        break;
 
-            case "Pistol":
-                TurnBasedManager.Instance.tokenUsage.pistol += 1;
-                break;
+        //    case "Pistol":
+        //        TurnBasedManager.Instance.tokenUsage.pistol += 1;
+        //        break;
 
-            case "Shield":
-                TurnBasedManager.Instance.tokenUsage.shield += 1;
-                break;
+        //    case "Shield":
+        //        TurnBasedManager.Instance.tokenUsage.shield += 1;
+        //        break;
 
-            case "Sledgehammer":
-                TurnBasedManager.Instance.tokenUsage.sledgehamer += 1;
-                break;
+        //    case "Sledgehammer":
+        //        TurnBasedManager.Instance.tokenUsage.sledgehamer += 1;
+        //        break;
 
-            case "Shotgun":
-                TurnBasedManager.Instance.tokenUsage.shotgun += 1;
-                break;
+        //    case "Shotgun":
+        //        TurnBasedManager.Instance.tokenUsage.shotgun += 1;
+        //        break;
 
-            default:
-                Debug.Log("Token doesn't exist");
-                break;
-        }
+        //    default:
+        //        Debug.Log("Token doesn't exist");
+        //        break;
+        //}
 
         DestroyToken();
     }

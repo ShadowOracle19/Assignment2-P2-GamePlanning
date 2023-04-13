@@ -120,7 +120,8 @@ public class TurnBasedManager : MonoBehaviour
             if (currentCombat.dialogueAfterCombat != null)
             {
                 GameManager.Instance.StartDialogueEncounter(currentCombat.dialogueAfterCombat);
-
+                conveyorManager.DestroyTokens();
+                StopAllCoroutines();
                 GameManager.Instance.combatUI.SetActive(false);
                 return;
             }
@@ -171,7 +172,7 @@ public class TurnBasedManager : MonoBehaviour
     public void FinishEncounter()
     {
         encounterRunning = false;
-        TelemetryLogger.Log(this, $"Token's used through combat {currentNode.encounter.name}", tokenUsage);
+        //TelemetryLogger.Log(this, $"Token's used through combat {currentNode.encounter.name}", tokenUsage);
 
         tokenUsage.bandage = 0;
         tokenUsage.chainsaw = 0;

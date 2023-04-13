@@ -225,7 +225,7 @@ public class GameManager : MonoBehaviour
     public void EndGameDeath()
     {
         gameFinished = true;
-        TelemetryLogger.Log(this, "Death state achieved", seconds);
+        //TelemetryLogger.Log(this, "Death state achieved", seconds);
         endGameScreen.SetActive(true);
         sceneRoot.SetActive(false);
         combatUI.SetActive(false);
@@ -234,7 +234,7 @@ public class GameManager : MonoBehaviour
     public void EndGame()
     {
         gameFinished = true;
-        TelemetryLogger.Log(this, "Time taken to finish game", seconds);
+        //TelemetryLogger.Log(this, "Time taken to finish game", seconds);
         endGameScreen.SetActive(true);
         sceneRoot.SetActive(false);
         combatUI.SetActive(false);

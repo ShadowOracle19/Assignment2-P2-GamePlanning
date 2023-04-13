@@ -19,7 +19,7 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
     speakerSide: 2
     currentEmotion: 1
-    text: "\u201CGuys, look over there!\u201D "
+    text: Guys, look over there!
   - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 3
     currentEmotion: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 0272c3c7f4fd26d45b55b49ef2d19517, type: 2}
     speakerSide: 1
     currentEmotion: 0
-    text: "\u201CIncredible, garbage.\u201D"
+    text: Incredible, garbage.
   - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 3
     currentEmotion: 0
@@ -35,5 +35,6 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
     speakerSide: 2
     currentEmotion: 4
-    text: " \u201CBoost me up, I wanna see what\u2019s inside. Please?\u201D"
+    text: "Boost me up, I wanna see what\u2019s inside. Please?"
   choice: {fileID: 11400000, guid: f54917aeaa1d8a54bbde6a7b8560c7f2, type: 2}
+  combat: {fileID: 0}

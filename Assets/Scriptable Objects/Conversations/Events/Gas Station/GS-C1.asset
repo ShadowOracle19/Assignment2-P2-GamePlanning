@@ -16,14 +16,14 @@ MonoBehaviour:
   speakerRight: {fileID: 0}
   speakerMiddle: {fileID: 11400000, guid: e820afaca5571b747b0afaa83bc36078, type: 2}
   lines:
-  - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
-    speakerSide: 2
+  - character: {fileID: 11400000, guid: 065687a327d13d14a94af3e6cc4def44, type: 2}
+    speakerSide: 3
     currentEmotion: 0
-    text: "\u201CThanks, enjoy the meal!\u201D\r"
+    text: Thanks, enjoy the meal!
   - character: {fileID: 11400000, guid: e820afaca5571b747b0afaa83bc36078, type: 2}
     speakerSide: 2
     currentEmotion: 1
-    text: "\u201CThank you, you too\u2026\u201D \n"
+    text: "Thank you, you too\u2026\n"
   - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 2
     currentEmotion: 0
@@ -31,3 +31,4 @@ MonoBehaviour:
 
 '
   choice: {fileID: 0}
+  combat: {fileID: 0}

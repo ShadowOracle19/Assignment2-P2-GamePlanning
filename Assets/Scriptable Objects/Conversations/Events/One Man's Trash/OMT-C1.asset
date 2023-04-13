@@ -29,7 +29,7 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
     speakerSide: 2
     currentEmotion: 1
-    text: "\u201CAha!\""
+    text: Aha!
   - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 2
     currentEmotion: 1
@@ -37,9 +37,10 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
     speakerSide: 2
     currentEmotion: 1
-    text: "\u201CFree caps, like stealing lollipops from babies.\u201D"
+    text: Free caps, like stealing lollipops from babies.
   - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 0
     currentEmotion: 3
     text: "Shaw complains about Candace\u2019s smell for the whole week."
   choice: {fileID: 0}
+  combat: {fileID: 0}

@@ -31,10 +31,11 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: 065687a327d13d14a94af3e6cc4def44, type: 2}
     speakerSide: 3
     currentEmotion: 0
-    text: "\u201CWhoa, there\u2019s no need for any of that here! How about you put
-      that gun down missus, and check out what I have in store instead.\u201D "
+    text: "Whoa, there\u2019s no need for any of that here! How about you put that
+      gun down missus, and check out what I have in store instead."
   - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 1
     currentEmotion: 4
     text: The crew give each other pointed looks.
   choice: {fileID: 11400000, guid: 8a8ea3bc2009bfa4cb12cc11d0c07fae, type: 2}
+  combat: {fileID: 0}

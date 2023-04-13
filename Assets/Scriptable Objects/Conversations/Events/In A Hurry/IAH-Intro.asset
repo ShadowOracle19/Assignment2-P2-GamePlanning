@@ -29,12 +29,12 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: fae2436a9f89c334da99e5945749850d, type: 2}
     speakerSide: 1
     currentEmotion: 2
-    text: "\u201CI\u2019m SORRY, that was the first time I saw an air horn. I didn\u2019t
-      know that\u2019s what it did!\u201D"
+    text: "I\u2019m SORRY, that was the first time I saw an air horn. I didn\u2019t
+      know that\u2019s what it did!"
   - character: {fileID: 11400000, guid: e820afaca5571b747b0afaa83bc36078, type: 2}
     speakerSide: 2
     currentEmotion: 4
-    text: "\u201CYou can apologize later when we\u2019re safe, look!\u201D "
+    text: "You can apologize later when we\u2019re safe, look!"
   - character: {fileID: 11400000, guid: bde8565bd525ab0409cddac2810b9806, type: 2}
     speakerSide: 1
     currentEmotion: 4
@@ -52,6 +52,6 @@ MonoBehaviour:
   - character: {fileID: 11400000, guid: e820afaca5571b747b0afaa83bc36078, type: 2}
     speakerSide: 2
     currentEmotion: 2
-    text: " \u201CThis ladder is too unstable, we gotta choose someone to do it for
-      us.\u201D\r"
+    text: This ladder is too unstable, we gotta choose someone to do it for us.
   choice: {fileID: 11400000, guid: 2bbdc6d73a1488a4fbbf2b19db5c7037, type: 2}
+  combat: {fileID: 0}
